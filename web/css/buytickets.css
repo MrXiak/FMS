@@ -1,0 +1,33 @@
+html,
+　　　　body {
+　　　　　　　　height: 100%
+　　　　}
+
+p {text-align:center; color:red;}
+td{font-size: 12px;}
+
+.table_chooseseats {
+    margin:2px auto;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+    onselectstart:return false;
+    unselectable:0;
+}
+
+#tab_chooseseats
+.call {
+    padding:3px 15px 3px;
+    width:10px;
+    height:5px;
+    background-color:#11EE96;
+}
+
+#tab_chooseseats
+.curr {
+    padding:3px 15px 3px;
+    width:10px;
+    height:5px;
+    background-color:#000000;
+}
