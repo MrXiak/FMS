@@ -1,0 +1,52 @@
+
+table{
+    height: 90%;
+    width: 70%;
+    margin: 0 auto;
+
+}
+table,td{
+    border: 1px solid red;
+    border-collapse: collapse;
+    text-align: center;
+}
+#theader{
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: white;
+    border: 1px solid lightgray;
+
+}
+#film_pic{
+    width: 75%;
+    height:500px;
+    border: 1px solid green;
+    margin: 0 auto;
+    margin-top: 6%;
+}
+.show {
+    border: 1px solid red;
+    margin-left: 20%;
+    margin-bottom: 5px;
+    float: left;
+}
+#film_hot{
+    width: 70%;
+    height: 100%;
+    margin-top: 5%;
+}
+.film_img{
+    height:200px;
+    width: 80%;
+    border: 1px solid green;
+}
+.buyTickets{
+    height: 30px;
+    width: 80%;
+    color: red;
+    background: white;
+    border: 1px solid blue;
+    text-align: center;
+}

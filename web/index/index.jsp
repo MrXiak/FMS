@@ -9,8 +9,8 @@
 <html>
   <head>
     <title>$Title$</title>
-    <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
-    <script src="layui/layui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+    <script src="../layui/layui.js"></script>
   </head>
   <style>
     table{
