@@ -9,12 +9,12 @@ function initTable(){
         var tr = $("<tr></tr>")
         //创建单元格
         var td0 = $("<th colspan=‘3’>【第"+i+"排】</th>")
-        var td1 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排1座'>"+i+"排1座</td>")
-        var td2 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排2座'>"+i+"排2座</td>")
-        var td3 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排3座'>"+i+"排3座</td>")
-        var td4 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排4座'>"+i+"排4座</td>")
-        var td5 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排5座'>"+i+"排5座</td>")
-        var td6 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排6座'>"+i+"排6座</td>")
+        var td1 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排1座'></td>")
+        var td2 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排2座'></td>")
+        var td3 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排3座'></td>")
+        var td4 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排4座'></td>")
+        var td5 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排5座'></td>")
+        var td6 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排6座'></td>")
         //将单元格追加到tr
         tr.append(td0).append(td1).append(td2).append(td3).append(td4).append(td5).append(td6);
         //将行元素追加到Tbody
@@ -74,8 +74,6 @@ function change(obj){
                 a=a+","+x[j];
             }
         }
-
-
         /*if(a == ""){
             document.getElementById("choosed").innerHTML=a+b;
         }else{
