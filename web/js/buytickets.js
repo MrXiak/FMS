@@ -15,8 +15,12 @@ function initTable(){
         var td4 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排4座'></td>")
         var td5 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排5座'></td>")
         var td6 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排6座'></td>")
+        var td7 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排7座'></td>")
+        var td8 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排8座'></td>")
+        var td9 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排9座'></td>")
+        var td10 = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排10座'></td>")
         //将单元格追加到tr
-        tr.append(td0).append(td1).append(td2).append(td3).append(td4).append(td5).append(td6);
+        tr.append(td0).append(td1).append(td2).append(td3).append(td4).append(td5).append(td6).append(td7).append(td8).append(td9).append(td10);
         //将行元素追加到Tbody
         var tbody = $("#tb1")
         tbody.append(tr);
