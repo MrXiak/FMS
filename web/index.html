@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>狗眼电影</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js"></script>
+</head>
+<style>
+    table{
+        height: 90%;
+        width: 70%;
+        margin: 0 auto;
+
+    }
+    table,td{
+        border: 1px solid red;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    #theader{
+        height: 100px;
+        width: 90%;
+        position: fixed;
+        top: 0px;
+        background: white;
+
+       }
+    #film_pic{
+        width: 75%;
+        height:500px;
+        border: 1px solid green;
+        margin: 0 auto;
+        margin-top: 5.2%;
+    }
+    #film_hot{
+        width: 70%;
+        height: 100%;
+    }
+</style>
+<body>
+<div id="theader">
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <img src="image/logo.jpg" height="44px" ;width="149px">
+                    狗眼电影
+                </div>
+            </td>
+            <td>
+                <select>
+                    <option value="location">地区选择</option>
+                    <option value="rugao">如皋</option>
+                    <option value="beijing">北京</option>
+                    <option value="shanghai">上海</option>
+                </select>
+            </td>
+            <td><a href="#">首页</a></td>
+            <td>
+                <select>
+                    <option value="pic"><img src="../images/face/64.gif"></option>/
+                    <option value="login">登录</option>
+                </select>
+            </td>
+            <td>备用</td>
+
+        </tr>
+    </table>
+</div>
+
+
+<div id="film_pic">
+    <img src="image/shouye2.jpg" width="100%" height="100%">
+</div>
+
+<div id="film_hot">
+    <table>
+        <tr>
+            <td><span style="color: red;font-size: 20px">正在热映</span></td>
+            <td><a href="#"><span style="color: red">全部>>></span></a></td>
+        </tr>
+        </table>
+    <table>
+        <tr>
+            <td>
+                <div><img src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@464w_644h_1e_1c"></div>
+                <div><a href="#"style="color:red;">购票</a></div>  <!--加动画，鼠标移动到购票上div变成红色，子变成白色-->
+            </td>
+            <td>123</td>
+            <td>132</td>
+            <td>132</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>123</td>
+            <td>132</td>
+            <td>132</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
