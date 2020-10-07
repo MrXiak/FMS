@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>购票</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="../css/buytickets.css">
     <script src="../js/jquery/jquery-3.2.1.js"></script>
     <script src="../js/buytickets.js"></script>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
 </head>
 <body>
+    <ul class="layui-nav">
+        <li class="layui-nav-item"><a href="">最新活动</a></li>
+        <li class="layui-nav-item layui-this">
+            <a href="javascript:;">产品</a>
+            <dl class="layui-nav-child">
+                <dd><a href="">选项1</a></dd>
+                <dd><a href="">选项2</a></dd>
+                <dd><a href="">选项3</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item"><a href="">大数据</a></li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">解决方案</a>
+            <dl class="layui-nav-child">
+                <dd><a href="">移动模块</a></dd>
+                <dd><a href="">后台模版</a></dd>
+                <dd class="layui-this"><a href="">选中项</a></dd>
+                <dd><a href="">电商平台</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item"><a href="">社区</a></li>
+    </ul>
+
     <div>
 
     </div>
@@ -18,7 +45,7 @@
     <hr />
     <p>票价：</p>
     <hr />
-    <table class="table_chooseseats" border="0" id="tab_chooseseats">
+    <table class="table_chooseseats" id="tab_chooseseats" border="1" style="border-color: #FFFFFF;">
         <thead>
             <tr>
                 <caption>选择座位</caption>
@@ -33,5 +60,21 @@
     <hr />
     <p>已选票数：<span id="counttickets">0</span>票</p>
     <hr />
+
+    <script src="../layui/layui.js" charset="utf-8"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+    <script>
+        layui.use('element', function(){
+            var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+            //监听导航点击
+            element.on('nav(demo)', function(elem){
+                //console.log(elem)
+                layer.msg(elem.text());
+            });
+        });
+    </script>
+
+
 </body>
 </html>
