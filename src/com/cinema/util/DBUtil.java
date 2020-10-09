@@ -9,7 +9,7 @@ public class DBUtil {
 
     static {
         try {
-            Class.forName("com.mysql.jdbc.Driver");//加载驱动类
+            Class.forName("com.mysql.cj.jdbc.Driver");//加载驱动类
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -28,7 +28,7 @@ public class DBUtil {
             return;
         }
         try {
-            conn.prepareStatement(sql);
+            ps=conn.prepareStatement(sql);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -80,7 +80,6 @@ public class DBUtil {
             throwables.printStackTrace();
         }
     }
-
     public static ResultSet getRes() {
         return rs;
     }

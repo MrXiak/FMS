@@ -5,7 +5,7 @@
   Time: 20:04
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>login</title>
@@ -119,7 +119,7 @@
                                                                    style="font-size: 20px; color: #000000;">账号</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="text" name="user_id" lay-verify="required" placeholder="请输入"
+                                        <input type="text" name="user_id" id="user_id" lay-verify="required" placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>
@@ -133,7 +133,7 @@
                                                                    style="font-size: 20px; color: #000000;">密码</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="password" name="user_password" lay-verify="required" placeholder="请输入"
+                                        <input type="password" name="user_password" id="user_password" lay-verify="required" placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>

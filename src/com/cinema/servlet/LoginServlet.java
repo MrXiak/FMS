@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        resp.getWriter().println("hhh");
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,9 +27,10 @@ public class LoginServlet extends HttpServlet {
         //调用Service层，登录
         IUserService userService=new IUserServiceImpl();
         if (userService.isLogin(u)){
-            req.getRequestDispatcher("./registrt.jsp").forward(req,resp);
+//            req.getRequestDispatcher("./register.jsp").forward(req,resp);
+            req.getRequestDispatcher("./login_register/register.jsp").forward(req,resp);
         }else {
-            req.getRequestDispatcher("./registrt.jsp").forward(req,resp);
+            req.getRequestDispatcher("./login_register/register.jsp").forward(req,resp);
         }
     }
 }
