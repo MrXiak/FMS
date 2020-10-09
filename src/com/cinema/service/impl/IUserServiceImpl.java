@@ -19,4 +19,15 @@ public class IUserServiceImpl implements IUserService {
             return false;
         }
     }
+
+    @Override
+    public boolean isRegister(User user) {
+        IUserDao userDao=new IUserDaoImpl();
+        if (userDao.isExist(user.getUser_id())){
+            userDao.insertAccount(user.getUser_id(),user.getUser_password());
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

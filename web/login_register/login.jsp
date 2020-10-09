@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <style type="text/css">
         #container {
-            width: 1200px;
+            width: 1500px;
             height: auto;
-            margin: 0px auto;
+            margin: 0 auto;
         }
 
         #top {
@@ -155,7 +155,7 @@
                                    id="login_submit" value="登录"/></td>
                     </tr>
                     <tr>
-                        <td>还没有账号？<a href="">免费注册</a></td>
+                        <td>还没有账号？<a href="../login_register/register.jsp">免费注册</a></td>
                     </tr>
                 </table>
             </form>

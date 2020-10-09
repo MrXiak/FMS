@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <style type="text/css">
         #container {
-            width: 1200px;
+            width: 1500px;
             height: auto;
-            margin: 0px auto;
+            margin: 0 auto;
         }
 
         #top {
@@ -113,7 +113,7 @@
     <hr>
     <div id="middle">
         <div id="login_left">
-            <form action="" method="">
+            <form action="register.action" method="post">
                 <table id="main">
                     <tr>
                         <td class="layui-form-label" style="font-size: 30px;" id="register_word">注册账号</td>
@@ -124,7 +124,7 @@
                                 <label class="layui-form-label"><i class="layui-icon layui-icon-username"
                                                                    style="font-size: 20px; color: #000000;">创建账号</i></label>
                                 <div class="layui-input-inline">
-                                    <input type="text" name="username" lay-verify="required" placeholder="请输入"
+                                    <input type="text" name="user_id" lay-verify="required" placeholder="请输入"
                                            autocomplete="off" class="layui-input">
                                 </div>
 <%--                                <label class="tishi">不少于5位</label>--%>
@@ -137,8 +137,10 @@
                                 <label class="layui-form-label"><i class="layui-icon  layui-icon-password"
                                                                    style="font-size: 20px; color: #000000;">输入密码</i></label>
                                 <div class="layui-input-inline">
-                                    <input type="password" name="username" lay-verify="required" placeholder="请输入"
-                                           autocomplete="off" class="layui-input">
+                                    <label>
+                                        <input type="password" name="user_password" lay-verify="required" placeholder="请输入"
+                                               autocomplete="off" class="layui-input">
+                                    </label>
                                 </div>
 <%--                                <label class="tishi">请使用字母和数字的组合且不少于6位</label>--%>
                             </div>
@@ -150,8 +152,10 @@
                                 <label class="layui-form-label"><i class="layui-icon  layui-icon-auz"
                                                                    style="font-size: 20px; color: #000000;">确认密码</i></label>
                                 <div class="layui-input-inline">
-                                    <input type="password" name="username" lay-verify="required" placeholder="请输入"
-                                           autocomplete="off" class="layui-input">
+                                    <label>
+                                        <input type="password" name="username" lay-verify="required" placeholder="请输入"
+                                               autocomplete="off" class="layui-input">
+                                    </label>
                                 </div>
                             </div>
                         </td>

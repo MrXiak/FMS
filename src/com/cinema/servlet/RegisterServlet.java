@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class LoginServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
     }
@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
         u.setUser_password(upass);
         //调用Service层，登录
         IUserService userService=new IUserServiceImpl();
-        if (userService.isLogin(u)){
+        if (userService.isRegister(u)){
 //            req.getRequestDispatcher("./register.jsp").forward(req,resp);
             req.getRequestDispatcher("./login_register/success.jsp").forward(req,resp);
         }else {
