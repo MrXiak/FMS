@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <style type="text/css">
         #container {
-            width: 100%;
+            width: 1200px;
             height: auto;
+            margin: 0px auto;
         }
 
         #top {
@@ -93,6 +94,11 @@
         .layui-form-label {
             margin-left: -30px;
         }
+        hr {
+            height: 2px;
+            background-color: red;
+            border: 10px;
+        }
     </style>
 </head>
 <body>
@@ -102,6 +108,7 @@
             <img src="../image/logo.jpg" height="44" width="149" alt="logo">
         </div>
     </div>
+    <hr>
     <div id="middle">
         <div id="login_left">
             <img src="../image/login.png" alt="login_pictur"/>

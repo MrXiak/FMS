@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <style type="text/css">
         #container {
-            width: 100%;
+            width: 1200px;
             height: auto;
+            margin: 0px auto;
         }
 
         #top {
