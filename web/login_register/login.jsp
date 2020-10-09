@@ -99,15 +99,15 @@
 <div id="container">
     <div id="top">
         <div id="top_logo">
-            <img src="../image/logo.jpg" height="44" width="149">
+            <img src="../image/logo.jpg" height="44" width="149" alt="logo">
         </div>
     </div>
     <div id="middle">
         <div id="login_left">
-            <img src="../image/login.png"/>
+            <img src="../image/login.png" alt="login_pictur"/>
         </div>
         <div id="login_right">
-            <form action="" method="">
+            <form action="login.action" method="post">
                 <table id="main">
                     <tr>
                         <td class="layui-form-label" style="font-size: 30px;" id="login_word">账号登录</td>
@@ -119,7 +119,7 @@
                                                                    style="font-size: 20px; color: #000000;">账号</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="text" name="username" lay-verify="required" placeholder="请输入"
+                                        <input type="text" name="user_id" lay-verify="required" placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>
@@ -133,7 +133,7 @@
                                                                    style="font-size: 20px; color: #000000;">密码</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="password" name="username" lay-verify="required" placeholder="请输入"
+                                        <input type="password" name="user_password" lay-verify="required" placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>

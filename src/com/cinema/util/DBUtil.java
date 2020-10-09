@@ -17,7 +17,7 @@ public class DBUtil {
 
     public static void initConnection() {//初始化连接信息
         try {//初始化connect对象
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ros?serverTimezone=GMT%2B8&useSSL=false", "root", "1234");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root", "1234");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -48,7 +48,6 @@ public class DBUtil {
     }
 
     public static void executeQuery() {
-        rs = null;
         try {
             rs = ps.executeQuery();
         } catch (SQLException throwables) {
