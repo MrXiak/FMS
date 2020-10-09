@@ -27,7 +27,7 @@
 
         #middle {
             width: 100%;
-            height: 550px;
+            height: 450px;
             padding-top: 100px;
         }
 
