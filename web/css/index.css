@@ -14,6 +14,12 @@ table,td{
     border-collapse: collapse;
     text-align: center;
 }
+#main_body{
+    width:1903px;
+    height:auto;
+    margin:0 auto;
+    position: relative;
+}
 #theader{
     height: 100px;
     width: 100%;
@@ -21,6 +27,7 @@ table,td{
     top: 0;
     background: white;
     border: 1px solid lightgray;
+
 
 }
 #aside{
@@ -30,6 +37,7 @@ table,td{
     float: right;
     margin-right:12%;
     margin-top: 5%;
+    padding-bottom: 400px;
 }
 
 #film_rank{
@@ -50,21 +58,24 @@ table,td{
     float: left;
 }
 .first_content{
-    font-size: 25px;
+    font-size: 18px;
     color: #0C0C0C;
-    margin-left: 190px;
+    margin-left: 170px;
     margin-top: 20px;
+    text-align: left;
 }
 .first_booking{
     font-size: 15px;
     color: #ef4238;
     margin-top: 20px;
-    margin-left: 200px;
+    margin-left: 170px;
+    text-align: left;
 }
 .after{
     height: 80px;
     width: 360px;
     margin-top: 1px;
+    float: left;
 }
 .after_num1{
     line-height :80px;
@@ -73,23 +84,26 @@ table,td{
     color: #ef4238 ;
     text-align: center;
     float: left;
+    font-style: italic;
 }
 .after_num2{
     line-height :80px;
     height: 80px;
     width: 20px;
     color: #999;
-    text-align: center;
+    font-style: italic;
     float: left;
+    font-size: 14px;
 }
 .after_name{
     line-height: 80px;
     height: 80px;
     width: 200px;
     color: black;
-    font-size: 25px;
-    text-align: center;
+    font-size: 20px;
+    text-align: left;
     float: left;
+    margin-left:15px;
 }
 .after_booking{
     /*border: 1px solid red;*/
@@ -102,9 +116,106 @@ table,td{
     float: right;
 }
 #film_favourite{
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin-top:25%;
     height: 45%;
+    width: 360px;
+}
+
+#favourite_content{
+    height: 1000px;
+    /*border: 1px solid red;*/
+    width: 360px;
+}
+.first1{
+    height: 200px;
+    width: 360px;
+    border: 1px solid lightgray;
+}
+#first1_pic{
+    height: 200px;
+    width: 40%;
+    /*border: 1px solid black;*/
+    float: left;
+}
+#first1_content{
+    height: 60px;
+    width: 58%;
+    /*border: 1px solid black;*/
+    float: left;
+    font-size: 25px;
+    color: black;
+    line-height: 60px;
+    text-align: center;
+}
+#first1_time{
+    height: 60px;
+    width: 58%;
+    /*border: 1px solid black;*/
+    float: left;
+    font-size: 14px;
+    text-align: center;
+    color: #999;
+    line-height: 60px;
+}
+#first1_booking{
+    height: 60px;
+    width: 58%;
+    /*border: 1px solid black;*/
+    float: left;
+    text-align: center;
+    line-height: 60px;
+    color: orange;
+    font-size: 14px;
+}
+.first2{
+    height: 180px;
+    width: 360px;
+    /*border: 1px solid red;*/
+    margin-top: 15px;
+
+}
+.first2_left{
+    height: 180px;
+    width: 170px;
+    float: left;
+    border: 1px solid lightgray;
+}
+
+.first2_pic{
+    height: 100px;
+    width: 100%;
+    /*border: 1px solid blue;*/
+    float: left;
+}
+.first2_content{
+    height: 40px;
+    width: 100%;
+    /*border: 1px solid red;*/
+    float: left;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: black;
+
+}
+.first2_booking{
+    height: 30px;
+    width: 100%;
+    /*border: 1px solid red;*/
+    float: left;
+    font-size:12px;
+    line-height: 30px;
+    text-align: center;
+    color: orange;
+}
+.first2_right{
+    height: 180px;
+    width: 170px;
+    border: 1px solid lightgray;
+    /*margin-top: 15px;*/
+    float: right;
+
 }
 
 #film_pic{
@@ -113,6 +224,10 @@ table,td{
     border: 1px solid green;
     margin: 0 auto;
     margin-top: 6%;
+
+}
+#main{
+    padding-bottom: 400px;
 }
 .show {
     border: 1px solid red;
@@ -120,6 +235,7 @@ table,td{
     margin-bottom: 5px;
     width: 60%;
     height: 30px;
+
 }
 #film_hot{
     width: 70%;
@@ -131,7 +247,7 @@ table,td{
     width: 70%;
     height: 100%;
     margin-top: 5%;
-
+    padding-bottom: 800px;
 }
 .film_img{
     height:200px;
@@ -153,7 +269,9 @@ table,td{
     padding: 56px 0;
     margin: 0 auto;
     width: 1903px;
-    margin-top: 82px;
+    height: 300px;
+    bottom: 0;
+    position: absolute;
 }
 
 
