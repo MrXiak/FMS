@@ -5,15 +5,16 @@
   Time: 20:04
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>login</title>
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <style type="text/css">
         #container {
-            width: 100%;
+            width: 1200px;
             height: auto;
+            margin: 0px auto;
         }
 
         #top {
@@ -93,21 +94,27 @@
         .layui-form-label {
             margin-left: -30px;
         }
+        hr {
+            height: 2px;
+            background-color: red;
+            border: 10px;
+        }
     </style>
 </head>
 <body>
 <div id="container">
     <div id="top">
         <div id="top_logo">
-            <img src="../image/logo.jpg" height="44" width="149">
+            <img src="../image/logo.jpg" height="44" width="149" alt="logo">
         </div>
     </div>
+    <hr>
     <div id="middle">
         <div id="login_left">
-            <img src="../image/login.png"/>
+            <img src="../image/login.png" alt="login_pictur"/>
         </div>
         <div id="login_right">
-            <form action="" method="">
+            <form action="login.action" method="post">
                 <table id="main">
                     <tr>
                         <td class="layui-form-label" style="font-size: 30px;" id="login_word">账号登录</td>
@@ -119,7 +126,7 @@
                                                                    style="font-size: 20px; color: #000000;">账号</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="text" name="username" lay-verify="required" placeholder="请输入"
+                                        <input type="text" name="user_id" id="user_id" lay-verify="required" placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>
@@ -133,7 +140,7 @@
                                                                    style="font-size: 20px; color: #000000;">密码</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="password" name="username" lay-verify="required" placeholder="请输入"
+                                        <input type="password" name="user_password" id="user_password" lay-verify="required" placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>
