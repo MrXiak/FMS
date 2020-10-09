@@ -106,7 +106,7 @@ function change(obj){
     document.getElementById("choosed").innerHTML=a;
     document.getElementById("counttickets").innerText=i;
 
-    var totalprice = i*37.9;
+    var totalprice = (i*100)*(37.9*100)/10000;
     document.getElementById("total_price").innerText=totalprice;
 
 }
@@ -125,6 +125,11 @@ function mouseout(obj){
     }
 }
 
-function createorder(){
-    window.location.href="createorder.jsp";
+function createorder(obj){
+    if (i == 0){
+
+    }else {
+
+        window.location.href="orderinfo.html";
+    }
 }
