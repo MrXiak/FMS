@@ -1,13 +1,27 @@
-
 body {
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
+.p_title {
+    margin: 0px;
+    padding: 0px 0px 20px;
+    color:black;
+    font-weight: bold;
+    font-family: 黑体;
+    font-size: 20px;
+}
 
-p {text-align:center; color:red;}
+.p_introduction {
+    font-family: 微软雅黑;
+    color: black;
+    font-size: 14px;
+}
 
+.span_introduction_color {
+    color:gray;
+    font-size: 14px;
+}
 
 .table_chooseseats {
     margin:2px auto;
@@ -17,6 +31,9 @@ p {text-align:center; color:red;}
     user-select:none;
     onselectstart:return false;
     unselectable:0;
+    table-layout: fixed;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 #tab_chooseseats
@@ -26,30 +43,29 @@ p {text-align:center; color:red;}
     background: #FFFFFF;
 }
 
-
-
-#tab_chooseseats
-.td {
-}
-
-#main_container{
+.main_container{
     padding: 0px;
     width: 1200px;
-    height: 600px;
+    height: 700px;
     margin: 0px auto;
     border: 1px solid #eeeeee;
 }
 
 #main_container_left{
-    width: 65%;
+    width: 70%;
     height: 100%;
+    padding-top: 20px;
     float: left;
+}
+
+#main_container_left_table{
+    height: 80%;
+    overflow: scroll;
 }
 
 #main_container_right{
     width: 26.5%;
     height: 93%;
-    margin-left: 5%;
     background: #f6f7f8;
     padding: 20px;
     float: left;
@@ -57,6 +73,75 @@ p {text-align:center; color:red;}
 
 #main_container_right_top{
     width: 100%;
-    height: 30%;
-    background: white;
+    height: 170px;
 }
+
+#main_container_right_top_pic{
+    width: 115px;
+    height: 158px;
+    float: left;
+    box-shadow: 2px 2px 5px #d0d1d2;
+}
+#main_container_right_top_content{
+    margin-left: 15px;
+    float: left;
+}
+
+.info_item{
+    width: 90%;
+    height: 16px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+#main_container_right_middle{
+    margin-top: 20px;
+    width: 100%;
+    height: 170px;
+    border-bottom:1px dashed lightgrey;
+}
+
+.show_info{
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+#main_container_right_bottom{
+    margin-top: 20px;
+    width: 100%;
+    border-bottom:1px dashed lightgrey;
+}
+
+.has_ticket{
+    width: 100%;
+}
+
+#main_container_right_button{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+ }
+
+.submit_button{
+    font-family: 黑体;
+    font-size: 16px;
+    width: 250px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    padding: 14px 32px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    border: 2px solid #FF5722;
+    border-radius:50px;
+    box-shadow: 5px 5px 20px #d0d1d2;
+    outline: none;
+    cursor: pointer;
+}
+.submit_button:hover{
+    background-color: #FF5722;
+    color: white;
+}
+

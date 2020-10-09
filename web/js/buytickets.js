@@ -30,7 +30,7 @@ function initTable(){
     var tda2 = $("<td></td>")
 
     var tdb = $("<td colspan="+j+" style='background: gainsboro'><hr></td>")
-    var tdc = $("<td colspan="+j+" align='center'>屏幕中央</td>")
+    var tdc = $("<td colspan="+j+" align='center' style='padding-bottom: 20px'>屏幕中央</td>")
 
     var tdd = $("<td class='call'></td>")
     var tde = $("<td colspan="+alj+">可选座位</td>")
@@ -105,6 +105,10 @@ function change(obj){
     }
     document.getElementById("choosed").innerHTML=a;
     document.getElementById("counttickets").innerText=i;
+
+    var totalprice = i*37.9;
+    document.getElementById("total_price").innerText=totalprice;
+
 }
 function mouseenter(obj){
     if(obj.style.background == "darkseagreen"){
