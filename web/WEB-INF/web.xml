@@ -5,6 +5,7 @@
          version="4.0">
     <welcome-file-list>
         <welcome-file>login_register/login.jsp</welcome-file>
+        <welcome-file>login_register/register.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>login</servlet-name>

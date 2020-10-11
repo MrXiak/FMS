@@ -10,6 +10,8 @@
 <head>
     <title>register</title>
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <script src="../js/jquery/jquery-3.2.1.js"></script>
+    <script src="../js/register.js"></script>
     <style type="text/css">
         #container {
             width: 1500px;
@@ -18,7 +20,7 @@
         }
 
         #top {
-            height: 100px;
+            height: 60px;
             width: 100%;
         }
 
@@ -107,13 +109,13 @@
 <div id="container">
     <div id="top">
         <div id="top_logo">
-            <img src="../image/logo.jpg" height="44" width="149">
+            <img src="../image/logo.jpg" height="44" width="149" alt="no">
         </div>
     </div>
     <hr>
     <div id="middle">
         <div id="login_left">
-            <form action="register.action" method="post">
+            <form action="${pageContext.request.contextPath}/register.action" method="post" onsubmit="return validate()">
                 <table id="main">
                     <tr>
                         <td class="layui-form-label" style="font-size: 30px;" id="register_word">注册账号</td>
@@ -124,7 +126,7 @@
                                 <label class="layui-form-label"><i class="layui-icon layui-icon-username"
                                                                    style="font-size: 20px; color: #000000;">创建账号</i></label>
                                 <div class="layui-input-inline">
-                                    <input type="text" name="user_id" lay-verify="required" placeholder="请输入"
+                                    <input type="text" name="user_id" id="user_id" lay-verify="required" placeholder="请输入"
                                            autocomplete="off" class="layui-input">
                                 </div>
 <%--                                <label class="tishi">不少于5位</label>--%>
@@ -138,7 +140,7 @@
                                                                    style="font-size: 20px; color: #000000;">输入密码</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="password" name="user_password" lay-verify="required" placeholder="请输入"
+                                        <input type="password" name="user_password" id="user_password" lay-verify="required" placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>
@@ -153,7 +155,7 @@
                                                                    style="font-size: 20px; color: #000000;">确认密码</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="password" name="username" lay-verify="required" placeholder="请输入"
+                                        <input type="password" name="confirm_password" id="confirm_password" lay-verify="required" placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>
@@ -161,8 +163,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="submit" name="login_submit" class="layui-btn layui-btn-danger"
-                                   id="login_submit" value="同意以下协议并注册"/></td>
+                        <td><input type="submit" name="register_submit" class="layui-btn layui-btn-danger"
+                                   id="register_submit" value="同意以下协议并注册"/></td>
                     </tr>
                     <tr>
                         <td>
@@ -173,7 +175,7 @@
             </form>
         </div>
         <div id="login_right">
-            <img src="../image/register.jpg" width="400px" height="500px"/>
+            <img src="../image/register.jpg" width="400px" height="500px" alt="no"/>
         </div>
     </div>
     <hr>

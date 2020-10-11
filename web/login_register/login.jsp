@@ -10,6 +10,8 @@
 <head>
     <title>login</title>
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <script src="../js/jquery/jquery-3.2.1.js"></script>
+    <script src="../js/login.js"></script>
     <style type="text/css">
         #container {
             width: 1500px;
@@ -18,7 +20,7 @@
         }
 
         #top {
-            height: 100px;
+            height: 60px;
             width: 100%;
         }
 
@@ -114,7 +116,7 @@
             <img src="../image/login.png" alt="login_pictur"/>
         </div>
         <div id="login_right">
-            <form action="login.action" method="post">
+            <form action="login.action" method="post" onsubmit="return validate()">
                 <table id="main">
                     <tr>
                         <td class="layui-form-label" style="font-size: 30px;" id="login_word">账号登录</td>

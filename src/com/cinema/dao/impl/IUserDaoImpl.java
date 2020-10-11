@@ -58,11 +58,11 @@ public class  IUserDaoImpl implements IUserDao {
     @Override
     public User insertAccount(String account, String password) {
         DBUtil.initConnection();
-        String sql="insert into user(user_id,user_password) values(?,?)";
+        String sql="insert into user (user_id,user_password) values (?,?)";
         DBUtil.initPrepareStatement(sql);
-        DBUtil.setPar(account);
-        DBUtil.setPar(password);
-        DBUtil.executeQuery();
+        DBUtil.setPar(account,password);
+        DBUtil.executeUpdate();
+        DBUtil.close();
         return null;
     }
 }
