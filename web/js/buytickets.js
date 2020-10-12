@@ -83,18 +83,22 @@ function change(obj){
         // document.getElementById("choosed").innerHTML=a;
         // document.getElementById("counttickets").innerHTML=i;
     }else{
-        obj.style.background = "darkseagreen";
 
-        x[i] = b;
-        i++;
+        if (i+1 > 6){
+            alert("每位用户至多选择6个座位！");
+        }else {
+            obj.style.background = "darkseagreen";
+            x[i] = b;
+            i++;
 
-        for(j=0; j<=i; j++){
-            if(!x[j]){
-                continue;
-            }else if(a == ""){
-                a=a+x[j];
-            }else{
-                a=a+","+x[j];
+            for(j=0; j<=i; j++){
+                if(!x[j]){
+                    continue;
+                }else if(a == ""){
+                    a=a+x[j];
+                }else{
+                    a=a+","+x[j];
+                }
             }
         }
         /*if(a == ""){
@@ -127,9 +131,8 @@ function mouseout(obj){
 
 function createorder(obj){
     if (i == 0){
-
+        alert("请选择至少一个座位！");
     }else {
-
         window.location.href="orderinfo.html";
     }
 }
