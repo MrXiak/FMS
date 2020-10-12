@@ -24,7 +24,7 @@
 <body>
 
 <div id="main_body">
-<%--    <div id="theader">--%>
+    <div id="theader">
 <%--        <table>--%>
 <%--            <tr>--%>
 <%--                <td>--%>
@@ -71,7 +71,6 @@
 
 <%--            </tr>--%>
 <%--        </table>--%>
-<%--    </div>--%>
     <ul class="layui-nav" lay-filter="">
         <li class="layui-nav-item"><a href=""><img src="../image/icon_bear.svg" height="44px"width="50px">熊熊电影</a></li>
         <li class="layui-nav-item layui-this"><a href="">首页</a></li>
@@ -86,6 +85,8 @@
         </li>
         <li class="layui-nav-item"><a href="">登录</a></li>
     </ul>
+    </div>
+
 
     <div id="film_pic">
         <img src="../image/shouye3.png" width="100%" height="100%">
@@ -536,8 +537,6 @@
 <script>
     layui.use('element', function(){
         var element = layui.element;
-
     });
-
 </script>
 </html>
