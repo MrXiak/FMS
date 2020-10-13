@@ -3,7 +3,11 @@ function validate(){
     var upassword=document.getElementById("user_password");
     var conform_password=document.getElementById("confirm_password")
     if(uid.value===""){
-        alert("请输入账号哦！")
+        alert("请创建账号哦！")
+        uid.focus();
+        return false;
+    }else if (uid.value.length<6 || uid.value.length>10) {
+        alert("账号长度不符合要求，请输入6-10位账号!");
         uid.focus();
         return false;
     }

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>MyInfo</title>
@@ -32,7 +33,7 @@
 
         #main {
             width: 100%;
-            height: 650px;
+            height: 1000px;
             margin-top: 5px;
         }
 
@@ -50,9 +51,9 @@
         #main_right {
             width: 530px;
             height: auto;
-
         }
-        #personal_submit{
+
+        #personal_submit {
             width: 150px;
             font-size: 20px;
             height: 40px;
@@ -60,18 +61,23 @@
             margin-top: 20px;
             margin-bottom: 5px;
         }
-        #test1{
-           margin-top: 15px;
+
+        #test1 {
+            margin-top: 15px;
         }
     </style>
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <script src="../layui/layui.js"></script>
 </head>
 <body>
+<%--<%--%>
+<%--    List list= (List) request.getAttribute("list");--%>
+<%--%>--%>
+<%--${sessionScope.list}--%>
 <div id="container">
     <div id="top"><h2 class="Info">基本信息</h2></div>
     <hr>
-    <form action="" method="post">
+    <form action="/myInfo.action" method="post">
         <div id="main">
             <div id="main_left">
                 <div class="layui-upload">
@@ -88,7 +94,7 @@
                     <label class="layui-form-label">昵称：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="qname" id="qname" lay-verify="required" placeholder="请输入"
-                               autocomplete="off" class="layui-input">
+                               autocomplete="off" class="layui-input" value="${USER.user_name}">
                     </div>
                 </div>
 
@@ -96,52 +102,49 @@
                     <label class="layui-form-label">账号：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="user_id" id="user_id" lay-verify="required" placeholder="请输入"
-                               autocomplete="off" class="layui-input">
+                               autocomplete="off" class="layui-input" readonly="readonly" value="${USER.user_id}">
                     </div>
                 </div>
 
-                <div class="layui-form-item">
-                    <label class="layui-form-label">密码：</label>
-                    <div class="layui-input-inline">
-                        <input type="password" name="user_password" id="user_password" lay-verify="required"
-                               placeholder="请输入" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
                 <div class="layui-form" lay-filter="test">
                     <!--                    更新 lay-filter="test1" 所在容器内的全部表单状态-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">性别：</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="sex" value="男" title="男">
-                            <input type="radio" name="sex" value="女" title="女">
+                            <input type="radio" name="sex" value="1" id="man"
+                                   title="男" ${(USER.user_sex)=="1"?"checked":""}>
+                            <input type="radio" name="sex" value="0" id="woman"
+                                   title="女" ${(USER.user_sex)=="0"?"checked":""}>
                         </div>
                     </div>
                 </div>
-
-
                 <div class="layui-form-item">
                     <label class="layui-form-label">电话：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="utel" id="user_tel" lay-verify="required" placeholder="请输入"
-                               autocomplete="off" class="layui-input">
+                               autocomplete="off" class="layui-input" value="${USER.user_tel}">
                     </div>
                 </div>
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">生日：</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="year" id="user_birthday" lay-verify="required" placeholder="请输入"
-                               autocomplete="off" class="layui-input">
+                        <input type="text" name="year" lay-verify="required" placeholder="请输入"
+                               autocomplete="off" class="layui-input" value="${USER.user_birthday}">
                     </div>
                 </div>
                 <div class="layui-form" lay-filter="test1">
                     <div class="layui-form-item">
                         <label class="layui-form-label">生活状态：</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="state" value="单身" title="单身">
-                            <input type="radio" name="state" value="热恋中" title="热恋中">
-                            <input type="radio" name="state" value="已婚" title="已婚">
-                            <input type="radio" name="state" value="为人父母" title="为人父母">
+                            <input type="radio" name="state" value="danshen"
+                                   title="单身" ${(USER.life_state)=="danshen"?"checked":""}>
+                            <input type="radio" name="state" value="relian"
+                                   title="热恋中" ${(USER.life_state)=="relian"?"checked":""}>
+                            <input type="radio" name="state" value="yihun"
+                                   title="已婚" ${(USER.life_state)=="yihun"?"checked":""}>
+                            <input type="radio" name="state" value="fumu"
+                                   title="为人父母" ${(USER.life_state)=="fumu"?"checked":""}>
                         </div>
                     </div>
                 </div>
@@ -149,18 +152,30 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">兴趣：</label>
                         <div class="layui-input-block">
-                            <input type="checkbox" name="like[write]" title="写作">
-                            <input type="checkbox" name="like[read]" title="阅读">
-                            <input type="checkbox" name="like[daze]" title="发呆">
-                            <input type="checkbox" name="like[food]" title="美食">
-                            <input type="checkbox" name="like[animals]" title="动物">
-                            <input type="checkbox" name="like[travel]" title="旅游">
-                            <input type="checkbox" name="like[music]" title="音乐">
-                            <input type="checkbox" name="like[sports]" title="运动">
-                            <input type="checkbox" name="like[science]" title="科技">
-                            <input type="checkbox" name="like[car]" title="汽车">
-                            <input type="checkbox" name="like[fashion]" title="时尚">
-                            <input type="checkbox" name="like[camera]" title="摄影">
+                            <input type="checkbox" name="like[write]" title="写作" value="write" <c:if
+                                    test="${USER.hobbies.contains('write')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[read]" title="阅读" value="read" <c:if
+                                    test="${USER.hobbies.contains('read')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[daze]" title="发呆" value="daze" <c:if
+                                    test="${USER.hobbies.contains('daze')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[food]" title="美食" value="food" <c:if
+                                    test="${USER.hobbies.contains('food')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[animals]" title="动物" value="animals" <c:if
+                                    test="${USER.hobbies.contains('animals')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[travel]" title="旅游" value="travel" <c:if
+                                    test="${USER.hobbies.contains('travel')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[music]" title="音乐" value="music" <c:if
+                                    test="${USER.hobbies.contains('music')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[sports]" title="运动" value="sports" <c:if
+                                    test="${USER.hobbies.contains('sports')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[science]" title="科技" value="science" <c:if
+                                    test="${USER.hobbies.contains('science')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[car]" title="汽车" value="car" <c:if
+                                    test="${USER.hobbies.contains('car')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[fashion]" title="时尚" value="fashion" <c:if
+                                    test="${USER.hobbies.contains('fashion')}"> checked="checked"</c:if>/>
+                            <input type="checkbox" name="like[camera]" title="摄影" value="camera" <c:if
+                                    test="${USER.hobbies.contains('camera')}"> checked="checked"</c:if>/>
                         </div>
                     </div>
                 </div>
@@ -168,7 +183,36 @@
                     <label class="layui-form-label">个性签名：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="person_word" id="person_word" lay-verify="required"
-                               placeholder="20个字以内" autocomplete="off" class="layui-input">
+                               placeholder="20个字以内" autocomplete="off" class="layui-input"
+                               value="${USER.personal_word}">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密保一问：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="questionone" id="questionone" lay-verify="required"
+                               placeholder="用于找回密码" autocomplete="off" class="layui-input" value="${USER.question_one}">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">一问答案：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="answerone" id="answerone" lay-verify="required"
+                               placeholder="请填写" autocomplete="off" class="layui-input" value="${USER.answer_one}">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密保二问：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="questiontwo" id="questiontwo" lay-verify="required"
+                               placeholder="自愿填写" autocomplete="off" class="layui-input" value="${USER.question_two}">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">二问答案：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="answertwo" id="answertwo" lay-verify="required"
+                               placeholder="自愿填写" autocomplete="off" class="layui-input" value="${USER.answer_two}">
                     </div>
                 </div>
                 <input type="submit" class="layui-btn layui-btn-warm" id="personal_submit" value="保存"/>

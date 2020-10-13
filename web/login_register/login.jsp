@@ -116,7 +116,7 @@
             <img src="../image/login.png" alt="login_pictur"/>
         </div>
         <div id="login_right">
-            <form action="login.action" method="post" onsubmit="return validate()">
+            <form action="${pageContext.request.contextPath}/login.action" method="post" onsubmit="return validate()">
                 <table id="main">
                     <tr>
                         <td class="layui-form-label" style="font-size: 30px;" id="login_word">账号登录</td>
