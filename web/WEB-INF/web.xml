@@ -23,4 +23,12 @@
         <servlet-name>register</servlet-name>
         <url-pattern>/register.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>myInfo</servlet-name>
+        <servlet-class>com.cinema.servlet.InfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>myInfo</servlet-name>
+        <url-pattern>/myInfo.action</url-pattern>
+    </servlet-mapping>
 </web-app>

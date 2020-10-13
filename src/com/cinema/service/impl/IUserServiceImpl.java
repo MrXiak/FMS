@@ -5,22 +5,13 @@ import com.cinema.dao.impl.IUserDaoImpl;
 import com.cinema.entity.User;
 import com.cinema.service.IUserService;
 
-public class IUserServiceImpl implements IUserService {
-    @Override
-    public boolean isLogin(User user) {
-        IUserDao userDao=new IUserDaoImpl();
-        User u=userDao.selectByAccount(user.getUser_id());
-        if (u==null){
-            return false;
-        }else {
-            return user.getUser_password().equals(u.getUser_password());
-        }
-    }
+import javax.servlet.http.HttpSession;
 
+public class IUserServiceImpl implements IUserService {
     @Override
     public boolean isRegister(User user) {
         IUserDao userDao=new IUserDaoImpl();
-        User u=userDao.selectByAccount(user.getUser_id());
+        User u=userDao.selectByIdOnly(user.getUser_id());
         if (u==null){
             userDao.insertAccount(user.getUser_id(),user.getUser_password());
             return true;
@@ -32,7 +23,7 @@ public class IUserServiceImpl implements IUserService {
     @Override
     public boolean isUpdate(User user) {
         IUserDao userDao=new IUserDaoImpl();
-        userDao.addInfo(user.getUser_name(),user.getUser_id(),user.getUser_sex(),user.getUser_tel(),user.getUser_birthday(),user.getLife_state(),user.getHobbies(),user.getPerson_word());
+        userDao.addInfo(user.getUser_name(),user.getUser_id(),user.getUser_sex(),user.getUser_tel(),user.getUser_birthday(),user.getLife_state(),user.getHobbies(),user.getPersonal_word(),user.getQuestion_one(),user.getAnswer_one(),user.getQuestion_two(),user.getAnswer_two());
         return true;
     }
 }
