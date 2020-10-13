@@ -9,6 +9,7 @@ public class User {
     private String user_tel;
     private String user_birthday;
     private String life_state;
+    private String hobbies;
     private String person_word;
 
     public String getUser_image() {
@@ -83,6 +84,14 @@ public class User {
         this.person_word = person_word;
     }
 
+    public String getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(String hobbies) {
+        this.hobbies = hobbies;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -94,6 +103,7 @@ public class User {
                 ", user_tel='" + user_tel + '\'' +
                 ", user_birthday='" + user_birthday + '\'' +
                 ", life_state='" + life_state + '\'' +
+                ", hobbies='" + hobbies + '\'' +
                 ", person_word='" + person_word + '\'' +
                 '}';
     }

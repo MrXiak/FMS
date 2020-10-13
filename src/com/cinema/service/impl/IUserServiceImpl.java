@@ -28,4 +28,11 @@ public class IUserServiceImpl implements IUserService {
             return false;
         }
     }
+
+    @Override
+    public boolean isUpdate(User user) {
+        IUserDao userDao=new IUserDaoImpl();
+        userDao.addInfo(user.getUser_name(),user.getUser_id(),user.getUser_sex(),user.getUser_tel(),user.getUser_birthday(),user.getLife_state(),user.getHobbies(),user.getPerson_word());
+        return true;
+    }
 }
