@@ -32,35 +32,23 @@ public class  IUserDaoImpl implements IUserDao {
         DBUtil.close();
         return null;
     }
-
-//    @Override
-//    public boolean isExist(String account) {
-//        DBUtil.initConnection();
-//        PreparedStatement ps = null;
-//        // 查询账号是否已经存在
-//        String sql = "select * from user where user_id=?";
-//        DBUtil.initPrepareStatement(sql);
-//        DBUtil.setPar(account);
-//        DBUtil.executeQuery();
-//        ResultSet rs=DBUtil.getRes();
-//        try {
-//            if(rs.next()) {
-//                return true;
-//            }
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }finally {
-//            DBUtil.close();
-//        }
-//        return false;
-//    }
-
     @Override
     public User insertAccount(String account, String password) {
         DBUtil.initConnection();
         String sql="insert into user (user_id,user_password) values (?,?)";
         DBUtil.initPrepareStatement(sql);
         DBUtil.setPar(account,password);
+        DBUtil.executeUpdate();
+        DBUtil.close();
+        return null;
+    }
+
+    @Override
+    public User addInfo(String name,String sex, String tel, String birth, String state,String hobby,String word,String id) {
+        DBUtil.initConnection();
+        String sql="update user set user_name=?,user_sex=?,user_tel=?,user_birthday=?,life_state=?,hobbies=?,personal_word=? where user_id=?";
+        DBUtil.initPrepareStatement(sql);
+        DBUtil.setPar(name,id,sex,tel,birth,state,hobby,word);
         DBUtil.executeUpdate();
         DBUtil.close();
         return null;

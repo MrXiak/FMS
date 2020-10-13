@@ -3,6 +3,15 @@ body {
     padding: 0;
 }
 
+.icon_seat{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../image/loveseat.svg");
+    background-position: center center;
+    background-size: contain;
+}
+
 .p_title {
     margin: 0px;
     padding: 0px 0px 20px;
@@ -25,22 +34,20 @@ body {
 
 .table_chooseseats {
     margin:2px auto;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -o-user-select:none;
-    user-select:none;
-    onselectstart:return false;
-    unselectable:0;
+    border-collapse: separate;
+    border-spacing:3px 3px;
     table-layout: fixed;
     overflow: hidden;
     white-space: nowrap;
 }
 
-#tab_chooseseats
 .call {
-    padding:3px 10px 3px;
-    border: 2px solid gray;
-    background: #FFFFFF;
+    padding:10px 15px 10px;
+    border: 2px dashed lightgrey;
+    background-image: url("../image/loveseat.svg");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .main_container{
