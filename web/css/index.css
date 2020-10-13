@@ -30,7 +30,7 @@ table,td{
     height: 100px;
     position: fixed;
     top: 0;
-    background: white;
+    background: lightgray;
     border: 1px solid lightgray;
     line-height: 80px;
 }
@@ -40,6 +40,25 @@ table,td{
     color: #A2795E;
     font-size: 20px;
     font-weight: bolder;
+    line-height: 100px;
+}
+#location_select{
+    width: 200px;
+    height: 100px;
+}
+#position{
+    width: 200px;
+    height: 100px;
+}
+#login{
+    width: 200px;
+    height: 100px;
+}
+#btnLogin{
+    width: 80px;
+    height: 25px;
+    font-size:15px;
+    line-height: 20px;
 }
 
 #aside{
