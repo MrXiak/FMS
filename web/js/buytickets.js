@@ -5,14 +5,14 @@ $(function (){
 //初始化表格
 function initTable(){
 
-    for (var i = 1; i <= 16; i++){
+    for (var i = 1; i <= 15; i++){
         //创建行
         var tr = $("<tr></tr>")
         //创建单元格
-        var td0 = $("<th colspan=‘3’>【第"+i+"排】</th>")
+        var td0 = $("<th colspan=‘3’ style='color: gray'>【第"+i+"排】</th>")
         tr.append(td0);
         //将单元格追加到tr
-        for (var j = 1; j <= 20; j++){
+        for (var j = 1; j <= 16; j++){
             var td = $("<td class='call' onclick='change(this)' onmouseenter='mouseenter(this)' onmouseout='mouseout(this)' id='"+i+"排"+j+"座'></td>")
             tr.append(td);
         }
@@ -34,9 +34,9 @@ function initTable(){
 
     var tdd = $("<td class='call'></td>")
     var tde = $("<td colspan="+alj+">可选座位</td>")
-    var tdf = $("<td style='background: red'></td>")
+    var tdf = $("<td class='call' style='background-color: red'></td>")
     var tdg = $("<td colspan="+alj+">已售座位</td>")
-    var tdh = $("<td style='background: darkseagreen'></td>")
+    var tdh = $("<td class='call' style='background-color: darkseagreen'></td>")
     var tdi = $("<td colspan="+alj+">已选座位</td>")
 
     tr0.append(tda0).append(tdd).append(tde).append(tdf).append(tdg).append(tdh).append(tdi);
@@ -48,26 +48,16 @@ function initTable(){
 
 var x = new Array();
 var i = 0;
-
 function change(obj){
-    var a = "";
     var b = obj.id;
     var j = 0;
-    if(obj.style.background == "darkseagreen"){
-        obj.style.background = "#FFFFFF";
+    if(obj.style.backgroundColor == "darkseagreen"){
+        obj.style.backgroundColor = "#FFFFFF";
         for(j=0; j<=i; j++){
             if(x[j] == b){
                 x.splice(j, 1);
                 i--;
                 continue;
-            }else if(!x[j]){
-                continue;
-            }else{
-                if(a == ""){
-                    a=a+x[j];
-                }else{
-                    a=a+","+x[j];
-                }
             }
         }
         /*for(j=0; j<=i; j++){
@@ -83,23 +73,12 @@ function change(obj){
         // document.getElementById("choosed").innerHTML=a;
         // document.getElementById("counttickets").innerHTML=i;
     }else{
-
         if (i+1 > 6){
             alert("每位用户至多选择6个座位！");
         }else {
-            obj.style.background = "darkseagreen";
+            obj.style.backgroundColor = "darkseagreen";
             x[i] = b;
             i++;
-
-            for(j=0; j<=i; j++){
-                if(!x[j]){
-                    continue;
-                }else if(a == ""){
-                    a=a+x[j];
-                }else{
-                    a=a+","+x[j];
-                }
-            }
         }
         /*if(a == ""){
             document.getElementById("choosed").innerHTML=a+b;
@@ -107,7 +86,7 @@ function change(obj){
             document.getElementById("choosed").innerHTML=a+","+b;
         }*/
     }
-    document.getElementById("choosed").innerHTML=a;
+    document.getElementById("choosed").innerHTML=x;
     document.getElementById("counttickets").innerText=i;
 
     var totalprice = (i*100)*(37.9*100)/10000;
@@ -115,17 +94,17 @@ function change(obj){
 
 }
 function mouseenter(obj){
-    if(obj.style.background == "darkseagreen"){
-        obj.style.background = "darkseagreen";
+    if(obj.style.backgroundColor == "darkseagreen"){
+        obj.style.backgroundColor = "darkseagreen";
     }else{
-        obj.style.background = "#FAC205";
+        obj.style.backgroundColor = "#FAC205";
     }
 }
 function mouseout(obj){
-    if(obj.style.background == "darkseagreen"){
-        obj.style.background = "darkseagreen";
+    if(obj.style.backgroundColor == "darkseagreen"){
+        obj.style.backgroundColor = "darkseagreen";
     }else{
-        obj.style.background = "#FFFFFF";
+        obj.style.backgroundColor = "#FFFFFF";
     }
 }
 
