@@ -4,9 +4,31 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <welcome-file-list>
+        <welcome-file>index/index.jsp</welcome-file>
+<!--        <welcome-file>index/Film.jsp</welcome-file>-->
         <welcome-file>login_register/login.jsp</welcome-file>
         <welcome-file>login_register/register.jsp</welcome-file>
+
     </welcome-file-list>
+
+    <servlet>
+        <servlet-name>pagetest</servlet-name>
+        <servlet-class>com.cinema.servlet.pageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pagetest</servlet-name>
+        <url-pattern>/Film.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Film</servlet-name>
+        <servlet-class>com.cinema.servlet.FilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Film</servlet-name>
+        <url-pattern>/FilmInfo.action</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>login</servlet-name>
         <servlet-class>com.cinema.servlet.LoginServlet</servlet-class>
@@ -47,4 +69,5 @@
         <servlet-name>inputId</servlet-name>
         <url-pattern>/inputId.action</url-pattern>
     </servlet-mapping>
+
 </web-app>

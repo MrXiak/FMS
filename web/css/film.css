@@ -1,0 +1,140 @@
+/*a:link{color: white}*/
+/*a:visited{color: white}*/
+/*a:active{color: red}*/
+
+#container{
+    height: 5000px;
+    width:1200px;
+    margin:80px auto;
+
+}
+
+#select{
+
+    height: 60px;
+    width: 100%;
+    background-color: #47464a;
+    margin: 0 auto;
+    overflow:auto;
+    bottom:0px;
+    top:60px;
+    _height:100%;
+    position:absolute;
+    _top:0px;
+    z-index:90;
+}
+#select_container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.nav_bar{
+    /*border: 1px solid red;*/
+    height: 60px;
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+}
+#hotting{
+    height: 60px;
+    line-height: 60px;
+    color: white;
+    float: left;
+    font-size: 16px;
+    /*margin-left: 300px;*/
+}
+.hotting_a{
+    color:white;
+}
+.hotting_a:hover{
+    color: red;
+}
+
+#updating{
+    height: 60px;
+    line-height: 60px;
+    color: white;
+    float: right;
+    font-size: 16px;
+    /*margin-left: 80px;*/
+}
+#pageSelect{
+    border:1px solid red;
+    height: 60px;
+    width: 80px;
+    magin:20px auto;
+}
+.film_img{
+    margin-top: 5%;
+    margin-left:20px;
+    height:200px;
+    width: 150px;
+    border: 1px solid lightgray;
+    position: relative;
+    z-index: 2;
+}
+.film_img:hover{
+    box-shadow: darkgray 5px 5px 10px;
+}
+.film_info{
+    position: absolute;
+    z-index: 3;
+    height: 25px;
+    width: 150px;
+    color: white;
+    font-size: 12px;
+    background: rgba(51,51,51,0.5);
+    line-height: 22px;
+    text-overflow: ellipsis;
+    margin-top: -25px;
+    float: left;
+}
+.film_name{
+    height: 25px;
+    width: 80px;
+    position: absolute;
+    z-index: 4;
+    font-size: 12px;
+    font-style: italic;
+
+}
+.film_score{
+    height: 25px;
+    width: 30px;
+    position: absolute;
+    z-index: 4;
+    color: orange;
+    font-size:13px;
+    margin-left: 100px;
+}
+.film_type{
+    position: absolute;
+    z-index: 3;
+    height: 25px;
+    width: 80px;
+    color: white;
+    background-color:#1E9FFF;
+    line-height: 25px;
+    margin: -225px -2px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15px;
+    user-select: none;
+    margin-left:20px;
+}
+.buyTickets{
+    height: 30px;
+    width: 150px;
+    background: white;
+    border: 1px solid lightgray;
+    text-align: center;
+    color: red;
+    margin-left:20px;
+}
+
+
+.buyTickets:hover{
+    color: white;
+    background-color: red;
+    box-shadow: darkgray 5px 5px 10px;
+
+}

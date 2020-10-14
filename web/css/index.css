@@ -1,6 +1,5 @@
 a:link {color:red}
 a:visited{color: red}
-
 a:active{color: red}
 
 body{
@@ -29,10 +28,12 @@ table,td{
     /*margin: 0 auto;*/
     height: 80px;
     position: fixed;
+    position: absolute;
     top: 0;
     background: white;
     border: 1px solid lightgray;
     line-height: 80px;
+    z-index:999;
 }
 #logo{
     width: 200px;
@@ -299,14 +300,14 @@ table,td{
     width: 150px;
     border: 1px solid lightgray;
     position: relative;
-    z-index: 1;
+    z-index: 2;
  }
 .film_img:hover{
     box-shadow: darkgray 5px 5px 10px;
 }
 .film_info{
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     height: 25px;
     width: 150px;
     color: white;
@@ -322,7 +323,7 @@ table,td{
     height: 25px;
     width: 80px;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     font-size: 12px;
     font-style: italic;
 
@@ -331,14 +332,14 @@ table,td{
     height: 25px;
     width: 30px;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     color: orange;
     font-size:13px;
     margin-left: 100px;
 }
 .film_type{
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     height: 25px;
     width: 80px;
     color: white;
