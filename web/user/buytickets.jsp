@@ -20,7 +20,7 @@
 <body>
 <div>
     <ul class="layui-nav" lay-filter="">
-        <li class="layui-nav-item"><a href=""><img src="../image/icon_bear.svg" height="44px"width="50px">熊熊电影</a></li>
+        <li class="layui-nav-item"><a href=""><img src="../image/icon_bear.svg" height="44px" width="50px">熊熊电影</a></li>
         <li class="layui-nav-item"><a href="">首页</a></li>
         <li class="layui-nav-item"><a href="">影片</a></li>
         <li class="layui-nav-item">
@@ -53,37 +53,37 @@
                 <img src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@115w_158h_1e_1c">
             </div>
             <div id="main_container_right_top_content">
-                <p class="p_title">我和我的家乡</p>
+                <p class="p_title" id="film_name"></p>
                 <div class="info_item">
                     <span class="span_introduction_color" style="font-size: 12px">类型：</span>
-                    <span class="p_introduction" style="font-size: 12px">剧情，喜剧</span>
+                    <span class="p_introduction" style="font-size: 12px" id="film_type"></span>
                 </div>
                 <div class="info_item">
                     <span class="span_introduction_color" style="font-size: 12px">时长：</span>
-                    <span class="p_introduction" style="font-size: 12px">153分钟</span>
+                    <span class="p_introduction" style="font-size: 12px" id="film_time"></span>
                 </div>
             </div>
         </div>
         <div id="main_container_right_middle">
             <div class="show_info">
                 <span class="span_introduction_color">影院：</span>
-                <span class="p_introduction">星轶IMAX影城（如皋吾悦广场旗舰店）</span>
+                <span class="p_introduction" id="cinema_name"></span>
             </div>
             <div class="show_info">
                 <span class="span_introduction_color">影厅：</span>
-                <span class="p_introduction">2号世博口腔激光厅</span>
+                <span class="p_introduction" id="hall_name"></span>
             </div>
             <div class="show_info">
                 <span class="span_introduction_color">版本：</span>
-                <span class="p_introduction">国语2D</span>
+                <span class="p_introduction" id="film_version">国语2D</span>
             </div>
             <div class="show_info">
                 <span class="span_introduction_color">场次：</span>
-                <span class="p_introduction" style="color: red">10月9日 21:40</span>
+                <span class="p_introduction" style="color: red" id="session_id"></span>
             </div>
             <div class="show_info">
                 <span class="span_introduction_color">票价：</span>
-                <span class="p_introduction">￥37.9/张</span>
+                <span class="p_introduction" id="film_price"></span>
             </div>
         </div>
         <div id="main_container_right_bottom">
@@ -110,6 +110,17 @@
     layui.use('element', function(){
         var element = layui.element;
     });
+
+    var film_name="${T.film_name}";
+    var film_type="${T.film_type}";
+    var film_time="${T.film_time}";
+    var film_version="${T.film_version}";
+    var film_price="￥"+"${T.film_price}"+"/张";
+    document.getElementById("film_name").innerHTML= film_name;
+    document.getElementById("film_type").innerHTML= film_type;
+    document.getElementById("film_time").innerHTML= film_time;
+    document.getElementById("film_version").innerHTML=film_version;
+    document.getElementById("film_price").innerHTML= film_price;
 </script>
 </body>
 </html>

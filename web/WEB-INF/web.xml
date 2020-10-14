@@ -47,4 +47,20 @@
         <servlet-name>inputId</servlet-name>
         <url-pattern>/inputId.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>inputFilm_id</servlet-name>
+        <servlet-class>com.cinema.servlet.inputFilmIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>inputFilm_id</servlet-name>
+        <url-pattern>/inputFilmId.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>buyTickets</servlet-name>
+        <servlet-class>com.cinema.servlet.BuyTicketsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>buyTickets</servlet-name>
+        <url-pattern>/buyTickets.action</url-pattern>
+    </servlet-mapping>
 </web-app>
