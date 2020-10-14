@@ -127,7 +127,7 @@ public class  IUserDaoImpl implements IUserDao {
                 String word=rs.getString("personal_word");
                 String q1=rs.getString("question_one");
                 String a1=rs.getString("answer_one");
-                String q2=rs.getString("question_one");
+                String q2=rs.getString("question_two");
                 String a2=rs.getString("answer_two");
 
                 User user=new User();
