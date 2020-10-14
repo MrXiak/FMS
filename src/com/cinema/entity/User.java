@@ -116,8 +116,8 @@ public class User {
         return question_two;
     }
 
-    public void setQuestion_two(String question_twoo) {
-        this.question_two = question_twoo;
+    public void setQuestion_two(String question_two) {
+        this.question_two = question_two;
     }
 
     public String getAnswer_two() {

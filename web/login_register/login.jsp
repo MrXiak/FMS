@@ -86,6 +86,7 @@
         #forget {
             float: right;
             color: red;
+            font-size: 2px;
         }
 
         #login_submit {
@@ -150,7 +151,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="layui-form-label" id="forget">忘记密码?</td>
+                        <td class="layui-form-label" id="forget"><a href="../login_register/inputId.jsp">忘记/修改密码?</a></td>
                     </tr>
                     <tr>
                         <td><input type="submit" name="login_submit" class="layui-btn layui-btn-danger"
