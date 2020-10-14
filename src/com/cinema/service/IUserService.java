@@ -5,4 +5,5 @@ import com.cinema.entity.User;
 public interface IUserService {
     boolean isRegister(User user);
     boolean isUpdate(User user);
+    boolean isChangedPass(User user);
 }

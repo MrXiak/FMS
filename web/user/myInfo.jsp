@@ -101,7 +101,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">账号：</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="user_id" id="user_id" lay-verify="required" placeholder="请输入"
+                        <input type="text" name="user_id" id="user_id" lay-verify="required"
                                autocomplete="off" class="layui-input" readonly="readonly" value="${USER.user_id}">
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                     <label class="layui-form-label">密保一问：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="questionone" id="questionone" lay-verify="required"
-                               placeholder="用于找回密码" autocomplete="off" class="layui-input" value="${USER.question_one}">
+                               placeholder="用于密码验证" autocomplete="off" class="layui-input" value="${USER.question_one}">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -205,14 +205,14 @@
                     <label class="layui-form-label">密保二问：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="questiontwo" id="questiontwo" lay-verify="required"
-                               placeholder="自愿填写" autocomplete="off" class="layui-input" value="${USER.question_two}">
+                               placeholder="用于密码验证" autocomplete="off" class="layui-input" value="${USER.question_two}">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">二问答案：</label>
                     <div class="layui-input-inline">
                         <input type="text" name="answertwo" id="answertwo" lay-verify="required"
-                               placeholder="自愿填写" autocomplete="off" class="layui-input" value="${USER.answer_two}">
+                               placeholder="请填写" autocomplete="off" class="layui-input" value="${USER.answer_two}">
                     </div>
                 </div>
                 <input type="submit" class="layui-btn layui-btn-warm" id="personal_submit" value="保存"/>
