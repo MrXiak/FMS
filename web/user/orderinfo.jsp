@@ -50,10 +50,10 @@
     <div class="main_container_middle">
         <div class="main_container_middle_top">
             <div class="main_container_middle_top_left" id="orderid">
-                狗眼订单号：
+                订单号：
             </div>
             <div class="main_container_middle_top_right">
-                （有订单问题可拨打狗眼客服电话：1001-1001，工作时间：9:00-24:00）
+                （有订单问题可拨打客服电话：1001-1001，工作时间：9:00-24:00）
             </div>
         </div>
         <table class="main_container_middle_table">
@@ -67,10 +67,10 @@
             </thead>
             <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>${T.film_name}</td>
+                <td>${T.film_name}</td>
+                <td>``````/td>
+                <td>``````</td>
             </tr>
             </tbody>
         </table>

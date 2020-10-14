@@ -53,7 +53,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>inputFilm_id</servlet-name>
-        <url-pattern>/inputFilmId.action</url-pattern>
+        <url-pattern>/inputFilmid.action</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>buyTickets</servlet-name>

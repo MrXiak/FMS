@@ -101,7 +101,7 @@
     <hr>
     <div id="middle">
         <div id="login_left">
-            <form action="${pageContext.request.contextPath}/inputFilmId.action" method="post" onsubmit="return inputId()">
+            <form action="${pageContext.request.contextPath}/inputFilmid.action" method="post" onsubmit="return inputId()">
                 <table id="main">
                     <tr>
                         <td class="layui-form-label" style="font-size: 30px;" id="register_word">点击电影</td>
