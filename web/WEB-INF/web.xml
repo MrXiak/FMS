@@ -31,4 +31,20 @@
         <servlet-name>myInfo</servlet-name>
         <url-pattern>/myInfo.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>forgetPassword</servlet-name>
+        <servlet-class>com.cinema.servlet.ForgetPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>forgetPassword</servlet-name>
+        <url-pattern>/forgetPassword.action</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>inputId</servlet-name>
+        <servlet-class>com.cinema.servlet.InputIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>inputId</servlet-name>
+        <url-pattern>/inputId.action</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -26,4 +26,19 @@ public class IUserServiceImpl implements IUserService {
         userDao.addInfo(user.getUser_name(),user.getUser_id(),user.getUser_sex(),user.getUser_tel(),user.getUser_birthday(),user.getLife_state(),user.getHobbies(),user.getPersonal_word(),user.getQuestion_one(),user.getAnswer_one(),user.getQuestion_two(),user.getAnswer_two());
         return true;
     }
+
+    @Override
+    public boolean isChangedPass(User user) {
+        IUserDao userDao=new IUserDaoImpl();
+        User u=userDao.selectByIdOnly(user.getUser_id());
+        if (u==null){
+            return false;
+        }else {
+            if (user.getAnswer_one().equals(u.getAnswer_one())&&user.getAnswer_two().equals(u.getAnswer_two())){
+                userDao.canChange(user.getUser_id(),user.getUser_password());
+                return true;
+            }
+            return false;
+        }
+    }
 }

@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: 夏康
+  Date: 2020/10/14
+  Time: 9:00
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>忘记密码</title>
+    <title>Title</title>
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <script src="../js/jquery/jquery-3.2.1.js"></script>
-    <script src="../js/register.js"></script>
+    <script src="../js/changePassword.js"></script>
     <style type="text/css">
         #container {
             width: 1500px;
@@ -109,10 +115,22 @@
     <hr>
     <div id="middle">
         <div id="login_left">
-            <form action="" method="post" onsubmit="return validate()">
+            <form action="${pageContext.request.contextPath}/forgetPassword.action" method="post" onsubmit="return changePassword()">
                 <table id="main">
                     <tr>
-                        <td class="layui-form-label" style="font-size: 30px;" id="register_word">忘记密码</td>
+                        <td class="layui-form-label" style="font-size: 30px;" id="register_word">忘记/修改密码</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><i class="layui-icon layui-icon-survey"
+                                                                   style="font-size: 20px; color: #000000;">您的账号</i></label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="id" id="id" lay-verify="required" value="${U.user_id}"
+                                           autocomplete="off" class="layui-input" readonly="readonly">
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -120,7 +138,7 @@
                                 <label class="layui-form-label"><i class="layui-icon layui-icon-survey"
                                                                    style="font-size: 20px; color: #000000;">密保一问</i></label>
                                 <div class="layui-input-inline">
-                                    <input type="text" name="q1" id="q1" lay-verify="required" placeholder="请输入答案"
+                                    <input type="text" name="a1" id="a1" lay-verify="required" placeholder="${U.question_one}"
                                            autocomplete="off" class="layui-input">
                                 </div>
                             </div>
@@ -132,7 +150,7 @@
                                 <label class="layui-form-label"><i class="layui-icon layui-icon-survey"
                                                                    style="font-size: 20px; color: #000000;">密保二问</i></label>
                                 <div class="layui-input-inline">
-                                    <input type="text" name="q2" id="q2" lay-verify="required" placeholder="请输入答案"
+                                    <input type="text" name="a2" id="a2" lay-verify="required" placeholder="${U.question_two}"
                                            autocomplete="off" class="layui-input">
                                 </div>
                             </div>
@@ -142,7 +160,7 @@
                         <td>
                             <div class="layui-form-item">
                                 <label class="layui-form-label"><i class="layui-icon  layui-icon-password"
-                                                                   style="font-size: 20px; color: #000000;">输入密码</i></label>
+                                                                   style="font-size: 20px; color: #000000;">新的密码</i></label>
                                 <div class="layui-input-inline">
                                     <label>
                                         <input type="password" name="user_password" id="user_password" lay-verify="required" placeholder="请输入"

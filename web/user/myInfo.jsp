@@ -101,7 +101,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">账号：</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="user_id" id="user_id" lay-verify="required" placeholder="请输入"
+                        <input type="text" name="user_id" id="user_id" lay-verify="required"
                                autocomplete="off" class="layui-input" readonly="readonly" value="${USER.user_id}">
                     </div>
                 </div>

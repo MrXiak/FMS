@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
         if (u!=null){
             HttpSession session = req.getSession();
             session.setAttribute("USER", u);
-            req.getRequestDispatcher("./user/myInfo.jsp").forward(req,resp);
+//            req.getRequestDispatcher("./user/myInfo.jsp").forward(req,resp);
         }else {
             out.print("<script type='text/javascript'>");
             out.print("alert('账号或密码错误，请核查，如没有账号请注册！');");
