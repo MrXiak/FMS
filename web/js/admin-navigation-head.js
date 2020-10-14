@@ -6,7 +6,7 @@ document.writeln("    </div>");
 document.writeln("    <!-- 头部区域（可配合layui已有的水平导航） -->");
 document.writeln("    <ul class=\'layui-nav layui-layout-left\'>");
 document.writeln("        <li class=\'layui-nav-item\' id='lifilm'><a href=\'admin-film.html\'>影片信息</a></li>");
-document.writeln("        <li class=\'layui-nav-item\' id='liuser'><a href=\'admin-user.html\'><a href=\'admin-user.html\'>用户信息</a></a></li>");
+document.writeln("        <li class=\'layui-nav-item\' id='liuser'><a href=\'admin-user.html\'>用户信息</a></li>");
 document.writeln("        <li class=\'layui-nav-item\'>");
 document.writeln("            <a href=\'javascript:;\'>其它</a>");
 document.writeln("            <dl class=\'layui-nav-child\'>");
