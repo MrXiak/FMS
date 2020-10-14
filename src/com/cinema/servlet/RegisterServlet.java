@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -32,6 +33,7 @@ public class RegisterServlet extends HttpServlet {
         //调用Service层，注册
         IUserService userService=new IUserServiceImpl();
         if (userService.isRegister(u)){
+            JOptionPane.showMessageDialog(null, "注册成功");
             req.getRequestDispatcher("./login_register/login.jsp").forward(req,resp);
         }else {
             out.print("<script type='text/javascript'>");

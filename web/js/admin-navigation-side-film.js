@@ -1,0 +1,17 @@
+document.writeln("    <div class=\'layui-side layui-bg-black\'>");
+document.writeln("        <div class=\'layui-side-scroll\'>");
+document.writeln("            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->");
+document.writeln("            <ul class=\'layui-nav layui-nav-tree\'  lay-filter=\'test\'>");
+document.writeln("                <li class=\'layui-nav-item layui-nav-itemed\'>");
+document.writeln("                    <a class=\'\' href=\'javascript:;\'>影片信息</a>");
+document.writeln("                    <dl class=\'layui-nav-child\'>");
+document.writeln("                        <dd id='ddfilm'><a href=\'admin-film.html\'>影片管理</a></dd>");
+document.writeln("                        <dd id='ddcinema'><a href=\'admin-cinema.html\'>影院管理</a></dd>");
+document.writeln("                        <dd id='ddaddfilm'><a href=\'admin-addfilm.html\'>添加影片</a></dd>");
+document.writeln("                        <dd><a href=\'javascript:;\'>影片上映管理</a></dd>");
+document.writeln("                        <dd><a href=\'javascript:;\'>影片类别管理</a></dd>");
+document.writeln("                    </dl>");
+document.writeln("                </li>");
+document.writeln("            </ul>");
+document.writeln("        </div>");
+document.writeln("    </div>");

@@ -21,7 +21,7 @@
 <div>
     <ul class="layui-nav" lay-filter="">
         <li class="layui-nav-item"><a href=""><img src="../image/icon_bear.svg" height="44px"width="50px">熊熊电影</a></li>
-        <li class="layui-nav-item layui-this"><a href="">首页</a></li>
+        <li class="layui-nav-item"><a href="">首页</a></li>
         <li class="layui-nav-item"><a href="">影片</a></li>
         <li class="layui-nav-item">
             <a href="javascript:;">地区选择</a>
@@ -35,7 +35,6 @@
     </ul>
 </div>
 <div class="main_container">
-
     <div id="main_container_left">
         <div id="main_container_left_table">
             <table class="table_chooseseats" id="tab_chooseseats" >

@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class InfoServlet extends HttpServlet {
@@ -75,6 +76,10 @@ public class InfoServlet extends HttpServlet {
             camera = " ";
         }
         String word=req.getParameter("person_word");
+        String q1=req.getParameter("questionone");
+        String a1=req.getParameter("answerone");
+        String q2=req.getParameter("questiontwo");
+        String a2=req.getParameter("answertwo");
         User u=new User();
         u.setUser_name(uname);
         u.setUser_id(uid);
@@ -83,14 +88,20 @@ public class InfoServlet extends HttpServlet {
         u.setUser_birthday(birth);
         u.setLife_state(life_state);
         u.setHobbies(write+read+daze+food+animals+travel+music+sports+science+car+fashion+camera);
-        u.setPerson_word(word);
+        u.setPersonal_word(word);
+        u.setQuestion_one(q1);
+        u.setAnswer_one(a1);
+        u.setQuestion_two(q2);
+        u.setAnswer_two(a2);
 
         //调用Service层
-        req.setAttribute("list", u);
+//        req.setAttribute("list", u);
 //        req.getSession().setAttribute("list",u);
 //        req.getServletContext().setAttribute("list",u);
         IUserService userService=new IUserServiceImpl();
         if (userService.isUpdate(u)){
+//        req.getSession().setAttribute("list",u);
+//        req.getServletContext().setAttribute("list",u);
             req.getRequestDispatcher("./user/success.jsp").forward(req,resp);
         }else{
             req.getRequestDispatcher("./user/fail.jsp").forward(req,resp);
