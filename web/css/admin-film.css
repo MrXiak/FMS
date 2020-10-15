@@ -6,7 +6,6 @@
     width: 100%;
     height: 90%;
     overflow: auto;
-    white-space:nowrap;
     word-wrap:break-word;
 }
 .admin_film_table_foot{
