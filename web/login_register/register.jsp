@@ -99,9 +99,11 @@
             border: 10px;
         }
 
-        .tishi {
-            font-size: 10px;
-            color: gray;
+        .layui-colla-title{
+            background-color: white;
+        }
+        .layui-collapse{
+            border: none;
         }
     </style>
 </head>
@@ -126,10 +128,9 @@
                                 <label class="layui-form-label"><i class="layui-icon layui-icon-username"
                                                                    style="font-size: 20px; color: #000000;">创建账号</i></label>
                                 <div class="layui-input-inline">
-                                    <input type="text" name="user_id" id="user_id" lay-verify="required" placeholder="请输入"
+                                    <input type="text" name="user_id" id="user_id" lay-verify="required" placeholder="请输入6-10位账号"
                                            autocomplete="off" class="layui-input">
                                 </div>
-<%--                                <label class="tishi">不少于5位</label>--%>
                             </div>
                         </td>
                     </tr>
@@ -140,11 +141,10 @@
                                                                    style="font-size: 20px; color: #000000;">输入密码</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="password" name="user_password" id="user_password" lay-verify="required" placeholder="请输入"
+                                        <input type="password" name="user_password" id="user_password" lay-verify="required" placeholder="请输入6-10位密码"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>
-<%--                                <label class="tishi">请使用字母和数字的组合且不少于6位</label>--%>
                             </div>
                         </td>
                     </tr>
@@ -168,7 +168,16 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="" data-method="notice">《用户服务协议》 </a><a href="">《隐私政策》</a>
+                            <div class="layui-collapse">
+                                <div class="layui-colla-item">
+                                    <h2 class="layui-colla-title">《用户服务协议》 </h2>
+                                    <div class="layui-colla-content ">除非您已阅读并接受本服务协议所有条款，否则您将不能注册账号......</div>
+                                </div>
+                                <div class="layui-colla-item">
+                                    <h2 class="layui-colla-title">《隐私政策》 </h2>
+                                    <div class="layui-colla-content ">我们非常注重保护用户（“您”）的个人信息及隐私......</div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -183,5 +192,12 @@
         <h4 id="login_h3">©2020 京ICP证070791号 京公网安备11010502025545号</h4>
     </div>
 </div>
+<script src="../layui/layui.js" charset="utf-8"></script>
+<script>
+    //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+</script>
 </body>
 </html>

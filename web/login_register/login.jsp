@@ -87,6 +87,7 @@
             float: right;
             color: red;
             font-size: 2px;
+            width: 150px;
         }
 
         #login_submit {

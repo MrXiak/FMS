@@ -68,8 +68,8 @@
             <tbody>
             <tr>
                 <td>${T.film_name}</td>
-                <td>${T.film_name}</td>
-                <td>``````/td>
+                <td>${T.film_time}</td>
+                <td>``````</td>
                 <td>``````</td>
             </tr>
             </tbody>

@@ -10,6 +10,8 @@
 <html>
 <head>
     <title>MyInfo</title>
+    <script src="../js/jquery/jquery-3.2.1.js"></script>
+    <script src="../js/myInfo.js"></script>
     <style type="text/css">
         .Info {
             margin-top: 20px;
@@ -77,7 +79,7 @@
 <div id="container">
     <div id="top"><h2 class="Info">基本信息</h2></div>
     <hr>
-    <form action="/myInfo.action" method="post">
+    <form action="/myInfo.action" method="post" onsubmit="return myInfo()">
         <div id="main">
             <div id="main_left">
                 <div class="layui-upload">
@@ -129,7 +131,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">生日：</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="year" lay-verify="required" placeholder="请输入"
+                        <input type="text" name="year" lay-verify="required" placeholder="请输入:如12月12日"
                                autocomplete="off" class="layui-input" value="${USER.user_birthday}">
                     </div>
                 </div>
