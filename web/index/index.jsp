@@ -19,10 +19,6 @@
     <link rel="icon" href="../image/icon_bear.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/logo-icon.css">
 </head>
-
-
-
-
 <body>
 <%--导航栏--%>
 <script type="text/javascript" src="../js/navigation-head.js"></script>
