@@ -1,9 +1,22 @@
+function newGuid(){
+    var guid = "";
+    for (var i = 1; i <= 12; i++){
+        var n = Math.floor(Math.random()*16.0).toString(16);
+        guid += n;
+    }
+    return guid;
+}
 var nowPage = 0, //当前页
-count = 5, //每页显示多少条消息
+count = 10 //每页显示多少条消息
 pageAll = 0; //总页数
 var testDataList = []; //创建一个存放数据的数组
 for (var m = 0; m < 53; m++) { //往数组里放入53条数据
+    var filmid = newGuid();
     testDataList.push(`<tr>
+        <td>第` + m + `条消息</td>
+        <td>第` + filmid + `条消息</td>
+        <td>第` + m + `条消息</td>
+        <td>第` + m + `条消息</td>
         <td>第` + m + `条消息</td>
         <td>第` + m + `条消息</td>
         <td>第` + m + `条消息</td>
@@ -12,12 +25,12 @@ for (var m = 0; m < 53; m++) { //往数组里放入53条数据
         <td>第` + m + `条消息</td>
         <td>第` + m + `条消息</td>
         <td>
-            <button type="button"  class="btnShow edit"> 编辑</button>
-            <button type="button" class="btnShow delete"> 删除</button>
+            <button type="button" class="btnoperate edit"> 编辑</button>
+            <button type="button" class="btnoperate del"> 删除</button>
         </td>
     </tr>`);
     }
-pageAll = (testDataList.length) / 5; //计算总页数
+pageAll = (testDataList.length) / count; //计算总页数
 var setTable = function () { //数据渲染表格
     var onePageData = []; //用来存放一页的数据
     /*
