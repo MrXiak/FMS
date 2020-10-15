@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.cinema.entity.FilmInfo" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: 诗
   Date: 2020/10/12
@@ -16,77 +17,16 @@
     <script src="../js/jquery/jquery-3.2.1.js"></script>
     <script src="../js/index.js"></script>
     <link rel="icon" href="../image/icon_bear.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/logo-icon.css">
 </head>
 
 
 
 
 <body>
-
+<%--导航栏--%>
+<script type="text/javascript" src="../js/navigation-head.js"></script>
 <div id="main_body">
-<%--    <div id="theader">--%>
-<%--        <table>--%>
-<%--            <tr>--%>
-<%--                <td>--%>
-<%--                    <div id="logo">--%>
-<%--                        <img src="../image/icon_bear.svg" height="44px" ;width="149px">--%>
-<%--                        熊熊电影--%>
-<%--                    </div>--%>
-<%--                </td>--%>
-<%--                <td>--%>
-<%--                    <div id="location_select">--%>
-<%--                        <select name="modules" lay-verify="required" lay-search="">--%>
-<%--                            <option value="">选择地区</option>--%>
-<%--                            <option value="1">如皋</option>--%>
-<%--                            <option value="2">北京</option>--%>
-<%--                            <option value="3">上海</option>--%>
-<%--                            <option value="4">武汉</option>--%>
-<%--                            <option value="5">新疆</option>--%>
-<%--                            <option value="6">江苏</option>--%>
-<%--                            <option value="7">浙江</option>--%>
-<%--                        </select>--%>
-<%--                    </div>--%>
-<%--                </td>--%>
-<%--                <td>--%>
-<%--                    <div id="position">--%>
-<%--                        <a href="#">首页</a>--%>
-<%--                    </div>--%>
-
-<%--                </td>--%>
-<%--                <td>--%>
-<%--                    <div id="login">--%>
-<%--                        <button id="btnLogin">登录</button>--%>
-<%--                        <!--                        <select>-->--%>
-<%--                        <!--                            <option value="pic"><img src="../image/icon_bear.svg"></option>/-->--%>
-<%--                        <!--                            <option value="login">登录</option>-->--%>
-<%--                        <!--                        </select>-->--%>
-<%--                    </div>--%>
-
-<%--                </td>--%>
-<%--                <!--                <td style="width:250px;height: 100px">-->--%>
-<%--                <!--                    <div>-->--%>
-<%--                <!--                        备用-->--%>
-<%--                <!--                    </div>-->--%>
-<%--                <!--                </td>-->--%>
-
-<%--            </tr>--%>
-<%--        </table>--%>
-<%--    </div>--%>
-    <ul class="layui-nav" lay-filter="">
-        <li class="layui-nav-item"><a href=""><img src="../image/icon_bear.svg" height="44px"width="50px">熊熊电影</a></li>
-        <li class="layui-nav-item layui-this"><a href="">首页</a></li>
-        <li class="layui-nav-item"><a href="">影片</a></li>
-        <li class="layui-nav-item">
-            <a href="javascript:;">地区选择</a>
-            <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a href="">江苏</a></dd>
-                <dd><a href="">北京</a></dd>
-                <dd><a href="">上海</a></dd>
-            </dl>
-        </li>
-        <li class="layui-nav-item"><a href="">登录</a></li>
-    </ul>
-
     <div id="film_pic">
         <img src="../image/shouye3.png" width="100%" height="100%">
     </div>
@@ -233,119 +173,126 @@
             <div class="show">
                 <ul>
                     <li style="float: left"><span style="color: red;font-size: 20px;font-weight: bold">正在热映</span></li>
-                    <li style="float: right"><a href="#"><span style="color: red">全部>>></span></a></li>
+                    <li style="float: right"><a href="/FilmInfo.action"><span style="color: red">全部>>></span></a></li>
                 </ul>
             </div>
-            <table>
+<%--            <% List<FilmInfo>filmInfoList= (List<FilmInfo>) request.getAttribute("filmInfoList");--%>
+<%--                if (filmInfoList!=null&&!filmInfoList.isEmpty()){--%>
+<%--                    for (FilmInfo filmInfo:filmInfoList){--%>
+<%--            %>--%>
+            <table >
                 <tr>
                     <td >
                         <a href="#">
                             <div class="film_img">
-                                <img src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@464w_644h_1e_1c" height="200px" width="150px">
+                                <img src="#" height="200px" width="150px">
                                 <div class="film_info">
-                                    <div class="film_name">我和我的家乡</div>
-                                    <div class="film_score">9.3</div>
+                                    <div class="film_name">电影名</div>
+                                    <div class="film_score">评分</div>
                                 </div>
                             </div>
                             <div class="buyTickets">购票</div>
                         </a>
                         <div class="film_type" >2DIMAX</div>
                     </td>
-                    <td>
-                        <a href="#">
-                            <div class="film_img" >
-                                <img src="#" height="200px" width="150px">
-                                <div class="film_info">
-                                    <div class="film_name">电影名</div>
-                                    <div class="film_score">评分</div>
-                                </div>
-                            </div>
-                            <div class="buyTickets">购票</div>
-                        </a>
-                        <div class="film_type" >电影类型</div>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <div class="film_img">
-                                <img src="#" height="200px" width="150px">
-                                <div class="film_info">
-                                    <div class="film_name">电影名</div>
-                                    <div class="film_score">评分</div>
-                                </div>
-                            </div>
-                            <div class="buyTickets">购票</div>
-                        </a>
-                        <div class="film_type" >电影类型</div>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <div class="film_img">
-                                <img src="#" height="200px" width="150px">
-                                <div class="film_info">
-                                    <div class="film_name">电影名</div>
-                                    <div class="film_score">评分</div>
-                                </div>
-                            </div>
-                            <div class="buyTickets">购票</div>
-                        </a>
-                        <div class="film_type" >电影类型</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="#">
-                            <div class="film_img">
-                                <img src="#" height="200px" width="150px">
-                                <div class="film_info">
-                                    <div class="film_name">电影名</div>
-                                    <div class="film_score">评分</div>
-                                </div>
-                            </div>
-                            <div class="buyTickets">购票</div>
-                        </a>
-                        <div class="film_type" >电影类型</div>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <div class="film_img">
-                                <img src="#" height="200px" width="150px">
-                                <div class="film_info">
-                                    <div class="film_name">电影名</div>
-                                    <div class="film_score">评分</div>
-                                </div>
-                            </div>
-                            <div class="buyTickets">购票</div>
-                        </a>
-                        <div class="film_type" >电影类型</div>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <div class="film_img">
-                                <img src="#" height="200px" width="150px">
-                                <div class="film_info">
-                                    <div class="film_name">电影名</div>
-                                    <div class="film_score">评分</div>
-                                </div>
-                            </div>
-                            <div class="buyTickets">购票</div>
-                        </a>
-                        <div class="film_type" >电影类型</div>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <div class="film_img">
-                                <img src="#" height="200px" width="150px">
-                                <div class="film_info">
-                                    <div class="film_name">电影名</div>
-                                    <div class="film_score">评分</div>
-                                </div>
-                            </div>
-                            <div class="buyTickets">购票</div>
-                        </a>
-                        <div class="film_type" >电影类型</div>
-                    </td>
-                </tr>
+<%--                    <td>--%>
+<%--                        <a href="#">--%>
+<%--                            <div class="film_img" >--%>
+<%--                                <img src="#" height="200px" width="150px">--%>
+<%--                                <div class="film_info">--%>
+<%--                                    <div class="film_name">电影名</div>--%>
+<%--                                    <div class="film_score">评分</div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="buyTickets">购票</div>--%>
+<%--                        </a>--%>
+<%--                        <div class="film_type" >电影类型</div>--%>
+<%--                    </td>--%>
+<%--                    <td>--%>
+<%--                        <a href="#">--%>
+<%--                            <div class="film_img">--%>
+<%--                                <img src="#" height="200px" width="150px">--%>
+<%--                                <div class="film_info">--%>
+<%--                                    <div class="film_name">电影名</div>--%>
+<%--                                    <div class="film_score">评分</div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="buyTickets">购票</div>--%>
+<%--                        </a>--%>
+<%--                        <div class="film_type" >电影类型</div>--%>
+<%--                    </td>--%>
+<%--                    <td>--%>
+<%--                        <a href="#">--%>
+<%--                            <div class="film_img">--%>
+<%--                                <img src="#" height="200px" width="150px">--%>
+<%--                                <div class="film_info">--%>
+<%--                                    <div class="film_name">电影名</div>--%>
+<%--                                    <div class="film_score">评分</div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="buyTickets">购票</div>--%>
+<%--                        </a>--%>
+<%--                        <div class="film_type" >电影类型</div>--%>
+<%--                    </td>--%>
+<%--                </tr>--%>
+<%--                <tr>--%>
+<%--                    <td>--%>
+<%--                        <a href="#">--%>
+<%--                            <div class="film_img">--%>
+<%--                                <img src="#" height="200px" width="150px">--%>
+<%--                                <div class="film_info">--%>
+<%--                                    <div class="film_name">电影名</div>--%>
+<%--                                    <div class="film_score">评分</div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="buyTickets">购票</div>--%>
+<%--                        </a>--%>
+<%--                        <div class="film_type" >电影类型</div>--%>
+<%--                    </td>--%>
+<%--                    <td>--%>
+<%--                        <a href="#">--%>
+<%--                            <div class="film_img">--%>
+<%--                                <img src="#" height="200px" width="150px">--%>
+<%--                                <div class="film_info">--%>
+<%--                                    <div class="film_name">电影名</div>--%>
+<%--                                    <div class="film_score">评分</div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="buyTickets">购票</div>--%>
+<%--                        </a>--%>
+<%--                        <div class="film_type" >电影类型</div>--%>
+<%--                    </td>--%>
+<%--                    <td>--%>
+<%--                        <a href="#">--%>
+<%--                            <div class="film_img">--%>
+<%--                                <img src="#" height="200px" width="150px">--%>
+<%--                                <div class="film_info">--%>
+<%--                                    <div class="film_name">电影名</div>--%>
+<%--                                    <div class="film_score">评分</div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="buyTickets">购票</div>--%>
+<%--                        </a>--%>
+<%--                        <div class="film_type" >电影类型</div>--%>
+<%--                    </td>--%>
+<%--                    <td>--%>
+<%--                        <a href="#">--%>
+<%--                            <div class="film_img">--%>
+<%--                                <img src="#" height="200px" width="150px">--%>
+<%--                                <div class="film_info">--%>
+<%--                                    <div class="film_name">电影名</div>--%>
+<%--                                    <div class="film_score">评分</div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="buyTickets">购票</div>--%>
+<%--                        </a>--%>
+<%--                        <div class="film_type" >电影类型</div>--%>
+<%--                    </td>--%>
+<%--                </tr>--%>
             </table>
+<%--            <% }--%>
+<%--            }--%>
+<%--            %>--%>
         </div>
 
         <div id="film_updating">
@@ -534,10 +481,5 @@
 
 </body>
 <script>
-    layui.use('element', function(){
-        var element = layui.element;
-
-    });
-
 </script>
 </html>

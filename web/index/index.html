@@ -17,52 +17,66 @@
 <body>
 <div id="main_body">
     <div id="theader">
-        <table>
-            <tr>
-                <td>
-                    <div id="logo">
-                        <img src="../image/icon_bear.svg" height="44px" ;width="149px">
-                        熊熊电影
-                    </div>
-                </td>
-                <td>
-                    <div id="location_select">
-                            <select name="modules" lay-verify="required" lay-search="">
-                            <option value="">选择地区</option>
-                            <option value="1">如皋</option>
-                            <option value="2">北京</option>
-                            <option value="3">上海</option>
-                            <option value="4">武汉</option>
-                            <option value="5">新疆</option>
-                            <option value="6">江苏</option>
-                            <option value="7">浙江</option>
-                        </select>
-                    </div>
-                </td>
-                <td>
-                    <div id="position">
-                        <a href="#">首页</a>
-                    </div>
-
-                </td>
-                <td>
-                    <div id="login">
-                        <button id="btnLogin">登录</button>
-<!--                        <select>-->
-<!--                            <option value="pic"><img src="../image/icon_bear.svg"></option>/-->
-<!--                            <option value="login">登录</option>-->
-<!--                        </select>-->
-                    </div>
-
-                </td>
-<!--                <td style="width:250px;height: 100px">-->
-<!--                    <div>-->
-<!--                        备用-->
+<!--        <table>-->
+<!--            <tr>-->
+<!--                <td>-->
+<!--                    <div id="logo">-->
+<!--                        <img src="../image/icon_bear.svg" height="44px" ;width="149px">-->
+<!--                        熊熊电影-->
 <!--                    </div>-->
 <!--                </td>-->
+<!--                <td>-->
+<!--                    <div id="location_select">-->
+<!--                            <select name="modules" lay-verify="required" lay-search="">-->
+<!--                            <option value="">选择地区</option>-->
+<!--                            <option value="1">如皋</option>-->
+<!--                            <option value="2">北京</option>-->
+<!--                            <option value="3">上海</option>-->
+<!--                            <option value="4">武汉</option>-->
+<!--                            <option value="5">新疆</option>-->
+<!--                            <option value="6">江苏</option>-->
+<!--                            <option value="7">浙江</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <div id="position">-->
+<!--                        <a href="#">首页</a>-->
+<!--                    </div>-->
 
-            </tr>
-        </table>
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <div id="login">-->
+<!--                        <button id="btnLogin">登录</button>-->
+<!--&lt;!&ndash;                        <select>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <option value="pic"><img src="../image/icon_bear.svg"></option>/&ndash;&gt;-->
+<!--&lt;!&ndash;                            <option value="login">登录</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </select>&ndash;&gt;-->
+<!--                    </div>-->
+
+<!--                </td>-->
+<!--&lt;!&ndash;                <td style="width:250px;height: 100px">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        备用&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+
+<!--            </tr>-->
+<!--        </table>-->
+        <ul class="layui-nav" lay-filter="">
+            <li class="layui-nav-item"><a href=""><img src="../image/icon_bear.svg" height="44px"width="50px">熊熊电影</a></li>
+            <li class="layui-nav-item layui-this"><a href="">首页</a></li>
+            <li class="layui-nav-item"><a href="">影片</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">地区选择</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="">江苏</a></dd>
+                    <dd><a href="">北京</a></dd>
+                    <dd><a href="">上海</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">登录</a></li>
+        </ul>
     </div>
 
 
@@ -220,7 +234,7 @@
                     <td >
                         <a href="#">
                         <div class="film_img">
-                            <img src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@464w_644h_1e_1c" height="200px" width="150px">
+                            <img src="<%=filmInfo.getFilm_img()%>" height="200px" width="150px">
                             <div class="film_info">
                                 <div class="film_name">我和我的家乡</div>
                                 <div class="film_score">9.3</div>
@@ -510,6 +524,10 @@
     </div>
 
 </div>
-
+<script>
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+</script>
 </body>
 </html>
