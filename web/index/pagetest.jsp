@@ -1,4 +1,5 @@
-<%--<jsp:useBean id="pageutils" scope="request" type="sun.management.snmp.jvminstr.JvmMemGCTableMetaImpl.GCTableFilter"/>--%>
+<%@ page import="com.cinema.entity.FilmInfo" %>
+<%@ page import="java.util.List" %><%--<jsp:useBean id="pageutils" scope="request" type="sun.management.snmp.jvminstr.JvmMemGCTableMetaImpl.GCTableFilter"/>--%>
 
 <%--
   Created by IntelliJ IDEA.
@@ -54,6 +55,9 @@
 </script>
 
 </head>
+<%
+    List<FilmInfo> filmInfos = (List<FilmInfo>) request.getAttribute("filmInfoList");
+%>
 <body>
 <center>
     <br><br>
@@ -70,9 +74,9 @@
             <th>电影价格</th>
             <th>电影评分</th>
         </tr>
-        <c:forEach items="${pageutils.records}" var="filmInfo">
+        <c:forEach items="<%=filmInfos%>" var="filmInfo">
             <tr>
-                <td>${filmInfo.film_img }</td>
+                <td><img src="${filmInfo.film_img }"height="200px" width="150px"></td>
                 <td>${filmInfo.film_id }</td>
                 <td>${filmInfo.film_name }</td>
                 <td>${filmInfo.film_time }</td>

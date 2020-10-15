@@ -17,7 +17,87 @@ public class pageUtils {
     private int beginPage;//第一个显示的页码
     private int endPage;//最后一个显示的页码
 
-    public pageUtils(List records,int currentPage,int pageSize,int totalRecordsSize){
+    public List getRecords() {
+        return records;
+    }
+
+    public void setRecords(List records) {
+        this.records = records;
+    }
+
+    public int getCurrentPage() {
+        return currentPage;
+    }
+
+    public void setCurrentPage(int currentPage) {
+        this.currentPage = currentPage;
+    }
+
+    public int getTotalRecordsSize() {
+        return totalRecordsSize;
+    }
+
+    public void setTotalRecordsSize(int totalRecordsSize) {
+        this.totalRecordsSize = totalRecordsSize;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public int getFirstPage() {
+        return firstPage;
+    }
+
+    public void setFirstPage(int firstPage) {
+        this.firstPage = firstPage;
+    }
+
+    public int getLastPage() {
+        return lastPage;
+    }
+
+    public void setLastPage(int lastPage) {
+        this.lastPage = lastPage;
+    }
+
+    public int getPre() {
+        return pre;
+    }
+
+    public void setPre(int pre) {
+        this.pre = pre;
+    }
+
+    public int getNext() {
+        return next;
+    }
+
+    public void setNext(int next) {
+        this.next = next;
+    }
+
+    public int getBeginPage() {
+        return beginPage;
+    }
+
+    public void setBeginPage(int beginPage) {
+        this.beginPage = beginPage;
+    }
+
+    public int getEndPage() {
+        return endPage;
+    }
+
+    public void setEndPage(int endPage) {
+        this.endPage = endPage;
+    }
+
+    public pageUtils(List records, int currentPage, int pageSize, int totalRecordsSize){
       this.records=records;
       this.currentPage=currentPage;
       this.totalRecordsSize=totalRecordsSize;

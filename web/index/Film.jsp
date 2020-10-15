@@ -20,6 +20,9 @@
     <title>影片放映—熊熊电影</title>
 </head>
 <body>
+<%
+    List<FilmInfo> filmInfos = (List<FilmInfo>) request.getAttribute("filmInfoList");
+%>
 <%--导航栏--%>
 <script type="text/javascript" src="../js/navigation-head.js"></script>
 <%--选择框--%>
@@ -34,20 +37,21 @@
 <div id="container">
             <%--影片展示--%>
     <div  style="margin-top:50px;height: 800px;width: 1200px">
-                <% List<FilmInfo>filmInfoList= (List<FilmInfo>) request.getAttribute("filmInfoList");
-                    if (filmInfoList!=null&&!filmInfoList.isEmpty()){
-                        for (FilmInfo filmInfo:filmInfoList){
-                %>
+<%--                <% List<FilmInfo>filmInfoList= (List<FilmInfo>) request.getAttribute("filmInfoList");--%>
+<%--                    if (filmInfoList!=null&&!filmInfoList.isEmpty()){--%>
+<%--                        for (FilmInfo filmInfo:filmInfoList){--%>
+<%--                %>--%>
                 <div style="float: left;margin-left:20px">
                 <table>
+                <c:forEach items="<%=filmInfos%>" var="filmInfo">
                     <tr>
                         <td>
                             <a href="#" >
                                 <div class="film_img">
-                                    <img src="<%=filmInfo.getFilm_img()%>" height="200px" width="150px">
+                                    <img src="${filmInfo.film_img }" height="200px" width="150px">
                                     <div class="film_info">
-                                        <div class="film_name"><%=filmInfo.getFilm_name()%></div>
-                                        <div class="film_score"><%=filmInfo.getFilm_score()%></div>
+                                        <div class="film_name">${filmInfo.film_name }</div>
+                                        <div class="film_score">${filmInfo.film_score }</div>
                                     </div>
                                 </div>
                                 <div class="buyTickets">购票</div>
@@ -55,28 +59,29 @@
                             <div class="film_type" >2DIMAX</div>
                         </td>
                     </tr>
+                </c:forEach>
                 </table>
                 </div>
-                <% }
-                }
-                %>
+<%--                <% }--%>
+<%--                }--%>
+<%--                %>--%>
     </div>
-    <div id="pageSelect">
-        <table>
-            <c:forEach items="${pageutils.records}" var="filmInfoList">
-                <tr>
-                    <td>${film_img }</td>
-                    <td>${film_id }</td>
-                    <td>${film_name }</td>
-                    <td>${film_time }</td>
-                    <td>${film_actor }</td>
-                    <td>${film_date }</td>
-                    <td>${film_info }</td>
-                    <td>${film_price }</td>
-                    <td>${film_score }</td>
-                </tr>
-            </c:forEach>
-        </table>
+<%--    <div id="pageSelect">--%>
+<%--        <table>--%>
+<%--            <c:forEach items="<%=filmInfos%>" var="filmInfo">--%>
+<%--                <tr>--%>
+<%--                    <td><img src="${filmInfo.film_img }"height="200px" width="150px"></td>--%>
+<%--                    <td>${filmInfo.film_id }</td>--%>
+<%--                    <td>${filmInfo.film_name }</td>--%>
+<%--                    <td>${filmInfo.film_time }</td>--%>
+<%--                    <td>${filmInfo.film_actor }</td>--%>
+<%--                    <td>${filmInfo.film_date }</td>--%>
+<%--                    <td>${filmInfo.film_info }</td>--%>
+<%--                    <td>${filmInfo.film_price }</td>--%>
+<%--                    <td>${filmInfo.film_score }</td>--%>
+<%--                </tr>--%>
+<%--            </c:forEach>--%>
+<%--        </table>--%>
         <table>
             <tr>
                 <td><a href="#" onclick="toPage(${pageutils.firstPage})">首页</a></td>

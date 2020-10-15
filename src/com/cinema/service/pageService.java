@@ -13,7 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class pageService {
+    static {
+        //加载驱动
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
     public pageUtils getFilms(int currentPage){
+
         Connection conn=null;
         Statement st=null;
         ResultSet rs=null;
@@ -29,7 +38,7 @@ public class pageService {
                 totalPageSize=rs.getInt("totalNum");
             }
 
-            rs=st.executeQuery("select * from film limit"+(currentPage-1)*pageSize+","+pageSize);
+            rs=st.executeQuery("select * from film limit "+(currentPage-1)*pageSize+","+pageSize);
             while(rs.next()){
                 filmInfoList.add(new FilmInfo(rs.getString(1),
                                               rs.getInt(2),
