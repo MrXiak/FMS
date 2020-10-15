@@ -1,15 +1,4 @@
-.admin_film_main_container{
-    width: 100%;
-    height: 600px;
-}
-
-.admin_film_main_container_tablediv{
-    margin: 0 auto;
+.admin_film_table{
     width: 1000px;
-    height: 100%;
-}
-.admin_film_main_container_table{
-    margin-top: 50px;
-    width: 100%;
-    height: 100%;
+    height: 600px;
 }
