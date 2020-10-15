@@ -97,11 +97,13 @@
 }
 .film_name{
     height: 25px;
-    width: 80px;
+    /*line-height: 25px;*/
+    width:200px;
     position: absolute;
     z-index: 4;
     font-size: 12px;
     font-style: italic;
+    overflow: hidden;
 
 }
 .film_score{
