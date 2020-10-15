@@ -47,7 +47,7 @@
 <%--                                    <div class="film_score">${filmInfo.film_score }</div>--%>
                                 </div>
                             </div>
-                            <div class="buyTickets">购票</div>
+                            <div class="buyTickets">查看详情</div>
                         </a>
                         <div class="film_type" >2DIMAX</div>
                     </td>
