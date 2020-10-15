@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 67463
+  Date: 2020/10/15
+  Time: 19:43
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -45,18 +52,18 @@
             </div>
         </div>
     </div>
-        <div class="layui-footer">
-            <!-- 底部固定区域 -->
-            © layui.com - 底部固定区域
-        </div>
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        熊熊电影管理系统
     </div>
+</div>
 </div>
 
 <script src="../js/admin-user-tablepage.js"></script>
 
-    <script>
-        document.getElementById("liuser").classList.add("layui-this");
-        document.getElementById("dduser").classList.add("layui-this");
-    </script>
+<script>
+    document.getElementById("liuser").classList.add("layui-this");
+    document.getElementById("dduser").classList.add("layui-this");
+</script>
 </body>
 </html>

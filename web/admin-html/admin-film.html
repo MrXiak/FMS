@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="../css/admin-film.css">
 
     <script src="../js/jquery/jquery-3.2.1.js"></script>
-    <script src="../js/admin-film-topage.js"></script>
     <link rel="stylesheet" href="../css/topage.css">
 
 </head>
@@ -22,29 +21,49 @@
     <div class="layui-layout layui-layout-admin">
         <script type="text/javascript" src="../js/admin-navigation-head.js"></script>
         <script type="text/javascript" src="../js/admin-navigation-side-film.js"></script>
-s
-        <div class="layui-body">
+
+        <div class="layui-body" style="">
 <!--             内容主体区域-->
-            <div class="admin_film_table"></div>
+            <div class="admin_film_table">
+                <div class="admin_film_table_content">
+                    <table class="table-normal" id="outBoxTab">
+                        <thead>
+                            <tr>
+                                <th>影片海报</th>
+                                <th>影片编号</th>
+                                <th>影片名称</th>
+                                <th>类型</th>
+                                <th>时长</th>
+                                <th>导演</th>
+                                <th>上映日期</th>
+                                <th>版本</th>
+                                <th>影片详情</th>
+                                <th>票价</th>
+                                <th>评分</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
+                </div>
+                <div class="admin_film_table_foot">
+                    <button type="button" id="up" class="btnShow">上一页</button>
+                    <button type="button" id="down" class="btnShow ">下一页</button>
+                </div>
+            </div>
         </div>
         <div class="layui-footer">
             熊熊电影后台管理系统
         </div>
 
     </div>
+    <script src="../js/admin-film-tablepage.js"></script>
 
     <script>
         document.getElementById("lifilm").classList.add("layui-this");
         document.getElementById("ddfilm").classList.add("layui-this");
-        /*容器1参数*/
-        var obj_1={
-            obj_box:'.admin_film_table',//翻页容器
-            total_item:18,//条目总数
-            per_num:10,//每页条目数
-            current_page:1//当前页
-        };
-        /*调用分页方法,初始化数据*/
-        page_ctrl(obj_1);
+
+
     </script>
 </body>
 </html>
