@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 诗
-  Date: 2020/10/13
-  Time: 9:14
+  Date: 2020/10/15
+  Time: 11:28
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -32,59 +32,59 @@
     </div>
 </div>
 <div id="container">
-                <%--影片展示--%>
-                <div  style="margin-top:50px;height: 800px;width: 1200px">
-                <div id="film_page">
-                <table style="border-collapse: separate;border-spacing: 20px 5px">
+    <%--影片展示--%>
+    <div  style="margin-top:50px;height: 800px;width: 1200px">
+        <div id="film_page">
+            <table style="border-collapse: separate;border-spacing: 20px 5px">
                 <c:forEach items="${pageutils.records}" var="filmInfo">
 
-                        <td>
-                            <a href="#" >
-                                <div class="film_img">
-                                    <img src="${filmInfo.film_img }" height="200px" width="150px">
-                                    <div class="film_info">
-                                        <div class="film_name">${filmInfo.film_name }</div>
-                                        <div class="film_score">${filmInfo.film_score }</div>
-                                    </div>
+                    <td>
+                        <a href="#" >
+                            <div class="film_img">
+                                <img src="${filmInfo.pre_film_img }" height="200px" width="150px">
+                                <div class="film_info">
+                                    <div class="film_name">${filmInfo.pre_film_name }</div>
+<%--                                    <div class="film_score">${filmInfo.film_score }</div>--%>
                                 </div>
-                                <div class="buyTickets">购票</div>
-                            </a>
-                            <div class="film_type" >2DIMAX</div>
-                        </td>
+                            </div>
+                            <div class="buyTickets">购票</div>
+                        </a>
+                        <div class="film_type" >2DIMAX</div>
+                    </td>
 
                 </c:forEach>
-                </table>
-                </div>
+            </table>
+        </div>
     </div>
-                <%--分页栏--%>
-                <div id="page_Select" >
-                        <table style="border-collapse: separate;border-spacing: 5px 5px;margin: 0 auto;">
-                            <tr style="margin: 0 auto ">
-                                <c:forEach begin="${pageutils.beginPage}" end="${pageutils.endPage}" var="pageNum">
-                                    <c:if test="${pageNum == pageutils.currentPage}">
-                                        <td><a href="#" onclick="toPage(${pageNum})"><font color="red">[${pageNum}]</font></a></td>
-                                    </c:if>
-                                    <c:if test="${pageNum != pageutils.currentPage}">
-                                        <td><a href="#" onclick="toPage(${pageNum})"><font color="black">[${pageNum}]</font></a></td>
-                                    </c:if>
-                                </c:forEach>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="toPage(${pageutils.firstPage})">首页</a></td>
-                                <td><a href="#" onclick="toPage(${pageutils.pre})">上一页</a></td>
-                                <td><a href="#" onclick="toPage(${pageutils.next})">下一页</a></td>
-                                <td><a href="#" onclick="toPage(${pageutils.lastPage})">末页</a></td>
-<%--                                                <td>--%>
-<%--                                                    <input id="page" type="text" size="2"/>--%>
-<%--                                                    <input type="button" value="go" onclick="toPage2()"/>--%>
-<%--                                                        </td>--%>
-                                <td>${pageutils.currentPage}/${pageutils.lastPage}, 共${pageutils.totalRecordsSize}条 </td>
-<%--                                                        <td>--%>
+    <%--分页栏--%>
+    <div id="page_Select" >
+        <table style="border-collapse: separate;border-spacing: 5px 5px;margin: 0 auto;">
+            <tr style="margin: 0 auto ">
+                <c:forEach begin="${pageutils.beginPage}" end="${pageutils.endPage}" var="pageNum">
+                    <c:if test="${pageNum == pageutils.currentPage}">
+                        <td><a href="#" onclick="toPage(${pageNum})"><font color="red">[${pageNum}]</font></a></td>
+                    </c:if>
+                    <c:if test="${pageNum != pageutils.currentPage}">
+                        <td><a href="#" onclick="toPage(${pageNum})"><font color="black">[${pageNum}]</font></a></td>
+                    </c:if>
+                </c:forEach>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="toPage(${pageutils.firstPage})">首页</a></td>
+                <td><a href="#" onclick="toPage(${pageutils.pre})">上一页</a></td>
+                <td><a href="#" onclick="toPage(${pageutils.next})">下一页</a></td>
+                <td><a href="#" onclick="toPage(${pageutils.lastPage})">末页</a></td>
+                <%--                <td>--%>
+                <%--                    <input id="page" type="text" size="2"/>--%>
+                <%--&lt;%&ndash;                    <input type="button" value="go" onclick="toPage2()"/>&ndash;%&gt;--%>
+                <%--                        </td>--%>
+                <td>${pageutils.currentPage}/${pageutils.lastPage}, 共${pageutils.totalRecordsSize}条 </td>
+                <%--                        <td>--%>
 
-                            </tr>
-                        </table>
+            </tr>
+        </table>
 
-                </div>
+    </div>
 
 </div>
 <%--底部栏--%>
@@ -158,12 +158,12 @@
 </div>
 </body>
 <script type="text/javascript">
-        function toPage(pageutils){
-            window.location = 'http://localhost:8080/Film.action?currentPage='+pageutils;
-        }
+    function toPage(pageutils){
+        window.location = 'http://localhost:8080/preFilm.action?currentPage='+pageutils;
+    }
     function toPage2(pageutils){
         var page = document.getElementById("page");
-        window.location = 'http://localhost:8080/Film.action?currentPage='+pageutils.value;
+        window.location = 'http://localhost:8080/preFilm.action?currentPage='+pageutils.value;
     }
 </script>
 

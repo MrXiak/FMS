@@ -19,14 +19,29 @@
             margin: 0 auto;
         }
 
-        #top {
-            height: 60px;
-            width: 100%;
-        }
+        #top{
+            height: 70px;
+            width: 500px;
 
-        #top_logo {
+        }
+        #top_logo{
+            height: 50px;
+            width: 50px;
+            float: left;
+            margin-top: 20px;
             margin-left: 20px;
         }
+        #logo_word{
+            width: 80px;
+            height: 50px;
+            text-align: center;
+            line-height: 70px;
+            float: left;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #009688;
+        }
+
 
         #middle {
             width: 100%;
@@ -85,18 +100,16 @@
             border: 10px;
         }
 
-        .tishi {
-            font-size: 10px;
-            color: gray;
-        }
+
     </style>
 </head>
 <body>
 <div id="container">
     <div id="top">
         <div id="top_logo">
-            <img src="../image/logo.jpg" height="44" width="149" alt="no">
+            <img src="../image/head_image.png" height="50px" width="50px" alt="logo">
         </div>
+        <div id="logo_word">熊熊电影</div>
     </div>
     <hr>
     <div id="middle">

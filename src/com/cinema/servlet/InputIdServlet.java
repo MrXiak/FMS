@@ -20,13 +20,20 @@ public class InputIdServlet extends HttpServlet {
         //获取页面的值
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
         String uid=req.getParameter("user_id");
         IUserDao userDao=new IUserDaoImpl();
-        User u=userDao.changePassword(uid);
+        User u=userDao.selectByIdOnly(uid);
         if (u!=null){
+            u=userDao.changePassword(uid);
             HttpSession session = req.getSession();
             session.setAttribute("U", u);
             req.getRequestDispatcher("./login_register/forgetPassword.jsp").forward(req,resp);
+        }else{
+            out.print("<script type='text/javascript'>");
+            out.print("alert('无此账号，请重新输入！');");
+            out.print("window.location='./login_register/inputId.jsp';");
+            out.print("</script>");
         }
     }
 }

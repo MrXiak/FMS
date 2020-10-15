@@ -1,5 +1,6 @@
 <%@ page import="com.cinema.entity.FilmInfo" %>
-<%@ page import="java.util.List" %><%--<jsp:useBean id="pageutils" scope="request" type="sun.management.snmp.jvminstr.JvmMemGCTableMetaImpl.GCTableFilter"/>--%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.cinema.util.pageUtils" %><%--<jsp:useBean id="pageutils" scope="request" type="sun.management.snmp.jvminstr.JvmMemGCTableMetaImpl.GCTableFilter"/>--%>
 
 <%--
   Created by IntelliJ IDEA.
@@ -46,18 +47,15 @@
 </style>
 <script type="text/javascript">
     function toPage(pageutils){
-        window.location = 'http://localhost:8080/pageServlet?currentPage='+pageutils;
+        window.location = 'http://localhost:8080/Film.action?currentPage='+pageutils;
     }
     function toPage2(pageutils){
         var page = document.getElementById("page");
-        window.location = 'http://localhost:8080/pageServlet?currentPage='+pageutils.value;
+        window.location = 'http://localhost:8080/Film.action?currentPage='+pageutils.value;
     }
 </script>
 
 </head>
-<%
-    List<FilmInfo> filmInfos = (List<FilmInfo>) request.getAttribute("filmInfoList");
-%>
 <body>
 <center>
     <br><br>
@@ -74,7 +72,7 @@
             <th>电影价格</th>
             <th>电影评分</th>
         </tr>
-        <c:forEach items="<%=filmInfos%>" var="filmInfo">
+        <c:forEach items="${pageutils.records}" var="filmInfo">
             <tr>
                 <td><img src="${filmInfo.film_img }"height="200px" width="150px"></td>
                 <td>${filmInfo.film_id }</td>

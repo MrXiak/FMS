@@ -10,6 +10,23 @@
         <welcome-file>login_register/register.jsp</welcome-file>
 
     </welcome-file-list>
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <servlet-class>com.cinema.servlet.FilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>preFilm</servlet-name>
+        <servlet-class>com.cinema.servlet.preFilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>preFilm</servlet-name>
+        <url-pattern>/preFilm.action</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>pagetest</servlet-name>

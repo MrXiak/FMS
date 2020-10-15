@@ -31,8 +31,7 @@ public class FilmServlet extends HttpServlet {
         //保存查询的电影信息
         req.setAttribute("filmInfoList",filmInfoList);
         //转发请求
-        req.getRequestDispatcher("/index/Film.jsp").forward(req,resp);
-//        req.getRequestDispatcher("/index/index.jsp").forward(req,resp);
+        req.getRequestDispatcher("/index/index.jsp").forward(req,resp);
     }
 
 }
