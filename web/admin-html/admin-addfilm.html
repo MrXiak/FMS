@@ -21,24 +21,29 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片海报</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                        <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">影片编号</label>
-                    <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" required  lay-verify="required" placeholder="请点击右侧生成按钮生成订单编号" autocomplete="off" class="layui-input">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">影片编号</label>
+                        <div class="layui-input-block" style="width: 500px;">
+                            <input id="input_filmid" type="text" name="title" placeholder="请点击右侧生成按钮生成订单编号" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button onclick="newGuid()">生成</button>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片名称</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入影片名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="title" placeholder="请输入影片名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">类型</label>
-                    <div class="layui-input-block">
+                    <div class="layui-input-block" style="width: 600px;">
                         <input type="checkbox" name="like[love]" title="爱情">
                         <input type="checkbox" name="like[comedy]" title="喜剧">
                         <input type="checkbox" name="like[animation]" title="动画">
@@ -65,13 +70,13 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">时长</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入电影时长xxx（min）" autocomplete="off" class="layui-input">
+                        <input type="text" name="title" placeholder="请输入电影时长xxx（min）" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">导演</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入影片导演" autocomplete="off" class="layui-input">
+                        <input type="text" name="title" placeholder="请输入影片导演" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -82,44 +87,20 @@
                         </div>
                     </div>
                 </div>
-<!--                <div class="layui-form-item">-->
-<!--                    <label class="layui-form-label">密码框</label>-->
-<!--                    <div class="layui-input-inline">-->
-<!--                        <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">-->
-<!--                    </div>-->
-<!--                    <div class="layui-form-mid layui-word-aux">辅助文字</div>-->
-<!--                </div>-->
                 <div class="layui-form-item">
-                    <label class="layui-form-label">选择框</label>
+                    <label class="layui-form-label">版本</label>
                     <div class="layui-input-block">
-                        <select name="city" lay-verify="required">
-                            <option value=""></option>
-                            <option value="0">北京</option>
-                            <option value="1">上海</option>
-                            <option value="2">广州</option>
-                            <option value="3">深圳</option>
-                            <option value="4">杭州</option>
-                        </select>
+                        <input type="checkbox" name="like[2D]" title="2D">
+                        <input type="checkbox" name="like[3D]" title="3D">
+                        <input type="checkbox" name="like[2D MAX]" title="2D MAX">
+                        <input type="checkbox" name="like[3D MAX]" title="3D MAX">
                     </div>
                 </div>
 
-                <div class="layui-form-item">
-                    <label class="layui-form-label">开关</label>
-                    <div class="layui-input-block">
-                        <input type="checkbox" name="switch" lay-skin="switch">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">单选框</label>
-                    <div class="layui-input-block">
-                        <input type="radio" name="sex" value="男" title="男">
-                        <input type="radio" name="sex" value="女" title="女" checked>
-                    </div>
-                </div>
                 <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">文本域</label>
+                    <label class="layui-form-label">电影简介</label>
                     <div class="layui-input-block">
-                        <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                        <textarea name="desc" placeholder="请输入电影介绍" class="layui-textarea"></textarea>
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -142,22 +123,36 @@
     document.getElementById("lifilm").classList.add("layui-this");
     document.getElementById("ddaddfilm").classList.add("layui-this");
 
-    //Demo
-    layui.use('form', 'laydate' , function(){
-        var form = layui.form
-        ,laydate = layui.laydate;
+    function newGuid(){
+        var guid = "";
+        for (var i = 1; i <= 12; i++){
+            var n = Math.floor(Math.random()*16.0).toString(16);
+            guid += n;
+        }
+        document.getElementById("input_filmid").innerHTML(guid);
+    }
+
+
+    layui.use('laydate' , function() {
+        var laydate = layui.laydate;
 
         //开启公历节日
         laydate.render({
             elem: '#calendar'
             ,calendar: true
         });
+    });
+
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
         //监听提交
         form.on('submit(formDemo)', function(data){
             layer.msg(JSON.stringify(data.field));
             return false;
         });
     });
+
 </script>
 </body>
 </html>
