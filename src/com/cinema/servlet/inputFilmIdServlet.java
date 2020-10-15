@@ -1,18 +1,17 @@
 package com.cinema.servlet;
 
-import com.cinema.entity.User;
-import com.cinema.service.IUserService;
-import com.cinema.service.impl.IUserServiceImpl;
+import com.cinema.dao.ITicketsDao;
+import com.cinema.dao.impl.ITicketsDaoImpl;
+import com.cinema.entity.Ticket;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.*;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-public class BuyTicketsServlet extends HttpServlet {
+public class inputFilmIdServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
     }
@@ -21,7 +20,14 @@ public class BuyTicketsServlet extends HttpServlet {
         //获取页面的值
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");
-
+        String filmid=req.getParameter("film_id");
+        ITicketsDao ticketsDao=new ITicketsDaoImpl();
+        Ticket t=ticketsDao.selectByfilmID(filmid);
+        if (t!=null){
+            HttpSession session = req.getSession();
+            session.setAttribute("T", t);
+            req.getRequestDispatcher("./user/buytickets.jsp").forward(req,resp);
+        }
 //        PrintWriter out = resp.getWriter();
 //        String uid=req.getParameter("user_id");
 //        String upass=req.getParameter("user_password");

@@ -112,6 +112,6 @@ function createorder(obj){
     if (i == 0){
         alert("请选择至少一个座位！");
     }else {
-        window.location.href="orderinfo.html";
+        window.location.href="../user/orderInfo.jsp";
     }
 }
