@@ -22,6 +22,8 @@ for (var m = 0; m < 53; m++) { //往数组里放入53条数据
         <td>第` + m + `条消息</td>
         <td>第` + m + `条消息</td>
         <td>第` + m + `条消息</td>
+        <td>第` + m + `条消息</td>
+        <td>第` + m + `条消息</td>
         <td>
             <button type="button" class="btnoperate edit"> 编辑</button>
             <button type="button" class="btnoperate del"> 删除</button>

@@ -136,7 +136,8 @@
             var n = Math.floor(Math.random()*16.0).toString(16);
             guid += n;
         }
-        document.getElementById("input_filmid").innerHTML(guid);
+        // document.getElementById("input_filmid").innerHTML = guid;
+        $("#input_filmid").attr("value",guid);
     }
 
 
