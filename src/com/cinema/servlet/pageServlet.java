@@ -1,8 +1,6 @@
 package com.cinema.servlet;
 
-import com.cinema.dao.filmInfoDao;
-import com.cinema.entity.FilmInfo;
-import com.cinema.service.pageService;
+import com.cinema.service.impl.pageService;
 import com.cinema.util.pageUtils;
 
 import javax.servlet.ServletException;
@@ -10,9 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-    public class pageServlet extends HttpServlet {
+public class pageServlet extends HttpServlet {
     private static final long serialVersionUID=1L;
     private pageService pageservice =new pageService();
     protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {

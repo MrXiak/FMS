@@ -70,8 +70,6 @@
 <script>
     document.getElementById("lifilm").classList.add("layui-this");
     document.getElementById("ddfilm").classList.add("layui-this");
-
-
 </script>
 </body>
 </html>

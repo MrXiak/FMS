@@ -1,6 +1,6 @@
 package com.cinema.servlet;
 
-import com.cinema.service.pageService;
+import com.cinema.service.impl.pageService;
 import com.cinema.util.pageUtils;
 
 import javax.servlet.ServletException;

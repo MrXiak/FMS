@@ -1,4 +1,4 @@
-package com.cinema.service;
+package com.cinema.service.impl;
 
 import com.cinema.entity.FilmInfo;
 import com.cinema.entity.preFilm;

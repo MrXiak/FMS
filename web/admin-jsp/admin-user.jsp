@@ -1,4 +1,8 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.cinema.dao.IUserDao" %>
+<%@ page import="com.cinema.dao.impl.IUserDaoImpl" %>
+<%@ page import="com.cinema.entity.User" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: 67463
   Date: 2020/10/15
@@ -19,6 +23,10 @@
     <script src="../js/jquery/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="../css/topage.css">
 </head>
+<%
+    IUserDao userDao=new IUserDaoImpl();
+    List<User> us=userDao.getAll();
+%>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <script type="text/javascript" src="../js/admin-navigation-head.js"></script>
@@ -43,7 +51,25 @@
                         <th>操作</th>
                     </tr>
                     </thead>
-                    <tbody> </tbody>
+                    <tbody>
+                    <c:forEach items="<%= us%>" var="user">
+                        <tr>
+                            <td>${user.user_image}</td>
+                            <td>${user.user_name}</td>
+                            <td>${user.user_id}</td>
+                            <td>${user.user_sex}</td>
+                            <td>${user.user_tel}</td>
+                            <td>${user.question_one}</td>
+                            <td>${user.answer_one}</td>
+                            <td>${user.question_two}</td>
+                            <td>${user.answer_two}</td>
+                            <td>
+                                <button type="button" class="btnoperate edit"> 编辑</button>
+                                <button type="button" class="btnoperate del"> 删除</button>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
                 </table>
             </div>
             <div class="admin_film_table_foot">
@@ -59,7 +85,6 @@
 </div>
 </div>
 
-<script src="../js/admin-user-tablepage.js"></script>
 
 <script>
     document.getElementById("liuser").classList.add("layui-this");

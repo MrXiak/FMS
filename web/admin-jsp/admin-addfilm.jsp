@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="layui-inline">
-                        <button onclick="newGuid()">生成</button>
+                        <input type="button" onclick="newGuid()" value="生成" style="padding: 2px 5px 2px 5px">
                     </div>
                 </div>
                 <div class="layui-form-item">
