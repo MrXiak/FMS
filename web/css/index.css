@@ -23,18 +23,18 @@ table,td{
     margin:0 auto;
     position: relative;
 }
-#theader{
-    width: 1200px;
-    /*margin: 0 auto;*/
-    height: 80px;
-    position: fixed;
-    position: absolute;
-    top: 0;
-    background: white;
-    border: 1px solid lightgray;
-    line-height: 80px;
-    z-index:999;
-}
+/*#theader{*/
+/*    width: 1200px;*/
+/*    !*margin: 0 auto;*!*/
+/*    height: 80px;*/
+/*    position: fixed;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    background: white;*/
+/*    border: 1px solid lightgray;*/
+/*    line-height: 80px;*/
+/*    z-index:999;*/
+/*}*/
 #logo{
     width: 200px;
     height: 100px;

@@ -30,12 +30,12 @@ function page_ctrl(data_obj) {
         function change_content() {
 
             /*此处根据项目实际自行编写页面显示内容的方法,举例说明:*/
-
             var page_content = '<table class="page_table"><thead><tr><th>影片封面</th><th>影片编号</th><th>影片名称</th><th>类型</th><th>时长</th><th>导演</th><th>上映日期</th><th>版本</th><th>影片详情</th><th>票价</th><th>评分</th></tr></thead>';//当前页内容
-            page_content += '<tbody>'
+            p1age_content += '<tbody>'
             for(var i=0;i<per_num;i++){
+
                 page_content +=
-                    '<tr><td>'+((current_page-1)*per_num+i+1)+',影片封面</td>' +
+                    '<tr><td>'+${filmInfo.film_img}+',影片封面</td>' +
                     '<td>'+((current_page-1)*per_num+i+1)+',影片编号</td>' +
                     '<td>'+((current_page-1)*per_num+i+1)+',影片名称</td>' +
                     '<td>'+((current_page-1)*per_num+i+1)+',类型</td>' +
@@ -46,6 +46,7 @@ function page_ctrl(data_obj) {
                     '<td>'+((current_page-1)*per_num+i+1)+',影片详情</td>' +
                     '<td>'+((current_page-1)*per_num+i+1)+',票价</td>' +
                     '<td>'+((current_page-1)*per_num+i+1)+',评分</td></tr>';
+
             }
             page_content+='</tbody></table>';
             $(obj_box).children('.page_content').html(page_content);

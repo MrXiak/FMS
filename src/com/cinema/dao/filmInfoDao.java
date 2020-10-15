@@ -81,35 +81,4 @@ public class filmInfoDao {
     }
 
 
-//    public pageUtils getPage(int pageNo,int pageSize) throws SQLException {
-//        Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
-//        PreparedStatement ps=null;
-//        ResultSet rs=null;
-//        List<FilmInfo> filmInfoList=new ArrayList<FilmInfo>();
-//        pageUtils page=null;
-//        try{
-//            int totalCount=0;
-//            ps=conn.prepareStatement("select count (film_id)from film");
-//            rs=ps.executeQuery();
-//            while(rs.next()){
-//                totalCount=rs.getInt(1);
-//            }
-//            //分段查询 例如pageNo=1，pageSize=5 ->取表里前五条数据作为第一页
-//            ps=conn.prepareStatement("select film_id,film_name from film limit"+(pageNo-1)*pageSize+","+pageSize);
-//            rs=ps.executeQuery();
-//            while(rs.next()){
-//                FilmInfo filmInfo=new FilmInfo();
-//                filmInfo.setFilm_id(rs.getInt(1));
-//                filmInfo.setFilm_name(rs.getString(2));
-//                filmInfoList.add(filmInfo);
-//            }
-//            page =new pageUtils(pageSize,totalCount);
-//            page.setData(filmInfoList);
-//        }catch (SQLException e){
-//            e.printStackTrace();
-//        }
-//
-//        return page;
-//    }
-
 }

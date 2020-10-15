@@ -1,7 +1,5 @@
 package com.cinema.servlet;
 
-import com.cinema.dao.filmInfoDao;
-import com.cinema.entity.FilmInfo;
 import com.cinema.service.pageService;
 import com.cinema.util.pageUtils;
 
@@ -10,12 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-    public class pageServlet extends HttpServlet {
+public class preFilmServlet extends HttpServlet {
+
     private static final long serialVersionUID=1L;
     private pageService pageservice =new pageService();
-    protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request,response);
     }
     protected  void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,9 +23,9 @@ import java.util.List;
         if (currentPage==null||"".equals(currentPage)){
             currentPage="1";
         }
-        pageUtils pageutils=pageservice.getFilms(Integer.parseInt(currentPage));
+        pageUtils pageutils=pageservice.getPreFilm(Integer.parseInt(currentPage));
         request.setAttribute("pageutils",pageutils);
-        request.getRequestDispatcher("/index/Film.jsp").forward(request,response);
+        request.getRequestDispatcher("/index/preFilm.jsp").forward(request,response);
 
     }
 

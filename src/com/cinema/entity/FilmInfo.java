@@ -3,15 +3,15 @@ package com.cinema.entity;
 import com.cinema.util.DBUtil;
 
 public class FilmInfo {
-    private String film_img;
-    private Integer film_id;
-    private String film_name;
-    private Integer film_time;
-    private String film_actor;
-    private String film_date;
-    private String film_info;
-    private Double film_price;
-    private Double film_score;
+    private String film_img;  //图片
+    private Integer film_id;   //id
+    private String film_name;   //电影名
+    private Integer film_time;  //电影时常
+    private String film_actor;  //电影导演
+    private String film_date;   //上映日期
+    private String film_info;   //详情
+    private Double film_price;  //票价
+    private Double film_score;  //评分
 
     public FilmInfo(){
 

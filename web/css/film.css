@@ -3,7 +3,7 @@
 /*a:active{color: red}*/
 
 #container{
-    height: 5000px;
+    height: 900px;
     width:1200px;
     margin:80px auto;
 
@@ -49,6 +49,7 @@
     color: red;
 }
 
+
 #updating{
     height: 60px;
     line-height: 60px;
@@ -57,15 +58,21 @@
     font-size: 16px;
     /*margin-left: 80px;*/
 }
-#pageSelect{
-    border:1px solid red;
-    height: 60px;
-    width: 80px;
-    magin:20px auto;
+#film_page{
+    float: left;
+    margin-left:50px;
+    width: 1200px;
+    height: 100px;
+}
+#page_Select{
+    height: 100px;
+    width: 300px;
+    margin: 0 auto;
+    line-height: 100px;
 }
 .film_img{
     margin-top: 5%;
-    margin-left:20px;
+    margin-left:15px;
     height:200px;
     width: 150px;
     border: 1px solid lightgray;
@@ -128,7 +135,7 @@
     border: 1px solid lightgray;
     text-align: center;
     color: red;
-    margin-left:20px;
+    margin-left:15px;
 }
 
 
@@ -137,4 +144,38 @@
     background-color: red;
     box-shadow: darkgray 5px 5px 10px;
 
+}
+.footer{
+    background-color: #262426;
+    /*padding: 56px 0;*/
+    margin: 0 auto;
+    width: 100%;
+    height: 300px;
+    /*z-index: 90;*/
+    /*position: absolute;*/
+    /*bottom: 0px;*/
+}
+.friendly-links{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    height: 22px;
+    color: white;
+}
+
+.friendly-links-credentials{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    height: 22px;
+    color: white;
+}
+.certificate{
+    margin-top: 20px;
+    padding: 0;
+    text-align: center;
 }
