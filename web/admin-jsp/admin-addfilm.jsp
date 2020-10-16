@@ -24,18 +24,18 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div class="admin_addfilm_maincontainer">
-            <form class="layui-form" action="">
+            <form class="layui-form" action="${pageContext.request.contextPath}/add_prefilm.action" method="post">
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片海报</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                        <input type="text" name="road" placeholder="海报路径" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <label class="layui-form-label">影片编号</label>
                         <div class="layui-input-block" style="width: 500px;">
-                            <input id="input_filmid" type="text" name="title" placeholder="请点击右侧生成按钮生成订单编号" autocomplete="off" class="layui-input">
+                            <input id="input_filmid" type="text" name="input_pre_filmid" placeholder="请点击右侧生成按钮生成订单编号" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-inline">
@@ -45,74 +45,67 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片名称</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" placeholder="请输入影片名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="p_name" placeholder="请输入影片名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">类型</label>
                     <div class="layui-input-block" style="width: 600px;">
-                        <input type="checkbox" name="like[love]" title="爱情">
-                        <input type="checkbox" name="like[comedy]" title="喜剧">
-                        <input type="checkbox" name="like[animation]" title="动画">
-                        <input type="checkbox" name="like[story]" title="剧情">
-                        <input type="checkbox" name="like[terror]" title="恐怖">
-                        <input type="checkbox" name="like[panic]" title="惊悚">
-                        <input type="checkbox" name="like[science]" title="科幻">
-                        <input type="checkbox" name="like[action]" title="动作">
-                        <input type="checkbox" name="like[suspense]" title="悬疑">
-                        <input type="checkbox" name="like[crime]" title="犯罪">
-                        <input type="checkbox" name="like[adventure]" title="冒险">
-                        <input type="checkbox" name="like[war]" title="战争">
-                        <input type="checkbox" name="like[strange]" title="奇幻">
-                        <input type="checkbox" name="like[sport]" title="运动">
-                        <input type="checkbox" name="like[family]" title="家庭">
-                        <input type="checkbox" name="like[ancient costume]" title="古装">
-                        <input type="checkbox" name="like[swordsman]" title="武侠">
-                        <input type="checkbox" name="like[song and dance]" title="歌舞">
-                        <input type="checkbox" name="like[history]" title="历史">
-                        <input type="checkbox" name="like[biography]" title="传记">
-                        <input type="checkbox" name="like[documentary]" title="纪录片">
+                        <input type="checkbox" name="like[love]" title="爱情" value="love">
+                        <input type="checkbox" name="like[comedy]" title="喜剧" value="comedy">
+                        <input type="checkbox" name="like[animation]" title="动画" value="animation">
+                        <input type="checkbox" name="like[story]" title="剧情" value="story">
+                        <input type="checkbox" name="like[panic]" title="惊悚" value="panic">
+                        <input type="checkbox" name="like[science]" title="科幻" value="science">
+                        <input type="checkbox" name="like[suspense]" title="悬疑" value="suspense">
+                        <input type="checkbox" name="like[crime]" title="犯罪" value="crime">
+                        <input type="checkbox" name="like[adventure]" title="冒险" value="adventure">
+                        <input type="checkbox" name="like[war]" title="战争" value="war">
+                        <input type="checkbox" name="like[family]" title="家庭" value="family">
+                        <input type="checkbox" name="like[swordsman]" title="武侠" value="swordsman">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">时长</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" placeholder="请输入电影时长xxx（min）" autocomplete="off" class="layui-input">
+                        <input type="text" name="p_time" placeholder="请输入电影时长xxx（min）" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">导演</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" placeholder="请输入影片导演" autocomplete="off" class="layui-input">
+                        <input type="text" name="p_actor" placeholder="请输入影片导演" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <label class="layui-form-label">上映日期</label>
                         <div class="layui-input-inline">
-                            <input type="text" class="layui-input" id="calendar" placeholder="yyyy-MM-dd">
+                            <input type="text" class="layui-input" id="calendar" placeholder="yyyy-MM-dd" name="p_date">
                         </div>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">版本</label>
                     <div class="layui-input-block">
-                        <input type="checkbox" name="like[2D]" title="2D">
-                        <input type="checkbox" name="like[3D]" title="3D">
-                        <input type="checkbox" name="like[2D MAX]" title="2D MAX">
-                        <input type="checkbox" name="like[3D MAX]" title="3D MAX">
+                        <input type="checkbox" name="like[2D]" title="2D" value="twod">
+                        <input type="checkbox" name="like[3D]" title="3D" value="threed">
+                        <input type="checkbox" name="like[2D MAX]" title="2D MAX" value="twodmax">
+                        <input type="checkbox" name="like[3D MAX]" title="3D MAX" value="threedmax">
                     </div>
                 </div>
 
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">电影简介</label>
                     <div class="layui-input-block">
-                        <textarea name="desc" placeholder="请输入电影介绍" class="layui-textarea"></textarea>
+                        <label>
+                            <textarea name="desc" placeholder="请输入电影介绍" class="layui-textarea" ></textarea>
+                        </label>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <input type="submit" class="layui-btn" value="立即提交"/>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>
@@ -125,7 +118,7 @@
     </div>
 </div>
 <script src="../layui/layui.js" charset=""></script>
-
+<script src="../js/jquery/jquery-3.2.1.js"></script>
 <script>
     document.getElementById("lifilm").classList.add("layui-this");
     document.getElementById("ddaddfilm").classList.add("layui-this");
@@ -148,6 +141,7 @@
         laydate.render({
             elem: '#calendar'
             ,calendar: true
+            ,trigger:'click'
         });
     });
 
