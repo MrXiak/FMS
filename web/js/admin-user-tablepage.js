@@ -6,6 +6,8 @@ function newGuid(){
     }
     return guid;
 }
+
+var a = "<%  %>"
 var nowPage = 0, //当前页
     count = 10 //每页显示多少条消息
 pageAll = 0; //总页数

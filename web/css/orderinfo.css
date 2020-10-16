@@ -29,12 +29,16 @@ body {
     border: 1px solid lightgrey;
     text-align: center;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 .main_container_middle_table thead{
     background: rgba(238,238,238,0.7);
 }
 tr{
     height: 50px;
+}
+td{
+    word-wrap: break-word;
 }
 
 .main_container{
@@ -93,4 +97,42 @@ tr{
     font-size: 13px;
     color: gray;
     text-align: right;
+}
+
+.main_container_middle_foot{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.main_container_middle_foot_left{
+    margin: 20px;
+    width: 200px;
+    float: left;
+}
+
+.main_container_middle_foot_right{
+    margin: 20px;
+    width: 200px;
+    float: right;
+}
+
+.order_submit_button{
+    font-family: 黑体;
+    font-size: 16px;
+    width: 200px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    padding: 14px 32px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    border: 2px solid #FF5722;
+    border-radius:50px;
+    box-shadow: 5px 5px 20px #d0d1d2;
+    outline: none;
+    cursor: pointer;
+}
+.order_submit_button:hover{
+    background-color: #FF5722;
+    color: white;
 }

@@ -37,7 +37,7 @@
     <div class="main_container_middle">
         <div class="main_container_middle_top">
             <div class="main_container_middle_top_left" id="orderid">
-                订单号：
+                熊熊订单号：
             </div>
             <div class="main_container_middle_top_right">
                 （有订单问题可拨打客服电话：1001-1001，工作时间：9:00-24:00）
@@ -45,22 +45,31 @@
         </div>
         <table class="main_container_middle_table">
             <thead>
-            <tr>
-                <td>影片</td>
-                <td>时间</td>
-                <td>影院</td>
-                <td>座位</td>
-            </tr>
+                <tr>
+                    <td>影片</td>
+                    <td>时间</td>
+                    <td>影院</td>
+                    <td>座位</td>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>${T.film_name}</td>
-                <td>${T.film_time}</td>
-                <td>``````</td>
-                <td>``````</td>
-            </tr>
+                <tr>
+                    <td>${T.film_name}</td>
+                    <td>${T.film_time}</td>
+                    <td>`````11111111111111111111111111111111111111111111111111111111111111`</td>
+                    <td>``````</td>
+                </tr>
             </tbody>
         </table>
+        <div class="main_container_middle_foot">
+            <div class="main_container_middle_foot_left">
+                <span style="color: red">￥</span>
+                <span style="color: red; font-size: 30px">0</span>
+            </div>
+            <div class="main_container_middle_foot_right">
+                <input type="button" class="order_submit_button" value="确认支付">
+            </div>
+        </div>
     </div>
 </div>
 
