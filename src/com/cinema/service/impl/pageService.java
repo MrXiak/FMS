@@ -32,7 +32,7 @@ public class pageService {
         int pageSize=6;//默认每页显示6条记录
 
         try{
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
             st=conn.createStatement();
             rs=st.executeQuery("select count(film_id) totalNum from film");
             if (rs.next()) {
@@ -79,7 +79,7 @@ public class pageService {
         int pageSize=6;//默认每页显示6条记录
 
         try{
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
             st=conn.createStatement();
             rs=st.executeQuery("select count(pre_film_id) totalNum from prefilm");
             if (rs.next()) {

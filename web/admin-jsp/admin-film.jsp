@@ -1,4 +1,7 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.cinema.dao.impl.filmInfoDao" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.cinema.entity.FilmInfo" %><%--
   Created by IntelliJ IDEA.
   User: 67463
   Date: 2020/10/15
@@ -21,10 +24,13 @@
     <link rel="stylesheet" href="../css/admin-film.css">
 
     <script src="../js/jquery/jquery-3.2.1.js"></script>
-    <script src="../js/admin-film-tablepage.js"></script>
     <link rel="stylesheet" href="../css/topage.css">
 
 </head>
+<%
+    filmInfoDao filmInfoDao=new filmInfoDao();
+    List<FilmInfo> filmInfoList= filmInfoDao.findAllFilms();
+%>
 <body>
 <div class="layui-layout layui-layout-admin">
     <script type="text/javascript" src="../js/admin-navigation-head.js"></script>
@@ -51,7 +57,27 @@
                         <th>操作</th>
                     </tr>
                     </thead>
-                    <tbody> </tbody>
+                    <tbody>
+                    <c:forEach items="<%= filmInfoList%>" var="fl">
+                    <tr>
+                        <td>${fl.film_img}</td>
+                        <td>${fl.film_id}</td>
+                        <td>${fl.film_name}</td>
+                        <td>${fl.film_type}</td>
+                        <td>${fl.film_time}</td>
+                        <td>${fl.film_actor}</td>
+                        <td>${fl.film_date}</td>
+                        <td>${fl.film_version}</td>
+                        <td>${fl.film_info}</td>
+                        <td>${fl.film_price}</td>
+                        <td>${fl.film_score}</td>
+                        <td>
+                            <button type="button" class="btnoperate edit"> 编辑</button>
+                            <button type="button" class="btnoperate del"> 删除</button>
+                        </td>
+                    </tr>
+                    </c:forEach>
+                    </tbody>
                 </table>
             </div>
             <div class="admin_film_table_foot">

@@ -1,6 +1,5 @@
 package com.cinema.servlet;
 
-import com.cinema.dao.filmInfoDao;
 import com.cinema.entity.preFilm;
 import com.cinema.service.preFilmService;
 
@@ -8,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -26,7 +26,8 @@ public class preFilmIndexServlet extends HttpServlet {
         preFilmService dao=new preFilmService();
         //即将上映的影片在首页显示8个
         List<preFilm> preFilmList=dao.findPreAll();
-        req.setAttribute("preFilmList",preFilmList);
+        HttpSession session=req.getSession();
+        session.setAttribute("preFilmList",preFilmList);
         req.getRequestDispatcher("/index/index.jsp").forward(req,resp);
     }
 }
