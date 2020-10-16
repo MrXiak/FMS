@@ -28,7 +28,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片海报</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                        <input type="text" name="title" placeholder="请输入标题"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -148,6 +148,7 @@
         laydate.render({
             elem: '#calendar'
             ,calendar: true
+            ,trigger: 'click'
         });
     });
 
