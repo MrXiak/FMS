@@ -1,4 +1,10 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.cinema.dao.impl.filmInfoDao" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.cinema.entity.FilmInfo" %>
+<%@ page import="com.cinema.dao.IUserDao" %>
+<%@ page import="com.cinema.dao.impl.IUserDaoImpl" %>
+<%@ page import="com.cinema.entity.User" %><%--
   Created by IntelliJ IDEA.
   User: 67463
   Date: 2020/10/15
@@ -24,6 +30,10 @@
     <link rel="stylesheet" href="../css/topage.css">
 
 </head>
+<%
+    filmInfoDao filmInfoDao=new filmInfoDao();
+    List<FilmInfo> filmInfoList= filmInfoDao.findAllFilms();
+%>
 <body>
 <div class="layui-layout layui-layout-admin">
     <script type="text/javascript" src="../js/admin-navigation-head.js"></script>
@@ -50,23 +60,27 @@
                         <th>操作</th>
                     </tr>
                     </thead>
-                    <tbody> <tr>
-                        <td>第` + m + `条消息</td>
-                        <td>第` + filmid + `条消息</td>
-                        <td>第` + m + `ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd条消息</td>
-                        <td>第` + m + `条消息</td>
-                        <td>第` + m + `条消息</td>
-                        <td>第` + m + `条消息</td>
-                        <td>第` + m + `条消息</td>
-                        <td>第` + m + `条消息</td>
-                        <td>第` + m + `条消息</td>
-                        <td>第` + m + `条消息</td>
-                        <td>第` + m + `条消息</td>
+                    <tbody>
+                    <c:forEach items="<%= filmInfoList%>" var="fl">
+                    <tr>
+                        <td><img src="${fl.film_img}" style="max-width: 100%"></td>
+                        <td>${fl.film_id}</td>
+                        <td>${fl.film_name}</td>
+                        <td>${fl.film_type}</td>
+                        <td>${fl.film_time}</td>
+                        <td>${fl.film_actor}</td>
+                        <td>${fl.film_date}</td>
+                        <td>${fl.film_version}</td>
+                        <td>${fl.film_info}</td>
+                        <td>${fl.film_price}</td>
+                        <td>${fl.film_score}</td>
                         <td>
                             <button type="button" class="btnoperate edit"> 编辑</button>
                             <button type="button" class="btnoperate del"> 删除</button>
                         </td>
-                    </tr></tbody>
+                    </tr>
+                    </c:forEach>
+                    </tbody>
                 </table>
             </div>
             <div class="admin_film_table_foot">
@@ -84,8 +98,6 @@
 <script>
     document.getElementById("lifilm").classList.add("layui-this");
     document.getElementById("ddfilm").classList.add("layui-this");
-
-
 </script>
 </body>
 </html>

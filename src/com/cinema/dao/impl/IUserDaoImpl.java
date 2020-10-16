@@ -7,6 +7,8 @@ import com.cinema.util.DBUtil;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class  IUserDaoImpl implements IUserDao {
     @Override
@@ -162,5 +164,52 @@ public class  IUserDaoImpl implements IUserDao {
         DBUtil.executeUpdate();
         DBUtil.close();
         return null;
+    }
+
+    @Override
+    public List<User> getAll() {
+        DBUtil.initConnection();//初始化connection对象
+        String sql="select * from user";
+        DBUtil.initPrepareStatement(sql);
+        DBUtil.executeQuery();
+        List<User> list=new ArrayList<>();
+        ResultSet rs=DBUtil.getRes();
+        try {
+            while (rs.next()) {
+                String username=rs.getString("user_name");
+                String userid = rs.getString("user_id");
+                String userpassword = rs.getString("user_password");
+                String usersex=rs.getString("user_sex");
+                String usertel=rs.getString("user_tel");
+                String userbirthday=rs.getString("user_birthday");
+                String lifestate=rs.getString("life_state");
+                String hobby=rs.getString("hobbies");
+                String word=rs.getString("personal_word");
+                String q1=rs.getString("question_one");
+                String a1=rs.getString("answer_one");
+                String q2=rs.getString("question_two");
+                String a2=rs.getString("answer_two");
+
+                User user=new User();
+                user.setUser_name(username);
+                user.setUser_id(userid);
+                user.setUser_password(userpassword);
+                user.setUser_sex(usersex);
+                user.setUser_tel(usertel);
+                user.setUser_birthday(userbirthday);
+                user.setLife_state(lifestate);
+                user.setHobbies(hobby);
+                user.setPersonal_word(word);
+                user.setQuestion_one(q1);
+                user.setAnswer_one(a1);
+                user.setQuestion_two(q2);
+                user.setAnswer_two(a2);
+                list.add(user);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        DBUtil.close();
+        return list;
     }
 }
