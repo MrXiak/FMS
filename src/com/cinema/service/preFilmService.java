@@ -22,7 +22,7 @@ public class preFilmService {
         List<preFilm> preFilmList=new ArrayList<preFilm>();
         try {
             //获取数据库连接
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
             //sql语句
             String sql="select * from prefilm limit 8";
             //创建sql执行对象

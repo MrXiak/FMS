@@ -19,17 +19,6 @@ public class FilmInfo {
 
     }
 
-    public FilmInfo(String film_img, Integer film_id, String film_name, Integer film_time, String film_actor, String film_date, String film_info, Double film_price, Double film_score) {
-        this.film_img = film_img;
-        this.film_id = film_id;
-        this.film_name = film_name;
-        this.film_time = film_time;
-        this.film_actor = film_actor;
-        this.film_date = film_date;
-        this.film_info = film_info;
-        this.film_price = film_price;
-        this.film_score = film_score;
-    }
     public FilmInfo(String film_img, Integer film_id, String film_name, String film_type, Integer film_time, String film_actor, String film_date, String film_version, String film_info, Double film_price, Double film_score) {
         this.film_img = film_img;
         this.film_id = film_id;
@@ -68,6 +57,14 @@ public class FilmInfo {
         this.film_name = film_name;
     }
 
+    public String getFilm_type() {
+        return film_type;
+    }
+
+    public void setFilm_type(String film_type) {
+        this.film_type = film_type;
+    }
+
     public Integer getFilm_time() {
         return film_time;
     }
@@ -92,6 +89,14 @@ public class FilmInfo {
         this.film_date = film_date;
     }
 
+    public String getFilm_version() {
+        return film_version;
+    }
+
+    public void setFilm_version(String film_version) {
+        this.film_version = film_version;
+    }
+
     public String getFilm_info() {
         return film_info;
     }
@@ -114,22 +119,6 @@ public class FilmInfo {
 
     public void setFilm_score(Double film_score) {
         this.film_score = film_score;
-    }
-
-    public String getFilm_type() {
-        return film_type;
-    }
-
-    public void setFilm_type(String film_type) {
-        this.film_type = film_type;
-    }
-
-    public String getFilm_version() {
-        return film_version;
-    }
-
-    public void setFilm_version(String film_version) {
-        this.film_version = film_version;
     }
 
     @Override

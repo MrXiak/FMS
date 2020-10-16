@@ -21,41 +21,41 @@ public class filmInfoDao {
         }
     }
 
-    public void addFilmInfo(FilmInfo filmInfo){
-        Connection conn=null;
-        Statement stmt=null;
-        try {
-            //获取数据库连接
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
-            //sql语句
-            String sql="update film set film_img=?,film_id=?,film_name=?,film_time=?,film_actor=?,film_date=?,film_info=?,film_price=?,film_score=?";
-//                    "('"+filmInfo.getFilm_img()+","+filmInfo.getFilm_id()+","+filmInfo.getFilm_name()+","+filmInfo.getFilm_time()+","+filmInfo.getFilm_actor()+","+filmInfo.getFilm_date()+","+filmInfo.getFilm_info()+","+filmInfo.getFilm_price()+","+filmInfo.getFilm_score()+"')";
-            //创建sql执行对象
-            stmt=conn.createStatement();
-            //执行sql语句
-            int row =stmt.executeUpdate(sql);
-            if (row!=1){
-                throw  new RuntimeException("新增电影失败！");
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
-            if (stmt!=null){
-                try {
-                    stmt.close();
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
-            }
-        }
-    }
+//    public void addFilmInfo(FilmInfo filmInfo){
+//        Connection conn=null;
+//        Statement stmt=null;
+//        try {
+//            //获取数据库连接
+//            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
+//            //sql语句
+//            String sql="update film set film_img=?,film_id=?,film_name=?,film_time=?,film_actor=?,film_date=?,film_info=?,film_price=?,film_score=?";
+////                    "('"+filmInfo.getFilm_img()+","+filmInfo.getFilm_id()+","+filmInfo.getFilm_name()+","+filmInfo.getFilm_time()+","+filmInfo.getFilm_actor()+","+filmInfo.getFilm_date()+","+filmInfo.getFilm_info()+","+filmInfo.getFilm_price()+","+filmInfo.getFilm_score()+"')";
+//            //创建sql执行对象
+//            stmt=conn.createStatement();
+//            //执行sql语句
+//            int row =stmt.executeUpdate(sql);
+//            if (row!=1){
+//                throw  new RuntimeException("新增电影失败！");
+//            }
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }finally {
+//            if (stmt!=null){
+//                try {
+//                    stmt.close();
+//                } catch (SQLException throwables) {
+//                    throwables.printStackTrace();
+//                }
+//            }
+//        }
+//    }
     public List<FilmInfo> findAll(){
         Connection conn=null;
         Statement stmt=null;
         List<FilmInfo> filmInfoList=new ArrayList<FilmInfo>();
         try {
             //获取数据库连接
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
             //sql语句
             String sql="select * from film limit 8 ";
             //创建sql执行对象
@@ -71,11 +71,11 @@ public class filmInfoDao {
                 Integer film_time= Integer.valueOf(rs.getString("film_time"));
                 String film_actor=rs.getString("film_actor");
                 String film_date=rs.getString("film_date");
-                String film_info=rs.getString("film_info");
                 String film_version=rs.getString("film_version");
+                String film_info=rs.getString("film_info");
                 Double film_price= Double.valueOf(rs.getString("film_price"));
                 Double film_score= Double.valueOf(rs.getString("film_score"));
-                FilmInfo filmInfo=new FilmInfo(film_img,film_id,film_name,film_type,film_time,film_actor,film_date,film_info,film_version,film_price,film_score);
+                FilmInfo filmInfo=new FilmInfo(film_img,film_id,film_name,film_type,film_time,film_actor,film_date,film_version,film_info,film_price,film_score);
                 filmInfoList.add(filmInfo);
             }
         } catch (SQLException throwables) {

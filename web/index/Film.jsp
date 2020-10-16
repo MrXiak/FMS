@@ -35,9 +35,9 @@
                 <%--影片展示--%>
                 <div  style="margin-top:50px;height: 800px;width: 1200px">
                 <div id="film_page">
-                <table style="border-collapse: separate;border-spacing: 20px 5px">
+                <table style="border-collapse: separate;border-spacing: 20px 5px;table-layout: fixed;">
+                    <tr style="word-wrap: break-word;">
                 <c:forEach items="${pageutils.records}" var="filmInfo">
-
                         <td>
                             <a href="#" >
                                 <div class="film_img">
@@ -49,10 +49,10 @@
                                 </div>
                                 <a href="/index/cinemaSelect.jsp"><div class="buyTickets">购票</div></a>
                             </a>
-                            <div class="film_type" >2DIMAX</div>
+                            <div class="film_type" >${filmInfo.film_version }</div>
                         </td>
-
                 </c:forEach>
+                    </tr>
                 </table>
                 </div>
     </div>

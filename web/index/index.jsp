@@ -25,7 +25,15 @@
 <script type="text/javascript" src="../js/navigation-head.js"></script>
 <div id="main_body">
     <div id="film_pic">
-        <img src="../image/shouye3.png" width="100%" height="100%">
+        <div class="layui-carousel" id="test1">
+            <div carousel-item>
+                <div><img src="../image/shouye3.png"width="100%"height="100%"></div>
+                <div><img src="../image/bl.png"width="100%"height="100%"></div>
+                <div><img src="../image/fsh.png"width="100%"height="100%"></div>
+                <div><img src="../image/dh.png"width="100%"height="100%"></div>
+                <div><img src="../image/yun.png"width="100%"height="100%"></div>
+            </div>
+        </div>
     </div>
 
     <div id="aside">
@@ -191,7 +199,7 @@
                             </div>
                             <div class="buyTickets">购票</div>
                         </a>
-                        <div class="film_type" >2DIMAX</div>
+                        <div class="film_type" ><%=filmInfo.getFilm_version()%></div>
                     </td>
                 </tr>
 
@@ -309,5 +317,26 @@
 
 </body>
 <script>
+    layui.config({
+        version: '1598935358933' //为了更新 js 缓存，可忽略
+    });
+
+    layui.use(['layer', 'carousel', 'element'], function(){
+        var layer = layui.layer //弹层
+            ,carousel = layui.carousel //轮播
+
+        //向世界问个好
+        layer.msg('欢迎进入熊熊电影后台管理界面！');
+
+        //执行一个轮播实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,height: '100%'
+            ,arrow: 'none' //不显示箭头
+            ,anim: 'fade' //切换动画方式
+        });
+
+    });
 </script>
 </html>

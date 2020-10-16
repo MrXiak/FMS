@@ -1,6 +1,6 @@
 package com.cinema.servlet;
 
-import com.cinema.dao.filmInfoDao;
+import com.cinema.dao.impl.filmInfoDao;
 import com.cinema.entity.FilmInfo;
 import com.cinema.entity.preFilm;
 

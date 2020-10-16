@@ -43,10 +43,28 @@
                     <div class="clearfix">
                         <a class="wish">
                             <div>
-                                <span class="wish_msg">想看</span>
+                                <span class="msg">想看</span>
                             </div>
                         </a>
-                        <a class="score_btn"></a>
+                        <a class="score_btn">
+                            <div>
+                                <span class="msg">评分</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div  >
+                        <a class="btn_buy">查看更多电影详情</a>
+                    </div>
+                </div>
+                <div class="movie_stars_nav">
+                    <div class="movie_index">
+                        <p class="movie_index_title">熊熊口碑</p>
+                        <div class="movie_index_content">
+                            <span class="left_score">9.3</span>
+                            <div class="right_index">
+                                <span class="score_num">70.6万人评分</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -55,7 +73,25 @@
 </div>
 <%--主要内容--%>
 <div id="container">
-
+    <div class="cinema_list">
+        <h2 class="cinema_list_header">
+            <span>影院列表</span>
+        </h2>
+        <div class="cinema_cell">
+            <div class="cinema_info">
+                <a class="cinema_name">上影影城（白蒲店）</a>
+                <p class="cinema_address">地址：如皋市白蒲镇蒲塘路63号文峰大世界3楼上岸影城</p>
+            </div>
+            <div class="buy_btn">
+                <a class="buy_tickets">选座购票</a>
+            </div>
+            <div class="price">
+                <span class="rmb">￥</span>
+                <span class="price_red">35</span>
+                <span>起</span>
+            </div>
+        </div>
+    </div>
 </div>
 <%--底部栏--%>
 <div class="footer" >

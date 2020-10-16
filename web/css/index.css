@@ -263,12 +263,12 @@ table,td{
     height:500px;
     /*border: 1px solid green;*/
     /*margin: 0 auto;*/
-    margin-top:10%;
+    margin-top:20px;
     margin-left:1px;
 
 }
 #main{
-    height: 1200px;
+    height: 1000px;
     width: 800px;
     padding-bottom: 400px;
 
@@ -283,7 +283,7 @@ table,td{
 }
 #film_hot{
     width: 800px;
-    height: 800px;
+    height: 650px;
     margin-top: 5%;
 
 
