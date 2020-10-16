@@ -94,4 +94,22 @@
         <url-pattern>/inputId.action</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>allogin</servlet-name>
+        <servlet-class>com.cinema.servlet.Admin_LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allogin</servlet-name>
+        <url-pattern>/allogin.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>alregister</servlet-name>
+        <servlet-class>com.cinema.servlet.Admin_RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>alregister</servlet-name>
+        <url-pattern>/alregister.action</url-pattern>
+    </servlet-mapping>
+
 </web-app>
