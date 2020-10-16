@@ -11,7 +11,7 @@
     <title>管理员登录</title>
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <script src="../js/jquery/jquery-3.2.1.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="../js/admin_login.js"></script>
     <style type="text/css">
         #container {
             width: 1500px;
@@ -19,19 +19,21 @@
             margin: 0 auto;
         }
 
-        #top{
+        #top {
             height: 70px;
             width: 500px;
 
         }
-        #top_logo{
+
+        #top_logo {
             height: 50px;
             width: 50px;
             float: left;
             margin-top: 20px;
             margin-left: 20px;
         }
-        #logo_word{
+
+        #logo_word {
             width: 80px;
             height: 50px;
             text-align: center;
@@ -48,13 +50,9 @@
             padding-top: 100px;
         }
 
-        #login_right {
-           margin: auto;
-        }
-
-        #main {
-            padding-top: 80px;
-            padding-left: 80px;
+        #middle_content{
+            margin-left: 500px;
+            height: 450px;
         }
 
         #bottom {
@@ -88,6 +86,7 @@
         .layui-form-label {
             margin-left: -30px;
         }
+
         hr {
             height: 2px;
             background-color: red;
@@ -105,8 +104,9 @@
     </div>
     <hr>
     <div id="middle">
-        <div id="login_right">
-            <form action="${pageContext.request.contextPath}/allogin.action" method="post" onsubmit="return alvalidate()">
+        <div id="middle_content">
+            <form action="${pageContext.request.contextPath}/allogin.action" method="post"
+                  onsubmit="return alvalidate()">
                 <table id="main">
                     <tr>
                         <td class="layui-form-label" style="font-size: 30px;" id="login_word">管理员登录</td>
@@ -118,7 +118,8 @@
                                                                    style="font-size: 20px; color: #000000;">账号</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="text" name="al_id" id="al_id" lay-verify="required" placeholder="请输入"
+                                        <input type="text" name="al_id" id="al_id" lay-verify="required"
+                                               placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>
@@ -132,7 +133,8 @@
                                                                    style="font-size: 20px; color: #000000;">密码</i></label>
                                 <div class="layui-input-inline">
                                     <label>
-                                        <input type="password" name="al_password" id="al_password" lay-verify="required" placeholder="请输入"
+                                        <input type="password" name="al_password" id="al_password" lay-verify="required"
+                                               placeholder="请输入"
                                                autocomplete="off" class="layui-input">
                                     </label>
                                 </div>
@@ -144,15 +146,15 @@
                                    id="login_reg_submit" value="登录"/></td>
                     </tr>
                     <tr>
-                        <td>还没有账号？<a href="../login_register/register.jsp">管理员注册</a></td>
+                        <td>还没有账号？<a href="../admin-jsp/admin-register.jsp">管理员注册</a></td>
                     </tr>
                 </table>
             </form>
         </div>
-    </div>
-    <hr>
-    <div id="bottom">
-        <h4 id="login_h3">©2020 京ICP证070791号 京公网安备11010502025545号</h4>
+        <hr>
+        <div id="bottom">
+            <h4 id="login_h3">©2020 京ICP证070791号 京公网安备11010502025545号</h4>
+        </div>
     </div>
 </div>
 

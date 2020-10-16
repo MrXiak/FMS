@@ -41,7 +41,7 @@ public class Admin_RegisterServlet extends HttpServlet {
         IAdminService adminService=new IAdminServiceImpl();
         if (adminService.isAlRegister(a)){
             JOptionPane.showMessageDialog(null, "注册成功");
-            req.getRequestDispatcher("./login_register/login.jsp").forward(req,resp);
+            req.getRequestDispatcher("./admin-jsp/admin-login.jsp").forward(req,resp);
         }else {
             out.print("<script type='text/javascript'>");
             out.print("alert('账号已被注册，请重新填写！');");

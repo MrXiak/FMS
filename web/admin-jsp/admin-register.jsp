@@ -11,7 +11,7 @@
     <title>管理员注册</title>
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <script src="../js/jquery/jquery-3.2.1.js"></script>
-    <script src="../js/register.js"></script>
+    <script src="../js/admin-register.js"></script>
     <style type="text/css">
         #container {
             width: 1500px;
@@ -174,8 +174,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="submit" name="register_submit" class="layui-btn layui-btn-danger"
-                                   id="register_submit" value="同意以下协议并注册"/></td>
+                        <td><input type="submit" name="alregister_submit" class="layui-btn layui-btn-danger"
+                                   id="alregister_submit" value="同意以下协议并注册"/></td>
                     </tr>
                     <tr>
                         <td>
