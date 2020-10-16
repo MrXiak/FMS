@@ -35,11 +35,11 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">影片编号</label>
                         <div class="layui-input-block" style="width: 500px;">
-                            <input id="input_filmid" type="text" name="title" placeholder="请点击右侧生成按钮生成订单编号" autocomplete="off" class="layui-input">
+                            <input id="input_filmid" type="text" name="title" placeholder="请点击右侧生成按钮生成影片编号" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-inline">
-                        <button onclick="newGuid()">生成</button>
+                        <input type="button" onclick="newGuid()" value="生成" style="padding: 2px 5px 2px 5px">
                     </div>
                 </div>
                 <div class="layui-form-item">

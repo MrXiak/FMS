@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="../css/admin-film.css">
 
     <script src="../js/jquery/jquery-3.2.1.js"></script>
-    <script src="../js/admin-film-tablepage.js"></script>
     <link rel="stylesheet" href="../css/topage.css">
 
 </head>
@@ -51,7 +50,23 @@
                         <th>操作</th>
                     </tr>
                     </thead>
-                    <tbody> </tbody>
+                    <tbody> <tr>
+                        <td>第` + m + `条消息</td>
+                        <td>第` + filmid + `条消息</td>
+                        <td>第` + m + `ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd条消息</td>
+                        <td>第` + m + `条消息</td>
+                        <td>第` + m + `条消息</td>
+                        <td>第` + m + `条消息</td>
+                        <td>第` + m + `条消息</td>
+                        <td>第` + m + `条消息</td>
+                        <td>第` + m + `条消息</td>
+                        <td>第` + m + `条消息</td>
+                        <td>第` + m + `条消息</td>
+                        <td>
+                            <button type="button" class="btnoperate edit"> 编辑</button>
+                            <button type="button" class="btnoperate del"> 删除</button>
+                        </td>
+                    </tr></tbody>
                 </table>
             </div>
             <div class="admin_film_table_foot">
@@ -65,7 +80,6 @@
     </div>
 
 </div>
-<script src="../js/admin-film-tablepage.js"></script>
 
 <script>
     document.getElementById("lifilm").classList.add("layui-this");

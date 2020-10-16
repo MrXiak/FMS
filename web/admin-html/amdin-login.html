@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>熊熊电影管理员登录</title>
+    <link rel="icon" href="../image/icon_bear.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/logo-icon.css">
+    <script src="../js/jquery/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../css/admin-login.css">
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+    <script type="text/javascript" src="../js/admin-navigation-head.js"></script>
+
+    <div class="layui-body" style="left: 0">
+        <!-- 内容主体区域 -->
+        <div class="admin_login_main_container">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">管理员名</label>
+                    <div class="layui-input-block" style="width: 400px;">
+                        <input type="text" name="title" placeholder="请输入管理员名" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">密码</label>
+                        <div class="layui-input-inline" style="width: 400px">
+                            <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即登录</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">取消</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+        </div>
+    </div>
+</div>
+<script src="../layui/layui.js" charset=""></script>
+
+<script>
+    document.getElementById("lifilm").classList.add("layui-this");
+    document.getElementById("ddaddfilm").classList.add("layui-this");
+
+    function newGuid(){
+        var guid = "";
+        for (var i = 1; i <= 12; i++){
+            var n = Math.floor(Math.random()*16.0).toString(16);
+            guid += n;
+        }
+        // document.getElementById("input_filmid").innerHTML = guid;
+        $("#input_filmid").attr("value",guid);
+    }
+
+
+    layui.use('laydate' , function() {
+        var laydate = layui.laydate;
+
+        //开启公历节日
+        laydate.render({
+            elem: '#calendar'
+            ,calendar: true
+        });
+    });
+
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+
+</script>
+</body>
+</html>
