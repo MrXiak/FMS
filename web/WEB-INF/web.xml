@@ -4,12 +4,19 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <welcome-file-list>
-        <welcome-file>index/index.jsp</welcome-file>
-<!--        <welcome-file>index/Film.jsp</welcome-file>-->
-        <welcome-file>login_register/login.jsp</welcome-file>
-        <welcome-file>login_register/register.jsp</welcome-file>
-
+        <welcome-file>/index/index.jsp</welcome-file>
     </welcome-file-list>
+
+    <servlet>
+        <servlet-name>pre_index</servlet-name>
+        <servlet-class>com.cinema.servlet.preFilmIndexServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pre_index</servlet-name>
+        <url-pattern>/pre_index.action</url-pattern>
+    </servlet-mapping>
+
+
     <servlet>
         <servlet-name>index</servlet-name>
         <servlet-class>com.cinema.servlet.FilmServlet</servlet-class>
