@@ -97,7 +97,7 @@
             </div>
             <div class="has_ticket">
                 <span style="color: black">总价：<span style="color: red">￥</span></span>
-                <span id="total_price" style="color: red; font-size: 30px">0</span>
+                <span id="total_price" style="color: red; font-size: 50px">0</span>
             </div>
         </div>
         <div id="main_container_right_button">
