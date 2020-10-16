@@ -1,14 +1,18 @@
 package com.cinema.servlet;
 
-import com.cinema.dao.impl.filmInfoDao;
+import com.cinema.dao.filmInfoDao;
 import com.cinema.entity.FilmInfo;
+import com.cinema.entity.preFilm;
+import com.cinema.util.pageUtils;
+import com.sun.deploy.net.HttpResponse;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public class FilmServlet extends HttpServlet {
@@ -26,10 +30,9 @@ public class FilmServlet extends HttpServlet {
         //查询所有电影信息
         List<FilmInfo> filmInfoList=dao.findAll();
         //保存查询的电影信息
-        HttpSession session = req.getSession();
-        session.setAttribute("filmInfoList",filmInfoList);
+        req.setAttribute("filmInfoList",filmInfoList);
         //转发请求
-        req.getRequestDispatcher("/index.action").forward(req,resp);
+        req.getRequestDispatcher("/index/index.jsp").forward(req,resp);
 
 
 

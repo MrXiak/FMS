@@ -1,0 +1,114 @@
+#container{
+    height: 900px;
+    width:1200px;
+    margin:80px auto;
+
+}
+
+#film_show{
+    height: 376px;
+    background:  radial-gradient(circle at 500px -1000px, indianred 5%, #392f59);
+}
+#nav{
+    height: 376px;
+    width: 1200px;
+    margin: 0 auto;
+}
+#nav_img{
+    height: 370px;
+    width: 300px;
+    float: left;
+    position: relative;
+    top: 70px;
+}
+#poster_shadow{
+    position: relative;
+    margin: 0 30px;
+    width: 240px;
+    height: 330px;
+    padding-bottom: 40px;
+
+ }
+#poster{
+    height: 322px;
+    width: 232px;
+    border: 4px solid white;
+    margin: 0 auto;
+}
+#nav_text{
+    height: 300px;
+    width: 870px;
+    border: 1px solid green;
+    margin-right: 30px;
+    margin-left: 300px;
+    top: 70px;
+    position: relative;
+}
+.name{
+    color: #fff;
+    margin: .67em 0;
+    width: 900px;
+    margin-top: 0;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 700;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+     max-height: 64px;
+}
+#film_info{
+    width: 340px;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+.ellipsis{
+    margin: 12px 0;
+    line-height: 100%;
+}
+.action_btn{}
+.clearfix{}
+.wish{}
+.wish_msg{}
+
+
+
+.footer{
+    background-color: #262426;
+    /*padding: 56px 0;*/
+    margin: 0 auto;
+    width: 100%;
+    height: 300px;
+    /*z-index: 90;*/
+    /*position: absolute;*/
+    /*bottom: 0px;*/
+}
+.friendly-links{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    height: 22px;
+    color: white;
+}
+
+.friendly-links-credentials{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    height: 22px;
+    color: white;
+}
+.certificate{
+    margin-top: 20px;
+    padding: 0;
+    text-align: center;
+}

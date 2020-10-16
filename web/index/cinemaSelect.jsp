@@ -1,90 +1,60 @@
 <%--
   Created by IntelliJ IDEA.
   User: 诗
-  Date: 2020/10/13
-  Time: 9:14
+  Date: 2020/10/16
+  Time: 8:56
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.cinema.entity.FilmInfo"%>
-<%@ page import="java.util.List"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+    <meta charset="UTF-8">
     <link rel="icon" href="../image/icon_bear.svg" type="image/x-icon">
     <link rel="stylesheet" href="../layui/css/layui.css">
     <script src="../layui/layui.js"></script>
     <script src="../js/jquery/jquery-3.2.1.js"></script>
-    <link rel="stylesheet" href="../css/film.css">
+    <link rel="stylesheet" href="../css/cinemaSelect.css">
     <link rel="stylesheet" href="../css/logo-icon.css">
     <title>影片放映—熊熊电影</title>
 </head>
 <body>
 <%--导航栏--%>
 <script type="text/javascript" src="../js/navigation-head.js"></script>
-<%--选择框--%>
-<div id="select">
-    <div id="select_container">
-        <ul class="nav_bar">
-            <li id="hotting"><a class="hotting_a"  href="/Film.action">正在热映</a></li>
-            <li id="updating"><a class="hotting_a" href="/preFilm.action">即将上映</a> </li>
-        </ul>
+<%--影片展示--%>
+<div id="film_show">
+    <div id="nav">
+        <div id="nav_img">
+            <div id="poster_shadow">
+                <img id="poster" src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@464w_644h_1e_1c">
+            </div>
+
+        </div>
+        <div id="nav_text">
+            <div id="text_film">
+                <h1 class="name">我和我的家乡</h1>
+                <div id="film_info">
+                    <ul>
+                        <li class="ellipsis">剧情&nbsp喜剧</li>
+                        <li class="ellipsis">中国大陆/153分钟</li>
+                        <li class="ellipsis">2020-10-01 08:00中国大陆上映</li>
+                    </ul>
+                </div>
+                <div class="action_btn">
+                    <div class="clearfix">
+                        <a class="wish">
+                            <div>
+                                <span class="wish_msg">想看</span>
+                            </div>
+                        </a>
+                        <a class="score_btn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<%--主要内容--%>
 <div id="container">
-                <%--影片展示--%>
-                <div  style="margin-top:50px;height: 800px;width: 1200px">
-                <div id="film_page">
-                <table style="border-collapse: separate;border-spacing: 20px 5px">
-                <c:forEach items="${pageutils.records}" var="filmInfo">
-
-                        <td>
-                            <a href="#" >
-                                <div class="film_img">
-                                    <img src="${filmInfo.film_img }" height="200px" width="150px">
-                                    <div class="film_info">
-                                        <div class="film_name">${filmInfo.film_name }</div>
-                                        <div class="film_score">${filmInfo.film_score }</div>
-                                    </div>
-                                </div>
-                                <a href="/index/cinemaSelect.jsp"><div class="buyTickets">购票</div></a>
-                            </a>
-                            <div class="film_type" >2DIMAX</div>
-                        </td>
-
-                </c:forEach>
-                </table>
-                </div>
-    </div>
-                <%--分页栏--%>
-                <div id="page_Select" >
-                        <table style="border-collapse: separate;border-spacing: 5px 5px;margin: 0 auto;">
-                            <tr style="margin: 0 auto ">
-                                <c:forEach begin="${pageutils.beginPage}" end="${pageutils.endPage}" var="pageNum">
-                                    <c:if test="${pageNum == pageutils.currentPage}">
-                                        <td><a href="#" onclick="toPage(${pageNum})"><font color="red">[${pageNum}]</font></a></td>
-                                    </c:if>
-                                    <c:if test="${pageNum != pageutils.currentPage}">
-                                        <td><a href="#" onclick="toPage(${pageNum})"><font color="black">[${pageNum}]</font></a></td>
-                                    </c:if>
-                                </c:forEach>
-                            </tr>
-                            <tr>
-                                <td><a href="#" onclick="toPage(${pageutils.firstPage})">首页</a></td>
-                                <td><a href="#" onclick="toPage(${pageutils.pre})">上一页</a></td>
-                                <td><a href="#" onclick="toPage(${pageutils.next})">下一页</a></td>
-                                <td><a href="#" onclick="toPage(${pageutils.lastPage})">末页</a></td>
-<%--                                                <td>--%>
-<%--                                                    <input id="page" type="text" size="2"/>--%>
-<%--                                                    <input type="button" value="go" onclick="toPage2()"/>--%>
-<%--                                                        </td>--%>
-                                <td>${pageutils.currentPage}/${pageutils.lastPage}, 共${pageutils.totalRecordsSize}条 </td>
-<%--                                                        <td>--%>
-
-                            </tr>
-                        </table>
-
-                </div>
 
 </div>
 <%--底部栏--%>
@@ -157,14 +127,4 @@
 
 </div>
 </body>
-<script type="text/javascript">
-        function toPage(pageutils){
-            window.location = 'http://localhost:8080/Film.action?currentPage='+pageutils;
-        }
-    function toPage2(pageutils){
-        var page = document.getElementById("page");
-        window.location = 'http://localhost:8080/Film.action?currentPage='+pageutils.value;
-    }
-</script>
-
 </html>
