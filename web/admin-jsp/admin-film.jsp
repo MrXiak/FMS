@@ -1,7 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.cinema.dao.impl.filmInfoDao" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.cinema.entity.FilmInfo" %><%--
+<%@ page import="com.cinema.entity.FilmInfo" %>
+<%@ page import="com.cinema.dao.IUserDao" %>
+<%@ page import="com.cinema.dao.impl.IUserDaoImpl" %>
+<%@ page import="com.cinema.entity.User" %><%--
   Created by IntelliJ IDEA.
   User: 67463
   Date: 2020/10/15
@@ -60,7 +63,7 @@
                     <tbody>
                     <c:forEach items="<%= filmInfoList%>" var="fl">
                     <tr>
-                        <td>${fl.film_img}</td>
+                        <td><img src="${fl.film_img}" style="max-width: 100%"></td>
                         <td>${fl.film_id}</td>
                         <td>${fl.film_name}</td>
                         <td>${fl.film_type}</td>
@@ -91,7 +94,6 @@
     </div>
 
 </div>
-<script src="../js/admin-film-tablepage.js"></script>
 
 <script>
     document.getElementById("lifilm").classList.add("layui-this");
