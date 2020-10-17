@@ -212,4 +212,15 @@ public class  IUserDaoImpl implements IUserDao {
         DBUtil.close();
         return list;
     }
+
+    @Override
+    public User del_User(String uid) {
+        DBUtil.initConnection();
+        String sql="delete from user where user_id=?";
+        DBUtil.initPrepareStatement(sql);
+        DBUtil.setPar(uid);
+        DBUtil.executeUpdate();
+        DBUtil.close();
+        return null;
+    }
 }

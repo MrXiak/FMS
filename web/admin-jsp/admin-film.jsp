@@ -17,7 +17,8 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>影片管理</title>
     <link rel="icon" href="../image/icon_bear.svg" type="image/x-icon">
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
@@ -31,8 +32,8 @@
 
 </head>
 <%
-    filmInfoDao filmInfoDao=new filmInfoDao();
-    List<FilmInfo> filmInfoList= filmInfoDao.findAllFilms();
+    filmInfoDao filmInfoDao = new filmInfoDao();
+    List<FilmInfo> filmInfoList = filmInfoDao.findAllFilms();
 %>
 <body>
 <div class="layui-layout layui-layout-admin">
@@ -62,23 +63,23 @@
                     </thead>
                     <tbody>
                     <c:forEach items="<%= filmInfoList%>" var="fl">
-                    <tr>
-                        <td><img src="${fl.film_img}" style="max-width: 100%"></td>
-                        <td>${fl.film_id}</td>
-                        <td>${fl.film_name}</td>
-                        <td>${fl.film_type}</td>
-                        <td>${fl.film_time}</td>
-                        <td>${fl.film_actor}</td>
-                        <td>${fl.film_date}</td>
-                        <td>${fl.film_version}</td>
-                        <td>${fl.film_info}</td>
-                        <td>${fl.film_price}</td>
-                        <td>${fl.film_score}</td>
-                        <td>
-                            <button type="button" class="btnoperate edit"> 编辑</button>
-                            <button type="button" class="btnoperate del"> 删除</button>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><img src="${fl.film_img}" style="max-width: 100%"></td>
+                            <td>${fl.film_id}</td>
+                            <td>${fl.film_name}</td>
+                            <td>${fl.film_type}</td>
+                            <td>${fl.film_time}</td>
+                            <td>${fl.film_actor}</td>
+                            <td>${fl.film_date}</td>
+                            <td>${fl.film_version}</td>
+                            <td>${fl.film_info}</td>
+                            <td>${fl.film_price}</td>
+                            <td>${fl.film_score}</td>
+                            <td>
+                                <a href="${pageContext.request.contextPath}/manage_Film.action?type=delete&filmid=${fl.film_id}"><span>删除</span></a>/
+                                <a href="${pageContext.request.contextPath}/manage_Film.action?type=update&filmid=${fl.film_id}"><span>修改</span></a>
+                            </td>
+                        </tr>
                     </c:forEach>
                     </tbody>
                 </table>
@@ -92,7 +93,6 @@
     <div class="layui-footer">
         熊熊电影后台管理系统
     </div>
-
 </div>
 
 <script>

@@ -65,8 +65,7 @@
                             <td>${user.question_two}</td>
                             <td>${user.answer_two}</td>
                             <td>
-                                <button type="button" class="btnoperate edit"> 编辑</button>
-                                <button type="button" class="btnoperate del"> 删除</button>
+                                <a href="${pageContext.request.contextPath}/manage_User.action?type=delete&uid=${user.user_id}"><span>删除</span></a>
                             </td>
                         </tr>
                     </c:forEach>

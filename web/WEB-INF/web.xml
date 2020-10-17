@@ -122,4 +122,22 @@
         <url-pattern>/add_prefilm.action</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>manage_Film</servlet-name>
+        <servlet-class>com.cinema.servlet.FilmManageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manage_Film</servlet-name>
+        <url-pattern>/manage_Film.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>manage_User</servlet-name>
+        <servlet-class>com.cinema.servlet.UserManageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manage_User</servlet-name>
+        <url-pattern>/manage_User.action</url-pattern>
+    </servlet-mapping>
+
 </web-app>
