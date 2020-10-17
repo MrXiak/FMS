@@ -2,25 +2,22 @@
   Created by IntelliJ IDEA.
   User: 夏康
   Date: 2020/10/17
-  Time: 9:46
+  Time: 13:35
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>修改电影信息</title>
     <link rel="icon" href="../image/icon_bear.svg" type="image/x-icon">
+    <script src="../js/jquery/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <script src="../layui/layui.all.js"></script>
     <link rel="stylesheet" href="../css/logo-icon.css">
     <link rel="stylesheet" href="../css/admin-addfilm.css">
-    <script src="../js/jquery/jquery-3.2.1.js"></script>
-    <script src="../js/myInfo.js"></script>
-    <script src="../layui/layui.js"></script>
 </head>
-
 <body>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
@@ -87,8 +84,9 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">版本</label>
                     <div class="layui-input-block">
-                        <input type="checkbox" name="like[2D]" title="2D" value="twod" <c:if test="${F.film_version.contains('twod')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[3D]" title="3D" value="threed" <c:if test="${F.film_version.contains('threed')}"> checked="checked"</c:if>/>
+
+                        <input type="checkbox" name="like[2D]" title="2D" value="2D" <c:if test="${F.film_version.contains('2D')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[3D]" title="3D" value="3D" <c:if test="${F.film_version.contains('3D')}"> checked="checked"</c:if>/>
                         <input type="checkbox" name="like[2D MAX]" title="2D MAX" value="twodmax" <c:if test="${F.film_version.contains('swordsman')}"> checked="checked"</c:if>/>
                         <input type="checkbox" name="like[3D MAX]" title="3D MAX" value="threedmax" <c:if test="${F.film_version.contains('threedmax')}"> checked="checked"</c:if>/>
                     </div>
@@ -126,11 +124,9 @@
     </div>
 </div>
 <script src="../layui/layui.js" charset=""></script>
-<script src="../js/jquery/jquery-3.2.1.js"></script>
 <script>
     document.getElementById("lifilm").classList.add("layui-this");
     document.getElementById("ddaddfilm").classList.add("layui-this");
-
 
     layui.use('laydate' , function() {
         var laydate = layui.laydate;

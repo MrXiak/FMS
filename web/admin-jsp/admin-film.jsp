@@ -77,7 +77,7 @@
                             <td>${fl.film_score}</td>
                             <td>
                                 <a href="${pageContext.request.contextPath}/manage_Film.action?type=delete&filmid=${fl.film_id}"><span>删除</span></a>/
-                                <a href="${pageContext.request.contextPath}/manage_Film.action?type=update&filmid=${fl.film_id}"><span>修改</span></a>
+                                <a target="_blank" href="${pageContext.request.contextPath}/manage_Film.action?type=update&filmid=${fl.film_id}"><span>修改</span></a>
                             </td>
                         </tr>
                     </c:forEach>
