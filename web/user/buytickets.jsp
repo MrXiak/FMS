@@ -18,22 +18,8 @@
     <script src="../layui/layui.js"></script>
 </head>
 <body>
-<div>
-    <ul class="layui-nav" lay-filter="">
-        <li class="layui-nav-item"><a href=""><img src="../image/icon_bear.svg" height="44px"width="50px">熊熊电影</a></li>
-        <li class="layui-nav-item"><a href="">首页</a></li>
-        <li class="layui-nav-item"><a href="">影片</a></li>
-        <li class="layui-nav-item">
-            <a href="javascript:;">地区选择</a>
-            <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a href="">江苏</a></dd>
-                <dd><a href="">北京</a></dd>
-                <dd><a href="">上海</a></dd>
-            </dl>
-        </li>
-        <li class="layui-nav-item"><a href="">登录</a></li>
-    </ul>
-</div>
+<script type="text/javascript" src="../js/navigation-head.js"></script>
+
 <div class="main_container">
     <div id="main_container_left">
         <div id="main_container_left_table">

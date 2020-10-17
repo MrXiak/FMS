@@ -101,7 +101,7 @@ public class filmInfoDao {
             //遍历结果集
             while(rs.next()){
                 String pre_film_img=rs.getString("pre_film_img");
-                Integer pre_film_id= Integer.valueOf(rs.getString("pre_film_id"));
+                String pre_film_id= rs.getString("pre_film_id");
                 String pre_film_name=rs.getString("pre_film_name");
                 String pre_film_time= rs.getString("pre_film_time");
                 String pre_film_actor=rs.getString("pre_film_actor");

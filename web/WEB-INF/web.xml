@@ -4,7 +4,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <welcome-file-list>
-        <welcome-file>/index/index.jsp</welcome-file>
+        <welcome-file>/admin-jsp/admin-index.jsp</welcome-file>
+<!--        <welcome-file>/index/index.jsp</welcome-file>-->
     </welcome-file-list>
     
 
@@ -84,6 +85,33 @@
     <servlet-mapping>
         <servlet-name>inputId</servlet-name>
         <url-pattern>/inputId.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>allogin</servlet-name>
+        <servlet-class>com.cinema.servlet.Admin_LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allogin</servlet-name>
+        <url-pattern>/allogin.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>alregister</servlet-name>
+        <servlet-class>com.cinema.servlet.Admin_RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>alregister</servlet-name>
+        <url-pattern>/alregister.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>add_prefilm</servlet-name>
+        <servlet-class>com.cinema.servlet.Add_PreFilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>add_prefilm</servlet-name>
+        <url-pattern>/add_prefilm.action</url-pattern>
     </servlet-mapping>
 
 </web-app>

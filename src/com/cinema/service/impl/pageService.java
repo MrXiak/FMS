@@ -93,7 +93,7 @@ public class pageService {
             rs=st.executeQuery("select * from prefilm limit "+(currentPage-1)*pageSize+","+pageSize);
             while(rs.next()){
                 filmInfoList.add(new preFilm(rs.getString(1),
-                        rs.getInt(2),
+                        rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),

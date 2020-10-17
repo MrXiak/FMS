@@ -14,6 +14,7 @@
     <script src="../js/myInfo.js"></script>
     <link rel="stylesheet" href="../layui/css/layui.css" media="all">
     <script src="../layui/layui.js"></script>
+    <link rel="stylesheet" href="../css/usercenter.css">
     <style type="text/css">
         .Info {
             margin-top: 20px;
@@ -29,10 +30,9 @@
         }
 
         #container {
-            width: 940px;
+            width: 100%;
             height: auto;
             margin: auto;
-            border: gainsboro 2px solid;
         }
 
         #main {
@@ -46,14 +46,14 @@
         }
 
         #main_left {
-            width: 400px;
+            width: 300px;
             text-align: center;
             line-height: 400px;
 
         }
 
         #main_right {
-            width: 530px;
+            width: 430px;
             height: auto;
         }
 
@@ -78,10 +78,8 @@
 <%--%>--%>
 <%--${sessionScope.list}--%>
 <div id="container">
-    <div id="top"><h2 class="Info">基本信息</h2></div>
-    <hr>
+    <div class="center_main_container_right_title">基本信息</div>
     <form action="/myInfo.action" method="post" onsubmit="return myInfo()">
-        <div id="main">
             <div id="main_left">
                 <div class="layui-upload">
                     <div class="layui-upload-list">
@@ -220,7 +218,6 @@
                 </div>
                 <input type="submit" class="layui-btn layui-btn-warm" id="personal_submit" value="保存"/>
             </div>
-        </div>
     </form>
 </div>
 <script>
