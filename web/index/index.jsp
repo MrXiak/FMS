@@ -184,7 +184,6 @@
             <% List<FilmInfo>filmInfoList= (List<FilmInfo>) request.getAttribute("filmInfoList");
                 if (filmInfoList!=null&&!filmInfoList.isEmpty()){
                     for (FilmInfo filmInfo:filmInfoList){
-
             %>
             <table style="height: 200px;width: 200px;float: left">
                 <tr>

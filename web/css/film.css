@@ -60,9 +60,9 @@
 }
 #film_page{
     float: left;
-    margin-left:50px;
+    margin:0 auto;
     width: 1200px;
-    height: 100px;
+    height: 500px;
 }
 #page_Select{
     height: 100px;
@@ -128,7 +128,7 @@
     font-weight: bold;
     font-size: 15px;
     user-select: none;
-    margin-left:20px;
+    margin-left:15px;
 }
 .buyTickets{
     height: 30px;
