@@ -5,12 +5,12 @@ document.writeln("        <div class=\'logo_word\'>熊熊电影-管理员</div>"
 document.writeln("    </div>");
 document.writeln("    <!-- 头部区域（可配合layui已有的水平导航） -->");
 document.writeln("    <ul class=\'layui-nav layui-layout-left\'>");
-document.writeln("        <li class=\'layui-nav-item\' id='lifilm'><a href=\'admin-film.jsp\'>影片信息</a></li>");
-document.writeln("        <li class=\'layui-nav-item\' id='liuser'><a href=\'admin-user.jsp\'>用户信息</a></li>");
+document.writeln("        <li class=\'layui-nav-item\' id='lifilm'><a href=\'../admin-jsp/admin-film.jsp\'>影片信息</a></li>");
+document.writeln("        <li class=\'layui-nav-item\' id='liuser'><a href=\'../admin-jsp/admin-user.jsp\'>用户信息</a></li>");
 document.writeln("        <li class=\'layui-nav-item\'>");
 document.writeln("            <a href=\'javascript:;\'>其它</a>");
 document.writeln("            <dl class=\'layui-nav-child\'>");
-document.writeln("                <dd><a href=\'admin-index.jsp\'>返回首页</a></dd>");
+document.writeln("                <dd><a href=\'../admin-jsp/admin-index.jsp\'>返回首页</a></dd>");
 document.writeln("            </dl>");
 document.writeln("        </li>");
 document.writeln("    </ul>");

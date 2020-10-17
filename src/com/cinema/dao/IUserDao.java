@@ -12,4 +12,5 @@ public interface IUserDao {
     User changePassword(String account);
     User canChange(String account,String password);
     List<User> getAll();
+    User del_User(String uid);
 }
