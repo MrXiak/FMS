@@ -53,18 +53,18 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">类型</label>
                     <div class="layui-input-block" style="width: 600px;">
-                        <input type="checkbox" name="like[love]" title="爱情" value="love">
-                        <input type="checkbox" name="like[comedy]" title="喜剧" value="comedy">
-                        <input type="checkbox" name="like[animation]" title="动画" value="animation">
-                        <input type="checkbox" name="like[story]" title="剧情" value="story">
-                        <input type="checkbox" name="like[panic]" title="惊悚" value="panic">
-                        <input type="checkbox" name="like[science]" title="科幻" value="science">
-                        <input type="checkbox" name="like[suspense]" title="悬疑" value="suspense">
-                        <input type="checkbox" name="like[crime]" title="犯罪" value="crime">
-                        <input type="checkbox" name="like[adventure]" title="冒险" value="adventure">
-                        <input type="checkbox" name="like[war]" title="战争" value="war">
-                        <input type="checkbox" name="like[family]" title="家庭" value="family">
-                        <input type="checkbox" name="like[swordsman]" title="武侠" value="swordsman">
+                        <input type="checkbox" name="like[love]" title="爱情" value="爱情">
+                        <input type="checkbox" name="like[comedy]" title="喜剧" value="喜剧">
+                        <input type="checkbox" name="like[animation]" title="动画" value="动画">
+                        <input type="checkbox" name="like[story]" title="剧情" value="剧情">
+                        <input type="checkbox" name="like[panic]" title="惊悚" value="惊悚">
+                        <input type="checkbox" name="like[science]" title="科幻" value="科幻">
+                        <input type="checkbox" name="like[suspense]" title="悬疑" value="悬疑">
+                        <input type="checkbox" name="like[crime]" title="犯罪" value="犯罪">
+                        <input type="checkbox" name="like[adventure]" title="冒险" value="冒险">
+                        <input type="checkbox" name="like[war]" title="战争" value="战争">
+                        <input type="checkbox" name="like[family]" title="家庭" value="家庭">
+                        <input type="checkbox" name="like[swordsman]" title="武侠" value="武侠">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -101,7 +101,7 @@
                     <label class="layui-form-label">电影简介</label>
                     <div class="layui-input-block">
                         <label>
-                            <textarea name="desc" placeholder="请输入电影介绍" class="layui-textarea" ></textarea>
+                            <input type="text" name="desc" placeholder="请输入电影介绍"  />
                         </label>
                     </div>
                 </div>

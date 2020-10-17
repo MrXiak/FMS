@@ -63,7 +63,8 @@
                             <td>${pl.pre_film_version}</td>
                             <td>${pl.pre_film_info}</td>
                             <td>
-                                <button type="button" class="btnoperate edit">上映</button>
+                                <a href="${pageContext.request.contextPath}/admin_PreFilm.action?type=onshow&pre_film_id=${pl.pre_film_id}"><span>上映</span></a>/
+                                <a href="${pageContext.request.contextPath}/admin_PreFilm.action?type=delete&pre_film_id=${pl.pre_film_id}"><span>删除</span></a>
                             </td>
                         </tr>
                     </c:forEach>

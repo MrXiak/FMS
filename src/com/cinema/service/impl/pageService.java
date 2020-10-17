@@ -42,14 +42,14 @@ public class pageService {
             rs=st.executeQuery("select * from film limit "+(currentPage-1)*pageSize+","+pageSize);
             while(rs.next()){
                 filmInfoList.add(new FilmInfo(rs.getString(1),
-                                              rs.getInt(2),
+                                              rs.getString(2),
                                               rs.getString(3),
-                                              rs.getInt(4),
+                                              rs.getString(4),
                                               rs.getString(5),
                                               rs.getString(6),
                                               rs.getString(7),
-                                              rs.getDouble(8),
-                                              rs.getDouble(9)));
+                                              rs.getString(8),
+                                              rs.getString(9)));
                 System.out.println(rs.getObject(1) + "\t"
                                  + rs.getObject(2) + "\t"
                                  + rs.getObject(3) + "\t"

@@ -140,4 +140,30 @@
         <url-pattern>/manage_User.action</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>update_FilmInfo</servlet-name>
+        <servlet-class>com.cinema.servlet.Update_FilmInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update_FilmInfo</servlet-name>
+        <url-pattern>/update_FilmInfo.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>admin_PreFilm</servlet-name>
+        <servlet-class>com.cinema.servlet.Admin_PreFilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin_PreFilm</servlet-name>
+        <url-pattern>/admin_PreFilm.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>admin_On_PreFilm</servlet-name>
+        <servlet-class>com.cinema.servlet.Admin_On_PreFilmServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin_On_PreFilm</servlet-name>
+        <url-pattern>/admin_On_PreFilm.action</url-pattern>
+    </servlet-mapping>
 </web-app>

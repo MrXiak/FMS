@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -23,7 +24,7 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div class="admin_addfilm_maincontainer">
-            <form class="layui-form" action="${pageContext.request.contextPath}/manage_Film.action" method="post">
+            <form class="layui-form" action="${pageContext.request.contextPath}/update_FilmInfo.action" method="post">
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片海报</label>
                     <div class="layui-input-block" style="width: 500px;">
@@ -87,8 +88,8 @@
 
                         <input type="checkbox" name="like[2D]" title="2D" value="2D" <c:if test="${F.film_version.contains('2D')}"> checked="checked"</c:if>/>
                         <input type="checkbox" name="like[3D]" title="3D" value="3D" <c:if test="${F.film_version.contains('3D')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[2D MAX]" title="2D MAX" value="twodmax" <c:if test="${F.film_version.contains('swordsman')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[3D MAX]" title="3D MAX" value="threedmax" <c:if test="${F.film_version.contains('threedmax')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[2D MAX]" title="2D MAX" value="2D MAX" <c:if test="${F.film_version.contains('2D MAX')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[3D MAX]" title="3D MAX" value="3D MAX" <c:if test="${F.film_version.contains('3D MAX')}"> checked="checked"</c:if>/>
                     </div>
                 </div>
 
@@ -96,26 +97,25 @@
                     <label class="layui-form-label">电影简介</label>
                     <div class="layui-input-block">
                         <label>
-                            <textarea name="desc" placeholder="请输入电影介绍" class="layui-textarea"  value="${F.film_info}"></textarea>
+                            <input name="desc" placeholder="请输入电影介绍" class="layui-textarea"  value="${F.film_info}"/>
                         </label>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">票价</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="p_actor" placeholder="请输入票价" autocomplete="off" class="layui-input" value="${F.film_price}">
+                        <input type="text" name="p_price" placeholder="请输入票价" autocomplete="off" class="layui-input" value="${F.film_price}">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">评分</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="p_actor" placeholder="请输入评分" autocomplete="off" class="layui-input" value="${F.film_score}">
+                        <input type="text" name="p_score" placeholder="请输入评分" autocomplete="off" class="layui-input" value="${F.film_score}">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <input type="submit" class="layui-btn" value="立即提交"/>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>
             </form>
@@ -123,7 +123,7 @@
         </div>
     </div>
 </div>
-<script src="../layui/layui.js" charset=""></script>
+<script src="../layui/layui.all.js" charset=""></script>
 <script>
     document.getElementById("lifilm").classList.add("layui-this");
     document.getElementById("ddaddfilm").classList.add("layui-this");

@@ -11,4 +11,6 @@ public interface IFilmDao {
     FilmInfo del_Film(String fid);
     FilmInfo update_FIlm(String film_img,String film_id,String film_name,String film_type,String film_time,String film_actor,String film_date,String film_version,String film_info,String film_price,String film_score);
     FilmInfo find_It(String film_id);
+    preFilm del_PreFilm(String pid);
+    preFilm find_prefilm(String pid);
 }

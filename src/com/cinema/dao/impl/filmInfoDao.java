@@ -65,16 +65,16 @@ public class filmInfoDao {
             //遍历结果集
             while(rs.next()){
                 String film_img=rs.getString("film_img");
-                Integer film_id= Integer.valueOf(rs.getString("film_id"));
+                String film_id= rs.getString("film_id");
                 String film_name=rs.getString("film_name");
                 String film_type=rs.getString("film_type");
-                Integer film_time= Integer.valueOf(rs.getString("film_time"));
+                String film_time= rs.getString("film_time");
                 String film_actor=rs.getString("film_actor");
                 String film_date=rs.getString("film_date");
                 String film_info=rs.getString("film_info");
                 String film_version=rs.getString("film_version");
-                Double film_price= Double.valueOf(rs.getString("film_price"));
-                Double film_score= Double.valueOf(rs.getString("film_score"));
+                String film_price= rs.getString("film_price");
+                String film_score= rs.getString("film_score");
                 FilmInfo filmInfo=new FilmInfo(film_img,film_id,film_name,film_type,film_time,film_actor,film_date,film_info,film_version,film_price,film_score);
                 filmInfoList.add(filmInfo);
             }
@@ -128,16 +128,16 @@ public class filmInfoDao {
             try {
                 while (rs.next()) {
                     String film_img=rs.getString("film_img");
-                    Integer film_id= Integer.valueOf(rs.getString("film_id"));
+                    String film_id= rs.getString("film_id");
                     String film_name=rs.getString("film_name");
                     String film_type=rs.getString("film_type");
-                    Integer film_time= Integer.valueOf(rs.getString("film_time"));
+                    String film_time= rs.getString("film_time");
                     String film_actor=rs.getString("film_actor");
                     String film_date=rs.getString("film_date");
                     String film_info=rs.getString("film_info");
                     String film_version=rs.getString("film_version");
-                    Double film_price= Double.valueOf(rs.getString("film_price"));
-                    Double film_score= Double.valueOf(rs.getString("film_score"));
+                    String film_price= rs.getString("film_price");
+                    String film_score= rs.getString("film_score");
 
                     FilmInfo fi=new FilmInfo();
                     fi.setFilm_img(film_img);
