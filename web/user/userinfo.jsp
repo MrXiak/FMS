@@ -12,9 +12,10 @@
     <title>MyInfo</title>
     <script src="../js/jquery/jquery-3.2.1.js"></script>
     <script src="../js/myInfo.js"></script>
-    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
-    <script src="../layui/layui.js"></script>
+    <link rel="stylesheet" href="../layui/css/layui.all.css" media="all">
+    <script src="../layui/layui.all.js"></script>
     <link rel="stylesheet" href="../css/usercenter.css">
+    <script src="../js/jquery/jquery-3.2.1.js"></script>
     <style type="text/css">
         .Info {
             margin-top: 20px;
@@ -130,7 +131,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">生日：</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="year" lay-verify="required" placeholder="请输入:如12月12日"
+                        <input type="text" name="year" id="calendar" lay-verify="required" placeholder="请输入:如12月12日"
                                autocomplete="off" class="layui-input" value="${USER.user_birthday}">
                     </div>
                 </div>
@@ -221,6 +222,10 @@
     </form>
 </div>
 <script>
+    // layui.use('element', function(){
+    //     var element = layui.element;
+    //     element.init();
+    // });
     layui.use('form', function () {
         var form = layui.form; //只有执行了这一步，部分表单元素才会自动修饰成功
         form.on('checkbox(filter)', function (data) {
@@ -235,13 +240,23 @@
         });
         form.render(null, "test");
     });
+    layui.use('laydate' , function() {
+        var laydate = layui.laydate;
+
+        //开启公历节日
+        laydate.render({
+            elem: '#calendar'
+            ,calendar: true
+            ,trigger:'click'
+        });
+    });
     layui.use('upload', function () {
         var $ = layui.jquery
             , upload = layui.upload;
         //普通图片上传
         var uploadInst = upload.render({
             elem: '#test1'
-            , url: '${pageContext.request.contextPath}/image/' //改成您自己的上传接口
+            , url: '../image' //改成您自己的上传接口
             , before: function (obj) {
                 //预读本地文件示例，不支持ie8
                 obj.preview(function (index, file, result) {
@@ -265,6 +280,8 @@
             }
         });
     })
+
+
 </script>
 </body>
 </html>
