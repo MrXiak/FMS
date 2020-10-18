@@ -76,7 +76,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片海报</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="road" placeholder="海报路径" autocomplete="off" class="layui-input">
+                        <input id="inputsrc" type="text" name="road" placeholder="海报路径" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
