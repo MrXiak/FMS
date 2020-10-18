@@ -1,10 +1,11 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.cinema.dao.impl.filmInfoDao" %>
-<%@ page import="java.util.List" %>
+<%@ page import="com.cinema.dao.impl.filmInfoDao"%>
 <%@ page import="com.cinema.entity.FilmInfo" %>
-<%@ page import="com.cinema.dao.IUserDao" %>
-<%@ page import="com.cinema.dao.impl.IUserDaoImpl" %>
-<%@ page import="com.cinema.entity.User" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.cinema.dao.impl.filmInfoDao" %>
+<%@ page import="com.cinema.entity.FilmInfo" %>
+<%@ page import="java.util.List" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
   Created by IntelliJ IDEA.
   User: 67463
   Date: 2020/10/15
@@ -77,7 +78,7 @@
                             <td>${fl.film_score}</td>
                             <td>
                                 <a href="${pageContext.request.contextPath}/manage_Film.action?type=delete&filmid=${fl.film_id}"><span>删除</span></a>/
-                                <a target="_blank" href="${pageContext.request.contextPath}/manage_Film.action?type=update&filmid=${fl.film_id}"><span>修改</span></a>
+                                <a href="${pageContext.request.contextPath}/manage_Film.action?type=update&filmid=${fl.film_id}"><span>修改</span></a>
                             </td>
                         </tr>
                     </c:forEach>

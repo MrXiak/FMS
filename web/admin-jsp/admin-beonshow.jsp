@@ -71,10 +71,6 @@
                     </tbody>
                 </table>
             </div>
-            <div class="admin_film_table_foot">
-                <button type="button" id="up" class="btnShow">上一页</button>
-                <button type="button" id="down" class="btnShow ">下一页</button>
-            </div>
         </div>
 
         <div class="layui-footer">

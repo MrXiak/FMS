@@ -36,7 +36,7 @@ public class Admin_PreFilmServlet extends HttpServlet {
             preFilm pfi=iFilmDao.find_prefilm(pid);
             HttpSession se=req.getSession();
             se.setAttribute("PF",pfi);
-            req.getRequestDispatcher("/admin-jsp/on_PreFilm.jsp").forward(req,resp);
+            req.getRequestDispatcher("./admin-jsp/on_PreFilm.jsp").forward(req,resp);
         }
     }
 }

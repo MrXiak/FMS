@@ -5,10 +5,10 @@ document.writeln("            <ul class=\'layui-nav layui-nav-tree\'  lay-filter
 document.writeln("                <li class=\'layui-nav-item layui-nav-itemed\'>");
 document.writeln("                    <a class=\'\' href=\'javascript:;\'>影片信息</a>");
 document.writeln("                    <dl class=\'layui-nav-child\'>");
-document.writeln("                        <dd id='ddfilm'><a href=\'admin-film.jsp\'>影片管理</a></dd>");
-document.writeln("                        <dd id='ddcinema'><a href=\'admin-cinema.jsp\'>影院管理</a></dd>");
-document.writeln("                        <dd id='ddaddfilm'><a href=\'admin-addfilm.jsp\'>添加影片</a></dd>");
-document.writeln("                        <dd id='ddbeonshow'><a href=\'admin-beonshow.jsp\'>影片上映管理</a></dd>");
+document.writeln("                        <dd id='ddfilm'><a href=\'../admin-jsp/admin-film.jsp\'>影片管理</a></dd>");
+// document.writeln("                        <dd id='ddcinema'><a href=\'../admin-jsp/admin-cinema.jsp\'>影院管理</a></dd>");
+document.writeln("                        <dd id='ddaddfilm'><a href=\'../admin-jsp/admin-addfilm.jsp\'>添加影片</a></dd>");
+document.writeln("                        <dd id='ddbeonshow'><a href=\'../admin-jsp/admin-beonshow.jsp\'>影片上映管理</a></dd>");
 document.writeln("                    </dl>");
 document.writeln("                </li>");
 document.writeln("            </ul>");
