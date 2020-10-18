@@ -33,7 +33,7 @@ public class FilmManageServlet extends HttpServlet {
             FilmInfo fi=iFilmDao.find_It(fid);
             HttpSession s=req.getSession();
             s.setAttribute("F",fi);
-            req.getRequestDispatcher("/admin-jsp/admin-update-film.jsp").forward(req,resp);
+            req.getRequestDispatcher("./admin-jsp/admin-update-film.jsp").forward(req,resp);
         }
     }
 }

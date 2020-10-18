@@ -16,6 +16,41 @@
     <link rel="stylesheet" href="../css/logo-icon.css">
     <link rel="stylesheet" href="../css/admin-addfilm.css">
     <script src="../js/jquery/jquery-3.2.1.js"></script>
+    <style type="text/css">
+        .warp {
+            display: inline-block;
+            vertical-align: bottom;
+            position: relative;
+
+        }
+
+        .warp-content {
+            border: 1px solid red;
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+        }
+
+        .input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid red;
+            width: 150px;
+            height: 150px;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .img {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin-top: 50px;
+            vertical-align: bottom;
+        }
+    </style>
 
 </head>
 <body>
@@ -26,6 +61,17 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div class="admin_addfilm_maincontainer">
+            <div class="fileBox">
+                <div class="warp">
+                    <div class="warp-content" >点击上传</div>
+                    <input class="input" type="file" id="file" />
+                </div>
+                <img class="img" id="ip" src=""/>
+                <button onclick=savesrc()>保存</button>
+                <img class="img" id="ip2" src=""/>
+            </div>
+
+
             <form class="layui-form" action="${pageContext.request.contextPath}/add_prefilm.action" method="post">
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片海报</label>
@@ -124,6 +170,37 @@
 <script>
     document.getElementById("lifilm").classList.add("layui-this");
     document.getElementById("ddaddfilm").classList.add("layui-this");
+
+    var file = document.getElementById('file');
+    var image = document.querySelector(".img");
+    file.onchange = function() {
+        var fileData = this.files[0];//获取到一个FileList对象中的第一个文件( File 对象),是我们上传的文件
+        var pettern = /^image/;
+
+        console.info(fileData.type)
+
+        if (!pettern.test(fileData.type)) {
+            alert("图片格式不正确");
+            return;
+        }
+        var reader = new FileReader();
+        reader.readAsDataURL(fileData);//异步读取文件内容，结果用data:url的字符串形式表示
+        /*当读取操作成功完成时调用*/
+        reader.onload = function(e) {
+            console.log(e); //查看对象
+            console.log(this.result);//要的数据 这里的this指向FileReader（）对象的实例reader
+            image.setAttribute("src", this.result)
+        }
+    }
+
+    function savesrc(){
+        var src1 = document.getElementById("ip").src;
+        alert(src1);
+        var ip2 = document.getElementById("ip2");
+        $("#inputsrc").attr("value",src1);
+        ip2.setAttribute("src", src1);
+    }
+
 
     function newGuid(){
         var guid = "";
