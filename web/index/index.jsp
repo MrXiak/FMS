@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../css/logo-icon.css">
 </head>
 <body>
+
 <%--导航栏--%>
 <script type="text/javascript" src="../js/navigation-head.js"></script>
 <div id="main_body">
@@ -317,6 +318,15 @@
 
 </body>
 <script>
+    // var i = 0;
+    // window.onload = function (){
+    // if (i == 0){
+        window.location.replace = "/index.action";
+    //     i++;
+    // }
+
+    // }
+
     layui.config({
         version: '1598935358933' //为了更新 js 缓存，可忽略
     });

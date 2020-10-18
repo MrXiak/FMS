@@ -36,24 +36,25 @@
     <div id="main_container_right">
         <div id="main_container_right_top">
             <div id="main_container_right_top_pic">
-                <img src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@115w_158h_1e_1c">
+                <img src="${FILMINFO.film_img}"style="max-width: 100%">
             </div>
             <div id="main_container_right_top_content">
-                <p class="p_title">我和我的家乡</p>
+                <p class="p_title" id="filmname">${FILMINFO.film_name}</p>
+
                 <div class="info_item">
                     <span class="span_introduction_color" style="font-size: 12px">类型：</span>
-                    <span class="p_introduction" style="font-size: 12px">剧情，喜剧</span>
+                    <span class="p_introduction" style="font-size: 12px">${FILMINFO.film_version}</span>
                 </div>
                 <div class="info_item">
                     <span class="span_introduction_color" style="font-size: 12px">时长：</span>
-                    <span class="p_introduction" style="font-size: 12px">153分钟</span>
+                    <span class="p_introduction"  style="font-size: 12px">${FILMINFO.film_time}</span>
                 </div>
             </div>
         </div>
         <div id="main_container_right_middle">
             <div class="show_info">
                 <span class="span_introduction_color">影院：</span>
-                <span class="p_introduction">星轶IMAX影城（如皋吾悦广场旗舰店）</span>
+                <span class="p_introduction" id="cinema_name">星轶IMAX影城（如皋吾悦广场旗舰店）</span>
             </div>
             <div class="show_info">
                 <span class="span_introduction_color">影厅：</span>
@@ -61,21 +62,21 @@
             </div>
             <div class="show_info">
                 <span class="span_introduction_color">版本：</span>
-                <span class="p_introduction">国语2D</span>
+                <span class="p_introduction">${FILMINFO.film_version}</span>
             </div>
             <div class="show_info">
                 <span class="span_introduction_color">场次：</span>
-                <span class="p_introduction" style="color: red">10月9日 21:40</span>
+                <span class="p_introduction" id="session_time" style="color: red">${FILMINFO.film_date} 21:40</span>
             </div>
             <div class="show_info">
                 <span class="span_introduction_color">票价：</span>
-                <span class="p_introduction">￥37.9/张</span>
+                <span class="p_introduction">￥${FILMINFO.film_price}/张</span>
             </div>
         </div>
         <div id="main_container_right_bottom">
             <div class="has_ticket">
                 <span class="span_introduction_color">座位：</span>
-                <p class="p_introduction" id="choosed" style="text-align: center">请<span style="color: red">点击左侧</span>座位图选择座位<br>（最多选择6个座位）</p>
+                <p class="p_introduction" id="choosed" onclick="test()" style="text-align: center">请<span style="color: red">点击左侧</span>座位图选择座位<br>（最多选择6个座位）</p>
             </div>
             <div class="has_ticket">
                 <span class="span_introduction_color">已选票数：</span>
@@ -93,6 +94,15 @@
     </div>
 </div>
 <script>
+    function test(){
+
+        console.log($("#filmname").val());
+        console.log($("#total_price").text());
+        console.log($("#choosed").text());
+    }
+  /*  $.post("./Order.action",{film_name:})*/
+
+
     layui.use('element', function(){
         var element = layui.element;
     });

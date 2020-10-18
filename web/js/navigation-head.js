@@ -24,8 +24,8 @@ document.writeln("                <img src=\'http://t.cn/RCzsdCq\' class=\'layui
 document.writeln("                贤心");
 document.writeln("            </a>");
 document.writeln("            <dl class=\'layui-nav-child\'>");
-document.writeln("                <dd><a href=\'\'>登录</a></dd>");
-document.writeln("                <dd><a href=\'\'>基本信息</a></dd>");
+document.writeln("                <dd><a href=\'/login_register/login.jsp\'>登录</a></dd>");
+document.writeln("                <dd><a href=\'/user/usercenter.jsp#order\'>我的订单</a></dd>");
 document.writeln("                <dd><a href=\'\'>退出登录</a></dd>");
 document.writeln("            </dl>");
 document.writeln("        </li>");

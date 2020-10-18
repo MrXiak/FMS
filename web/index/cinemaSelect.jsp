@@ -54,7 +54,7 @@
                         </a>
                     </div>
                     <div  >
-                        <a class="btn_buy">选择座位&nbsp&nbsp购买影票</a>
+                        <a class="btn_buy"href="/filmDetail.action?&film_id=${filmInfo.film_id}">查看电影详情</a>
                     </div>
                 </div>
                 <div class="movie_stars_nav">
@@ -86,7 +86,7 @@
                 <p class="cinema_address">地址：如皋市白蒲镇蒲塘路63号文峰大世界3楼上岸影城</p>
             </div>
             <div class="buy_btn">
-                <a class="buy_tickets">选座购票</a>
+                <a class="buy_tickets" href="/user/buytickets.jsp">选座购票</a>
             </div>
             <div class="price">
                 <span class="rmb">￥</span>

@@ -27,6 +27,7 @@
         <div id="nav_img">
             <div id="poster_shadow">
                 <img id="poster" src="${FILMINFO.pre_film_img}">
+
             </div>
 
         </div>

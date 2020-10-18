@@ -108,10 +108,30 @@ function mouseout(obj){
     }
 }
 
-function createorder(obj){
+function createorder(){
     if (i == 0){
         alert("请选择至少一个座位！");
     }else {
-        window.location.href="orderinfo.html";
+        var film_name =$("#filmname").html();
+        var cinema_name =$("#cinema_name").html();
+        var session_time =$("#session_time").html();
+        console.log(film_name)
+        var total_price =$("#total_price").text();
+        var seat =$("#choosed").text()
+
+       window.location.href="/user/orderinfo.jsp";
+
+        $.ajax({
+            type:"post",
+            data:{
+                film_name:film_name,
+                cinema_name:cinema_name,
+                session_time:session_time,
+                total_price:total_price,
+                seat:seat
+            },
+            dataType:"json",
+            url:"/Order.action"
+        })
     }
 }

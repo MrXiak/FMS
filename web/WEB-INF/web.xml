@@ -10,6 +10,15 @@
 
 
     <servlet>
+        <servlet-name>OrderInfo</servlet-name>
+        <servlet-class>com.cinema.servlet.OrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderInfo</servlet-name>
+        <url-pattern>/Order.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>FilmDetail</servlet-name>
         <servlet-class>com.cinema.servlet.FilmDetailServlet</servlet-class>
     </servlet>
@@ -32,6 +41,7 @@
     <servlet>
         <servlet-name>index</servlet-name>
         <servlet-class>com.cinema.servlet.FilmServlet</servlet-class>
+<!--        <load-on-startup>1</load-on-startup>-->
     </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
@@ -176,5 +186,23 @@
     <servlet-mapping>
         <servlet-name>admin_On_PreFilm</servlet-name>
         <url-pattern>/admin_On_PreFilm.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>admin_order</servlet-name>
+        <servlet-class>com.cinema.servlet.ManageOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin_order</servlet-name>
+        <url-pattern>/admin_order.action</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>user_manage_order</servlet-name>
+        <servlet-class>com.cinema.servlet.User_Manage_OrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>user_manage_order</servlet-name>
+        <url-pattern>/user_manage_order.action</url-pattern>
     </servlet-mapping>
 </web-app>

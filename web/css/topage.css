@@ -19,6 +19,8 @@
     width: 40px;
     border: 1px solid #ccc;
     word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .outBox .checkbox {
