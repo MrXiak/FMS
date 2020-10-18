@@ -43,7 +43,7 @@
                         <th>用户头像</th>
                         <th>用户昵称</th>
                         <th>帐号</th>
-                        <th>性别</th>
+                        <th>性别(1:男，0:女)</th>
                         <th>电话</th>
                         <th>密保一</th>
                         <th>密保一答案</th>
@@ -65,8 +65,7 @@
                             <td>${user.question_two}</td>
                             <td>${user.answer_two}</td>
                             <td>
-                                <button type="button" class="btnoperate edit"> 编辑</button>
-                                <button type="button" class="btnoperate del"> 删除</button>
+                                <a href="${pageContext.request.contextPath}/manage_User.action?type=delete&uid=${user.user_id}"><span>删除</span></a>
                             </td>
                         </tr>
                     </c:forEach>

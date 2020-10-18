@@ -1,4 +1,7 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.cinema.dao.IFilmDao" %>
+<%@ page import="com.cinema.dao.impl.IFilmDaoImpl" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: 67463
   Date: 2020/10/16
@@ -18,6 +21,10 @@
     <link rel="stylesheet" href="../css/admin-film.css">
     <link rel="stylesheet" href="../css/topage.css">
 </head>
+<%
+    IFilmDao iFilmDao=new IFilmDaoImpl();
+    List plist=iFilmDao.findAllPreFilm();
+%>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <script type="text/javascript" src="../js/admin-navigation-head.js"></script>
@@ -44,20 +51,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <c:forEach items="<%= plist%>" var="pl">
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><img src="${pl.pre_film_img}" style="max-width: 100%"></td>
+                            <td>${pl.pre_film_id}</td>
+                            <td>${pl.pre_film_name}</td>
+                            <td>${pl.pre_film_type}</td>
+                            <td>${pl.pre_film_time}</td>
+                            <td>${pl.pre_film_actor}</td>
+                            <td>${pl.pre_film_date}</td>
+                            <td>${pl.pre_film_version}</td>
+                            <td>${pl.pre_film_info}</td>
                             <td>
-                                <button type="button" class="btnoperate edit">上映</button>
+                                <a href="${pageContext.request.contextPath}/admin_PreFilm.action?type=onshow&pre_film_id=${pl.pre_film_id}"><span>上映</span></a>/
+                                <a href="${pageContext.request.contextPath}/admin_PreFilm.action?type=delete&pre_film_id=${pl.pre_film_id}"><span>删除</span></a>
                             </td>
                         </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

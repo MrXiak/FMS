@@ -22,11 +22,11 @@ import java.io.PrintWriter;
 import java.util.List;
 
 public class Admin_RegisterServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,  resp);
     }
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         //获取页面的值
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");

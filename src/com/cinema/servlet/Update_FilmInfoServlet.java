@@ -1,5 +1,10 @@
 package com.cinema.servlet;
 
+import com.cinema.dao.IFilmDao;
+import com.cinema.dao.IUserDao;
+import com.cinema.dao.impl.IFilmDaoImpl;
+import com.cinema.dao.impl.IUserDaoImpl;
+import com.cinema.entity.FilmInfo;
 import com.cinema.entity.preFilm;
 import com.cinema.service.IFilmService;
 import com.cinema.service.impl.IFilmServiceImpl;
@@ -9,15 +14,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-public class Add_PreFilmServlet extends HttpServlet {
-    public void doGet(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException {
+public class Update_FilmInfoServlet extends HttpServlet {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
     }
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         //获取页面的值
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");
+
         String img=req.getParameter("road");//引的是name
         String pid=req.getParameter("input_pre_filmid");
         String p_name = req.getParameter("p_name");
@@ -94,22 +102,25 @@ public class Add_PreFilmServlet extends HttpServlet {
             threedmax = " ";
         }
         String p_info=req.getParameter("desc");
+        String p_price=req.getParameter("p_price");
+        String p_score=req.getParameter("p_score");
 
-        preFilm preFilm=new preFilm();
-        preFilm.setPre_film_img(img);
-        preFilm.setPre_film_id(pid);
-        preFilm.setPre_film_name(p_name);
-        preFilm.setPre_film_type(love+comedy+animation+story+panic+science+suspense+crime+adventure+war+family+swordsman);
-        preFilm.setPre_film_time(p_time);
-        preFilm.setPre_film_actor(p_actor);
-        preFilm.setPre_film_date(p_date);
-        preFilm.setPre_film_version(twod+threed+twodmax+threedmax);
-        preFilm.setPre_film_info(p_info);
+        FilmInfo filmInfo=new FilmInfo();
+        filmInfo.setFilm_img(img);
+        filmInfo.setFilm_id(pid);
+        filmInfo.setFilm_name(p_name);
+        filmInfo.setFilm_type(love+comedy+animation+story+panic+science+suspense+crime+adventure+war+family+swordsman);
+        filmInfo.setFilm_time(p_time);
+        filmInfo.setFilm_actor(p_actor);
+        filmInfo.setFilm_date(p_date);
+        filmInfo.setFilm_version(twod+threed+twodmax+threedmax);
+        filmInfo.setFilm_info(p_info);
+        filmInfo.setFilm_price(p_price);
+        filmInfo.setFilm_score(p_score);
 
-        //调用Service层
         IFilmService iFilmService=new IFilmServiceImpl();
-        if (iFilmService.isInsert(preFilm)){
-            req.getRequestDispatcher("./user/success.jsp").forward(req,resp);
+        if ( iFilmService.isUpdateFilmInfo(filmInfo)){
+            req.getRequestDispatcher("./admin-jsp/admin-film.jsp").forward(req,resp);
         }else{
             req.getRequestDispatcher("./user/fail.jsp").forward(req,resp);
         }
