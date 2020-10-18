@@ -44,16 +44,8 @@ public class FilmServlet extends HttpServlet {
             //即将上映的影片在首页显示8个
             List<preFilm> preFilmList=dao1.findPreAll();
             req.setAttribute("preFilmList",preFilmList);
-
-
-
-
-
         //转发请求
         req.getRequestDispatcher("/index/index.jsp").forward(req,resp);
-
-
-
     }
 
 }

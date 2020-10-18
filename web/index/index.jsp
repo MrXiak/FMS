@@ -225,7 +225,7 @@
             <table style="height: 200px;width: 200px;float: left">
                 <tr>
                     <td>
-                        <a href="#">
+                        <a href="/filmDetail.action?&pre_film_id=<%=prefilm.getPre_film_id()%>">
                             <div class="film_img">
                                 <img src="<%=prefilm.getPre_film_img()%>" height="200px" width="150px">
                                 <div class="film_info">

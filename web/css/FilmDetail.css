@@ -121,21 +121,7 @@
 
 }
 .score_btn.a:visited{color: #ffffff}
-/*.btn_buy{*/
-/*    cursor: pointer;*/
-/*    position: absolute;*/
-/*    top: 50px;*/
-/*    width:250px;*/
-/*    height: 40px;*/
-/*    font-size: 16px;*/
-/*    line-height:40px;*/
-/*    text-align: center;*/
-/*    border-radius: 2px;*/
-/*    color: #fff;*/
-/*    background-color: #df2d2d;*/
-/*    display: inline-block;*/
-/*    !*margin-left: -50px;*!*/
-/*}*/
+
 .btn_buy.a:visited{
     color: #ffffff;}
 .movie_stars_nav{
@@ -172,9 +158,58 @@
     font-size: 12px;
     color: #ffc600;
 }
+#container{
+    /*height: 900px;*/
+    width:1200px;
+    margin:80px auto;
+}
+#container_main{
+    margin-top: 80px;
+}
+#main_content{
+    font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    width: 1200px;
+}
+#filmDetail{
+    font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
 
-
-
+}
+.module{
+    font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    margin-bottom: 60px;
+    position: relative;
+}
+.mod_title{
+    font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.mod_title_before{
+    float: left;
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    margin-right: 6px;
+    background-color: #ef4238;
+}
+.mod_title_text{
+    font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+    line-height: 18px;
+}
+.mod_content{
+    margin-top: 20px;
+    color: #333;
+}
 
 
 

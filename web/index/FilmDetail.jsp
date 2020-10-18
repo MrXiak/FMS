@@ -73,7 +73,21 @@
     </div>
 </div>
 <%--主要内容--%>
-
+<div id="container">
+    <div id="container_main">
+        <div id="main_content">
+            <div id="filmDetail">
+                <div class="module">
+                    <div class="mod_title">
+                        <div class="mod_title_before"></div>
+                        <h2 class="mod_title_text">剧情简介</h2>
+                    </div>
+                    <div class="mod_content">${FILMINFO.pre_film_info}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <%--底部栏--%>
 <div class="footer" >
     <p class="friendly-links">
