@@ -157,13 +157,4 @@
         <servlet-name>admin_PreFilm</servlet-name>
         <url-pattern>/admin_PreFilm.action</url-pattern>
     </servlet-mapping>
-
-    <servlet>
-        <servlet-name>admin_On_PreFilm</servlet-name>
-        <servlet-class>com.cinema.servlet.Admin_On_PreFilmServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>admin_On_PreFilm</servlet-name>
-        <url-pattern>/admin_On_PreFilm.action</url-pattern>
-    </servlet-mapping>
 </web-app>

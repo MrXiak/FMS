@@ -48,18 +48,18 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">类型</label>
                     <div class="layui-input-block" style="width: 600px;">
-                        <input type="checkbox" name="like[love]" title="爱情" value="love" <c:if test="${F.film_type.contains('love')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[comedy]" title="喜剧" value="comedy" <c:if test="${F.film_type.contains('comedy')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[animation]" title="动画" value="animation" <c:if test="${F.film_type.contains('animation')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[story]" title="剧情" value="story" <c:if test="${F.film_type.contains('story')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[panic]" title="惊悚" value="panic" <c:if test="${F.film_type.contains('panic')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[science]" title="科幻" value="science" <c:if test="${F.film_type.contains('science')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[suspense]" title="悬疑" value="suspense" <c:if test="${F.film_type.contains('suspense')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[crime]" title="犯罪" value="crime" <c:if test="${F.film_type.contains('crime')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[adventure]" title="冒险" value="adventure" <c:if test="${F.film_type.contains('adventure')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[war]" title="战争" value="war" <c:if test="${F.film_type.contains('war')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[family]" title="家庭" value="family" <c:if test="${F.film_type.contains('family')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[swordsman]" title="武侠" value="swordsman" <c:if test="${F.film_type.contains('swordsman')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[love]" title="爱情" value="爱情" <c:if test="${F.film_type.contains('爱情')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[comedy]" title="喜剧" value="喜剧" <c:if test="${F.film_type.contains('喜剧')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[animation]" title="动画" value="动画" <c:if test="${F.film_type.contains('动画')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[story]" title="剧情" value="剧情" <c:if test="${F.film_type.contains('剧情')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[panic]" title="惊悚" value="惊悚" <c:if test="${F.film_type.contains('惊悚')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[science]" title="科幻" value="科幻" <c:if test="${F.film_type.contains('科幻')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[suspense]" title="悬疑" value="悬疑" <c:if test="${F.film_type.contains('悬疑')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[crime]" title="犯罪" value="犯罪" <c:if test="${F.film_type.contains('犯罪')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[adventure]" title="冒险" value="冒险" <c:if test="${F.film_type.contains('冒险')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[war]" title="战争" value="战争" <c:if test="${F.film_type.contains('战争')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[family]" title="家庭" value="家庭" <c:if test="${F.film_type.contains('家庭')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[swordsman]" title="武侠" value="武侠" <c:if test="${F.film_type.contains('武侠')}"> checked="checked"</c:if>/>
                     </div>
                 </div>
                 <div class="layui-form-item">

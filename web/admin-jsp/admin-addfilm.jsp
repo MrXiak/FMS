@@ -136,10 +136,10 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">版本</label>
                     <div class="layui-input-block">
-                        <input type="checkbox" name="like[2D]" title="2D" value="twod">
-                        <input type="checkbox" name="like[3D]" title="3D" value="threed">
-                        <input type="checkbox" name="like[2D MAX]" title="2D MAX" value="twodmax">
-                        <input type="checkbox" name="like[3D MAX]" title="3D MAX" value="threedmax">
+                        <input type="checkbox" name="like[2D]" title="2D" value="2D">
+                        <input type="checkbox" name="like[3D]" title="3D" value="3D">
+                        <input type="checkbox" name="like[2D MAX]" title="2D MAX" value="2D MAX">
+                        <input type="checkbox" name="like[3D MAX]" title="3D MAX" value="3D MAX">
                     </div>
                 </div>
 
