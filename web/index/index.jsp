@@ -188,7 +188,7 @@
             <table style="height: 200px;width: 200px;float: left">
                 <tr>
                     <td >
-                        <a href="#">
+                        <a href="/cinema.action?&film_id=<%=filmInfo.getFilm_id()%>">
                             <div class="film_img">
                                 <img src="<%=filmInfo.getFilm_img()%>" height="200px" width="150px">
                                 <div class="film_info">
@@ -235,6 +235,7 @@
                             </div>
                             <div class="buyTickets">查看详情</div>
                         </a>
+                        <div class="film_type" ><%=prefilm.getPre_film_version()%></div>
                     </td>
                 </tr>
             </table>

@@ -67,7 +67,7 @@
 #page_Select{
     height: 100px;
     width: 300px;
-    margin: 0 auto;
+    margin: 50px auto;
     line-height: 100px;
 }
 .film_img{
@@ -119,14 +119,14 @@
     position: absolute;
     z-index: 3;
     height: 25px;
-    width: 80px;
+    width: 50px;
     color: white;
     background-color:#1E9FFF;
     line-height: 25px;
     margin: -225px -2px;
     font-style: italic;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 12px;
     user-select: none;
     margin-left:15px;
 }

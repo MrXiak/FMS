@@ -29,7 +29,7 @@ public class pageService {
         ResultSet rs=null;
         List<FilmInfo> filmInfoList=new ArrayList<FilmInfo>();
         int totalPageSize=0;
-        int pageSize=21;//默认每页显示多少条记录
+        int pageSize=18;//默认每页显示多少条记录
 
         try{
             conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
@@ -80,7 +80,7 @@ public class pageService {
         ResultSet rs=null;
         List<preFilm> filmInfoList=new ArrayList<preFilm>();
         int totalPageSize=0;
-        int pageSize=21;//默认每页显示多少条记录
+        int pageSize=18;//默认每页显示多少条记录
 
         try{
             conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
@@ -98,7 +98,9 @@ public class pageService {
                         rs.getString(4),
                         rs.getString(5),
                         rs.getString(6),
-                        rs.getString(7)));
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9)));
                 System.out.println(rs.getObject(1) + "\t"
                         + rs.getObject(2) + "\t"
                         + rs.getObject(3) + "\t"
@@ -106,6 +108,8 @@ public class pageService {
                         + rs.getObject(5) + "\t"
                         + rs.getObject(6) + "\t"
                         + rs.getObject(7) + "\t"
+                        + rs.getString(8) + "\t"
+                        + rs.getString(9) + "\t"
 
                 );
             }

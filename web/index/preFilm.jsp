@@ -38,7 +38,7 @@
 
                 <c:forEach items="${pageutils.records}" var="filmInfo">
 
-                    <div style="float: left">
+                    <div style="float: left;margin-top: 20px;margin-left: 20px">
                         <a href="#" >
                             <div class="film_img">
                                 <img src="${filmInfo.pre_film_img }" height="200px" width="150px">
@@ -49,7 +49,7 @@
                             </div>
                             <div class="buyTickets">查看详情</div>
                         </a>
-                        <div class="film_type" >2DIMAX</div>
+                        <div class="film_type" >${filmInfo.pre_film_version}</div>
                     </div>
 
                 </c:forEach>

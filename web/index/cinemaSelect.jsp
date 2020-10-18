@@ -15,6 +15,7 @@
     <script src="../js/jquery/jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="../css/cinemaSelect.css">
     <link rel="stylesheet" href="../css/logo-icon.css">
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <title>影片放映—熊熊电影</title>
 </head>
 <body>
@@ -25,18 +26,18 @@
     <div id="nav">
         <div id="nav_img">
             <div id="poster_shadow">
-                <img id="poster" src="https://p0.meituan.net/movie/202ea88abd2abf2aa1964487d61edab64556414.jpg@464w_644h_1e_1c">
+                <img id="poster" src="${FILMINFO.film_img}">
             </div>
 
         </div>
         <div id="nav_text">
             <div id="text_film">
-                <h1 class="name">我和我的家乡</h1>
+                <h1 class="name">${FILMINFO.film_name}</h1>
                 <div id="film_info">
                     <ul>
-                        <li class="ellipsis">剧情&nbsp喜剧</li>
-                        <li class="ellipsis">中国大陆/153分钟</li>
-                        <li class="ellipsis">2020-10-01 08:00中国大陆上映</li>
+                        <li class="ellipsis">${FILMINFO.film_type}</li>
+                        <li class="ellipsis">中国大陆/${FILMINFO.film_time}</li>
+                        <li class="ellipsis">${FILMINFO.film_date} 08:00中国大陆上映</li>
                     </ul>
                 </div>
                 <div class="action_btn">
@@ -60,7 +61,7 @@
                     <div class="movie_index">
                         <p class="movie_index_title">熊熊口碑</p>
                         <div class="movie_index_content">
-                            <span class="left_score">9.3</span>
+                            <span class="left_score">${FILMINFO.film_score}</span>
                             <div class="right_index">
                                 <span class="score_num">70.6万人评分</span>
                             </div>
@@ -77,9 +78,11 @@
         <h2 class="cinema_list_header">
             <span>影院列表</span>
         </h2>
+<c:forEach items="${cinemaList}" var="cinemaList">
         <div class="cinema_cell">
+
             <div class="cinema_info">
-                <a class="cinema_name">上影影城（白蒲店）</a>
+                <a class="cinema_name">${cinemaList.cinema_name}</a>
                 <p class="cinema_address">地址：如皋市白蒲镇蒲塘路63号文峰大世界3楼上岸影城</p>
             </div>
             <div class="buy_btn">
@@ -91,6 +94,7 @@
                 <span>起</span>
             </div>
         </div>
+</c:forEach>
     </div>
 </div>
 <%--底部栏--%>

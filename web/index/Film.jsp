@@ -40,7 +40,7 @@
 <%--                    <table >--%>
 <%--                        <tr >--%>
                 <c:forEach items="${pageutils.records}" var="filmInfo">
-                    <div style="float: left;">
+                    <div style="float: left;margin-top: 20px;margin-left: 20px">
                         <a href="#" >
                             <div class="film_img">
                                 <img src="${filmInfo.film_img }" height="200px" width="150px">
@@ -49,7 +49,7 @@
                                     <div class="film_score">${filmInfo.film_score }</div>
                                 </div>
                             </div>
-                                <a href="/index/cinemaSelect.jsp"><div class="buyTickets">购票</div></a>
+                                <a href="/cinema.action?&film_id=${filmInfo.film_id}"><div class="buyTickets">购票</div></a>
                         </a>
                             <div class="film_type" >${filmInfo.film_version }</div>
                         </div>

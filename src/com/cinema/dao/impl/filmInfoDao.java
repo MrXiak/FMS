@@ -1,5 +1,6 @@
 package com.cinema.dao.impl;
 
+import com.cinema.entity.AdminInfo;
 import com.cinema.entity.FilmInfo;
 import com.cinema.entity.User;
 import com.cinema.entity.preFilm;
@@ -103,12 +104,14 @@ public class filmInfoDao {
                 String pre_film_img=rs.getString("pre_film_img");
                 String pre_film_id= rs.getString("pre_film_id");
                 String pre_film_name=rs.getString("pre_film_name");
+                String pre_film_type=rs.getString("pre_film_type");
                 String pre_film_time= rs.getString("pre_film_time");
                 String pre_film_actor=rs.getString("pre_film_actor");
                 String pre_film_date=rs.getString("pre_film_date");
+                String pre_film_version=rs.getString("pre_film_version");
                 String pre_film_info=rs.getString("pre_film_info");
 
-                preFilm prfilm=new preFilm(pre_film_img,pre_film_id,pre_film_name,pre_film_time,pre_film_actor,pre_film_date,pre_film_info);
+                preFilm prfilm=new preFilm(pre_film_img,pre_film_id,pre_film_name,pre_film_type,pre_film_time,pre_film_actor,pre_film_date,pre_film_version,pre_film_info);
                 preFilmList.add(prfilm);
             }
         } catch (SQLException throwables) {
@@ -159,5 +162,42 @@ public class filmInfoDao {
             DBUtil.close();
             return lt;
         }
+    }
+//    private String film_img;  //图片
+//    private Integer film_id;   //id
+//    private String film_name;   //电影名
+//    private String film_type;   //类型
+//    private Integer film_time;  //电影时长
+//    private String film_actor;  //电影导演
+//    private String film_date;   //上映日期
+//    private String film_version;//电影版本
+//    private String film_info;   //详情
+//    private Double film_price;  //票价
+//    private Double film_score;  //评分
+
+    public FilmInfo selectByFilmId(Integer film_id) throws SQLException {
+        DBUtil.initConnection();//初始化connection对象
+        String sql="select * from film where film_id=?";
+        DBUtil.initPrepareStatement(sql);
+        DBUtil.setPar(film_id);
+        DBUtil.executeQuery();
+        ResultSet rs=DBUtil.getRes();
+            if(rs.next()){
+                String filmimg=rs.getString("film_img");
+                Integer filmid= Integer.valueOf(rs.getString("film_id"));
+                String filmname=rs.getString("film_name");
+                String filmtype=rs.getString("film_type");
+                Integer filmtime= Integer.valueOf(rs.getString("film_time"));
+                String filmactor=rs.getString("film_actor");
+                String filmdate=rs.getString("film_date");
+                String filmversion=rs.getString("film_version");
+                String filminfo=rs.getString("film_info");
+                Double filmprice= Double.valueOf(rs.getString("film_price"));
+                Double filmscore= Double.valueOf(rs.getString("film_score"));
+                FilmInfo filmInfos=new FilmInfo(filmimg,filmid,filmname,filmtype,filmtime,filmactor,filmdate,filmversion,filminfo,filmprice,filmscore);
+                return filmInfos;
+            }
+            DBUtil.close();
+        return null;
     }
 }
