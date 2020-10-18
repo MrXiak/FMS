@@ -29,10 +29,10 @@ public class pageService {
         ResultSet rs=null;
         List<FilmInfo> filmInfoList=new ArrayList<FilmInfo>();
         int totalPageSize=0;
-        int pageSize=6;//默认每页显示6条记录
+        int pageSize=18;//默认每页显示多少条记录
 
         try{
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
             st=conn.createStatement();
             rs=st.executeQuery("select count(film_id) totalNum from film");
             if (rs.next()) {
@@ -49,7 +49,9 @@ public class pageService {
                                               rs.getString(6),
                                               rs.getString(7),
                                               rs.getString(8),
-                                              rs.getString(9)));
+                                              rs.getString(9),
+                                              rs.getString(10),
+                                              rs.getString(11)));
                 System.out.println(rs.getObject(1) + "\t"
                                  + rs.getObject(2) + "\t"
                                  + rs.getObject(3) + "\t"
@@ -59,6 +61,8 @@ public class pageService {
                                  + rs.getObject(7) + "\t"
                                  + rs.getObject(8) + "\t"
                                  + rs.getObject(9) + "\t"
+                                 + rs.getObject(10) + "\t"
+                                 + rs.getObject(11) + "\t"
                 );
             }
         }catch (Exception e){
@@ -76,10 +80,10 @@ public class pageService {
         ResultSet rs=null;
         List<preFilm> filmInfoList=new ArrayList<preFilm>();
         int totalPageSize=0;
-        int pageSize=6;//默认每页显示6条记录
+        int pageSize=18;//默认每页显示多少条记录
 
         try{
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
             st=conn.createStatement();
             rs=st.executeQuery("select count(pre_film_id) totalNum from prefilm");
             if (rs.next()) {
@@ -94,7 +98,9 @@ public class pageService {
                         rs.getString(4),
                         rs.getString(5),
                         rs.getString(6),
-                        rs.getString(7)));
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9)));
                 System.out.println(rs.getObject(1) + "\t"
                         + rs.getObject(2) + "\t"
                         + rs.getObject(3) + "\t"
@@ -102,6 +108,8 @@ public class pageService {
                         + rs.getObject(5) + "\t"
                         + rs.getObject(6) + "\t"
                         + rs.getObject(7) + "\t"
+                        + rs.getObject(8) + "\t"
+                        + rs.getObject(9) + "\t"
 
                 );
             }

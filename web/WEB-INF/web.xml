@@ -10,6 +10,16 @@
 
 
     <servlet>
+        <servlet-name>FilmDetail</servlet-name>
+        <servlet-class>com.cinema.servlet.FilmDetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FilmDetail</servlet-name>
+        <url-pattern>/filmDetail.action</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
         <servlet-name>cinemaSelect</servlet-name>
         <servlet-class>com.cinema.servlet.FilmSelectServlet</servlet-class>
     </servlet>

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 诗
-  Date: 2020/10/16
-  Time: 8:56
+  Date: 2020/10/18
+  Time: 15:17
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../layui/css/layui.css">
     <script src="../layui/layui.js"></script>
     <script src="../js/jquery/jquery-3.2.1.js"></script>
-    <link rel="stylesheet" href="../css/cinemaSelect.css">
+    <link rel="stylesheet" href="../css/FilmDetail.css">
     <link rel="stylesheet" href="../css/logo-icon.css">
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <title>影片放映—熊熊电影</title>
@@ -26,18 +26,18 @@
     <div id="nav">
         <div id="nav_img">
             <div id="poster_shadow">
-                <img id="poster" src="${FILMINFO.film_img}">
+                <img id="poster" src="${FILMINFO.pre_film_img}">
             </div>
 
         </div>
         <div id="nav_text">
             <div id="text_film">
-                <h1 class="name">${FILMINFO.film_name}</h1>
+                <h1 class="name">${FILMINFO.pre_film_name}</h1>
                 <div id="film_info">
                     <ul>
-                        <li class="ellipsis">${FILMINFO.film_type}</li>
-                        <li class="ellipsis">中国大陆/${FILMINFO.film_time}</li>
-                        <li class="ellipsis">${FILMINFO.film_date} 08:00中国大陆上映</li>
+                        <li class="ellipsis">${FILMINFO.pre_film_type}</li>
+                        <li class="ellipsis">中国大陆/${FILMINFO.pre_film_time}</li>
+                        <li class="ellipsis">${FILMINFO.pre_film_date} 08:00中国大陆上映</li>
                     </ul>
                 </div>
                 <div class="action_btn">
@@ -53,17 +53,17 @@
                             </div>
                         </a>
                     </div>
-                    <div  >
-                        <a class="btn_buy">选择座位&nbsp&nbsp购买影票</a>
-                    </div>
+<%--                    <div  >--%>
+<%--                        <a class="btn_buy"href="#">查看更多电影详情</a>--%>
+<%--                    </div>--%>
                 </div>
                 <div class="movie_stars_nav">
                     <div class="movie_index">
                         <p class="movie_index_title">熊熊口碑</p>
                         <div class="movie_index_content">
-                            <span class="left_score">${FILMINFO.film_score}</span>
+                            <span class="left_score">暂无</span>
                             <div class="right_index">
-                                <span class="score_num">70.6万人评分</span>
+                                <span class="score_num">70.6万人想看</span>
                             </div>
                         </div>
                     </div>
@@ -73,30 +73,7 @@
     </div>
 </div>
 <%--主要内容--%>
-<div id="container">
-    <div class="cinema_list">
-        <h2 class="cinema_list_header">
-            <span>影院列表</span>
-        </h2>
-<c:forEach items="${cinemaList}" var="cinemaList">
-        <div class="cinema_cell">
 
-            <div class="cinema_info">
-                <a class="cinema_name">${cinemaList.cinema_name}</a>
-                <p class="cinema_address">地址：如皋市白蒲镇蒲塘路63号文峰大世界3楼上岸影城</p>
-            </div>
-            <div class="buy_btn">
-                <a class="buy_tickets">选座购票</a>
-            </div>
-            <div class="price">
-                <span class="rmb">￥</span>
-                <span class="price_red">35</span>
-                <span>起</span>
-            </div>
-        </div>
-</c:forEach>
-    </div>
-</div>
 <%--底部栏--%>
 <div class="footer" >
     <p class="friendly-links">

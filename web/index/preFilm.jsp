@@ -47,7 +47,7 @@
 <%--                                    <div class="film_score">${filmInfo.film_score }</div>--%>
                                 </div>
                             </div>
-                            <div class="buyTickets">查看详情</div>
+                            <a href="/filmDetail.action?&pre_film_id=${filmInfo.pre_film_id}"><div class="buyTickets">查看详情</div></a>
                         </a>
                         <div class="film_type" >${filmInfo.pre_film_version}</div>
                     </div>
