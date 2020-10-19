@@ -1,4 +1,4 @@
-package com.cinema.util;
+package com.cinema.entity;
 
 import java.util.List;
 

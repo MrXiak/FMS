@@ -1,11 +1,6 @@
 package com.cinema.servlet;
 
-import com.cinema.dao.IFilmDao;
-import com.cinema.dao.IUserDao;
-import com.cinema.dao.impl.IFilmDaoImpl;
-import com.cinema.dao.impl.IUserDaoImpl;
 import com.cinema.entity.FilmInfo;
-import com.cinema.entity.preFilm;
 import com.cinema.service.IFilmService;
 import com.cinema.service.impl.IFilmServiceImpl;
 
@@ -14,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-public class Update_FilmInfoServlet extends HttpServlet {
+public class Admin_On_FilmServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
     }
@@ -119,9 +113,8 @@ public class Update_FilmInfoServlet extends HttpServlet {
         filmInfo.setFilm_price(p_price);
         filmInfo.setFilm_score(p_score);
 
-        System.out.println(filmInfo);
         IFilmService iFilmService=new IFilmServiceImpl();
-        if ( iFilmService.isUpdateFilmInfo(filmInfo)){
+        if ( iFilmService.isInsertNew(filmInfo)){
             req.getRequestDispatcher("./admin-jsp/admin-film.jsp").forward(req,resp);
         }else{
             req.getRequestDispatcher("./user/fail.jsp").forward(req,resp);

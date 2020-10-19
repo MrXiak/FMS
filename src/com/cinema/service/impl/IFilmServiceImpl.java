@@ -20,4 +20,11 @@ public class IFilmServiceImpl implements IFilmService {
         iFilmDao.update_FIlm(filmInfo.getFilm_img(),filmInfo.getFilm_id(),filmInfo.getFilm_name(),filmInfo.getFilm_type(),filmInfo.getFilm_time(),filmInfo.getFilm_actor(),filmInfo.getFilm_date(),filmInfo.getFilm_version(),filmInfo.getFilm_info(),filmInfo.getFilm_price(),filmInfo.getFilm_score());
         return true;
     }
+
+    @Override
+    public boolean isInsertNew(FilmInfo filmInfo) {
+        IFilmDao iFilmDao=new IFilmDaoImpl();
+        iFilmDao.insertNewFilm(filmInfo.getFilm_img(),filmInfo.getFilm_id(),filmInfo.getFilm_name(),filmInfo.getFilm_type(),filmInfo.getFilm_time(),filmInfo.getFilm_actor(),filmInfo.getFilm_date(),filmInfo.getFilm_version(),filmInfo.getFilm_info(),filmInfo.getFilm_price(),filmInfo.getFilm_score());
+        return true;
+    }
 }

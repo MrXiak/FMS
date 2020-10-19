@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class InfoServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -20,6 +21,7 @@ public class InfoServlet extends HttpServlet {
         //获取页面的值
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
         String uname=req.getParameter("qname");//引的是name
         String uid=req.getParameter("user_id");
         String sex = req.getParameter("sex");
@@ -102,9 +104,12 @@ public class InfoServlet extends HttpServlet {
         if (userService.isUpdate(u)){
 //        req.getSession().setAttribute("list",u);
 //        req.getServletContext().setAttribute("list",u);
-            req.getRequestDispatcher("./user/success.jsp").forward(req,resp);
+            req.getRequestDispatcher("./user/usercenter.jsp#info").forward(req,resp);
         }else{
-            req.getRequestDispatcher("./user/fail.jsp").forward(req,resp);
+            out.print("<script type='text/javascript'>");
+            out.print("alert('账号或密码错误，请核查，如没有账号请注册！');");
+            out.print("window.location='./login_register/login.jsp';");
+            out.print("</script>");
         }
     }
 }

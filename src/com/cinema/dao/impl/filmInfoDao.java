@@ -1,11 +1,8 @@
 package com.cinema.dao.impl;
 
 import com.cinema.entity.FilmInfo;
-import com.cinema.entity.User;
 import com.cinema.entity.preFilm;
 import com.cinema.util.DBUtil;
-import com.cinema.util.pageUtils;
-import com.mysql.cj.protocol.Resultset;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -63,8 +63,8 @@
         <div class="admin_addfilm_maincontainer">
             <div class="fileBox">
                 <div class="warp">
-                    <div class="warp-content" >点击上传</div>
-                    <input class="input" type="file" id="file" />
+                    <div class="warp-content">点击上传</div>
+                    <input class="input" type="file" id="file"/>
                 </div>
                 <img class="img" id="ip" src=""/>
                 <button onclick=savesrc()>保存</button>
@@ -76,14 +76,16 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片海报</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input id="inputsrc" type="text" name="road" placeholder="海报路径" autocomplete="off" class="layui-input">
+                        <input id="inputsrc" type="text" name="road" placeholder="海报路径" autocomplete="off"
+                               class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <label class="layui-form-label">影片编号</label>
                         <div class="layui-input-block" style="width: 500px;">
-                            <input id="input_filmid" type="text" name="input_pre_filmid" placeholder="请点击右侧生成按钮生成订单编号" autocomplete="off" class="layui-input">
+                            <input id="input_filmid" type="text" name="input_pre_filmid" placeholder="请点击右侧生成按钮生成订单编号"
+                                   autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-inline">
@@ -116,7 +118,8 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">时长</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="p_time" placeholder="请输入电影时长xxx（min）" autocomplete="off" class="layui-input">
+                        <input type="text" name="p_time" placeholder="请输入电影时长xxx（min）" autocomplete="off"
+                               class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -147,7 +150,7 @@
                     <label class="layui-form-label">电影简介</label>
                     <div class="layui-input-block">
                         <label>
-                            <input type="text" name="desc" placeholder="请输入电影介绍"  />
+                            <input type="text" name="desc" placeholder="请输入电影介绍" autocomplete="off" class="layui-input">
                         </label>
                     </div>
                 </div>
@@ -173,7 +176,7 @@
 
     var file = document.getElementById('file');
     var image = document.querySelector(".img");
-    file.onchange = function() {
+    file.onchange = function () {
         var fileData = this.files[0];//获取到一个FileList对象中的第一个文件( File 对象),是我们上传的文件
         var pettern = /^image/;
 
@@ -186,49 +189,49 @@
         var reader = new FileReader();
         reader.readAsDataURL(fileData);//异步读取文件内容，结果用data:url的字符串形式表示
         /*当读取操作成功完成时调用*/
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             console.log(e); //查看对象
             console.log(this.result);//要的数据 这里的this指向FileReader（）对象的实例reader
             image.setAttribute("src", this.result)
         }
     }
 
-    function savesrc(){
+    function savesrc() {
         var src1 = document.getElementById("ip").src;
         alert(src1);
         var ip2 = document.getElementById("ip2");
-        $("#inputsrc").attr("value",src1);
+        $("#inputsrc").attr("value", src1);
         ip2.setAttribute("src", src1);
     }
 
 
-    function newGuid(){
+    function newGuid() {
         var guid = "";
-        for (var i = 1; i <= 12; i++){
-            var n = Math.floor(Math.random()*16.0).toString(16);
+        for (var i = 1; i <= 12; i++) {
+            var n = Math.floor(Math.random() * 16.0).toString(16);
             guid += n;
         }
         // document.getElementById("input_filmid").innerHTML = guid;
-        $("#input_filmid").attr("value",guid);
+        $("#input_filmid").attr("value", guid);
     }
 
 
-    layui.use('laydate' , function() {
+    layui.use('laydate', function () {
         var laydate = layui.laydate;
 
         //开启公历节日
         laydate.render({
             elem: '#calendar'
-            ,calendar: true
-            ,trigger:'click'
+            , calendar: true
+            , trigger: 'click'
         });
     });
 
     //Demo
-    layui.use('form', function(){
+    layui.use('form', function () {
         var form = layui.form;
         //监听提交
-        form.on('submit(formDemo)', function(data){
+        form.on('submit(formDemo)', function (data) {
             layer.msg(JSON.stringify(data.field));
             return false;
         });

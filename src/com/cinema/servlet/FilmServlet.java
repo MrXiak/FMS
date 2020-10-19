@@ -1,23 +1,15 @@
 package com.cinema.servlet;
 
 import com.cinema.dao.impl.filmInfoDao;
-import com.cinema.dao.impl.filmInfoDao;
 import com.cinema.entity.FilmInfo;
 import com.cinema.entity.preFilm;
 import com.cinema.service.preFilmService;
-import com.cinema.util.pageUtils;
-import com.sun.deploy.net.HttpResponse;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.sql.SQLException;
 import java.util.List;
 
 

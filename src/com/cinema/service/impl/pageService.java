@@ -2,9 +2,7 @@ package com.cinema.service.impl;
 
 import com.cinema.entity.FilmInfo;
 import com.cinema.entity.preFilm;
-import com.cinema.util.DBUtil;
-import com.cinema.util.pageUtils;
-import com.mysql.cj.protocol.Resultset;
+import com.cinema.entity.pageUtils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

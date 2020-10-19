@@ -2,17 +2,11 @@ package com.cinema.servlet;
 
 import com.cinema.dao.IUserDao;
 import com.cinema.dao.impl.IUserDaoImpl;
-import com.cinema.dao.impl.filmInfoDao;
 import com.cinema.entity.Cinema;
-import com.cinema.entity.FilmInfo;
 import com.cinema.entity.User;
-import com.cinema.entity.preFilm;
-import com.cinema.service.IUserService;
 import com.cinema.service.impl.CinemaService;
-import com.cinema.service.impl.IUserServiceImpl;
 import com.cinema.service.impl.pageService;
-import com.cinema.service.preFilmService;
-import com.cinema.util.pageUtils;
+import com.cinema.entity.pageUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.List;
 
 public class LoginServlet extends HttpServlet {

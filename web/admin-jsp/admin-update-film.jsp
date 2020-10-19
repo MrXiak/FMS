@@ -97,7 +97,7 @@
                     <label class="layui-form-label">电影简介</label>
                     <div class="layui-input-block">
                         <label>
-                            <input name="desc" placeholder="请输入电影介绍" class="layui-textarea"  value="${F.film_info}"/>
+                            <input type="text" name="desc" placeholder="请输入电影介绍" autocomplete="off" class="layui-input" value="${F.film_info}" >
                         </label>
                     </div>
                 </div>

@@ -181,7 +181,7 @@
 
     <servlet>
         <servlet-name>admin_On_PreFilm</servlet-name>
-        <servlet-class>com.cinema.servlet.Admin_On_PreFilmServlet</servlet-class>
+        <servlet-class>com.cinema.servlet.Admin_On_FilmServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>admin_On_PreFilm</servlet-name>

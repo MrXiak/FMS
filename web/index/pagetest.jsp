@@ -1,6 +1,6 @@
 <%@ page import="com.cinema.entity.FilmInfo" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.cinema.util.pageUtils" %><%--<jsp:useBean id="pageutils" scope="request" type="sun.management.snmp.jvminstr.JvmMemGCTableMetaImpl.GCTableFilter"/>--%>
+<%@ page import="com.cinema.entity.pageUtils" %><%--<jsp:useBean id="pageutils" scope="request" type="sun.management.snmp.jvminstr.JvmMemGCTableMetaImpl.GCTableFilter"/>--%>
 
 <%--
   Created by IntelliJ IDEA.

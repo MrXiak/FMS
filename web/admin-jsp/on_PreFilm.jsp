@@ -24,7 +24,7 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div class="admin_addfilm_maincontainer">
-            <form class="layui-form" action="${pageContext.request.contextPath}/update_FilmInfo.action" method="post">
+            <form class="layui-form" action="${pageContext.request.contextPath}/admin_On_PreFilm.action" method="post">
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片海报</label>
                     <div class="layui-input-block" style="width: 500px;">
@@ -57,9 +57,9 @@
                         <input type="checkbox" name="like[suspense]" title="悬疑" value="悬疑" <c:if test="${PF.pre_film_type.contains('悬疑')}"> checked="checked"</c:if>/>
                         <input type="checkbox" name="like[crime]" title="犯罪" value="犯罪" <c:if test="${PF.pre_film_type.contains('犯罪')}"> checked="checked"</c:if>/>
                         <input type="checkbox" name="like[adventure]" title="冒险" value="冒险" <c:if test="${PF.pre_film_type.contains('冒险')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[war]" title="战争" value="war" <c:if test="${PF.pre_film_type.contains('战争')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[family]" title="家庭" value="family" <c:if test="${PF.pre_film_type.contains('家庭')}"> checked="checked"</c:if>/>
-                        <input type="checkbox" name="like[swordsman]" title="武侠" value="swordsman" <c:if test="${PF.pre_film_type.contains('武侠')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[war]" title="战争" value="战争" <c:if test="${PF.pre_film_type.contains('战争')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[family]" title="家庭" value="家庭" <c:if test="${PF.pre_film_type.contains('家庭')}"> checked="checked"</c:if>/>
+                        <input type="checkbox" name="like[swordsman]" title="武侠" value="武侠" <c:if test="${PF.pre_film_type.contains('武侠')}"> checked="checked"</c:if>/>
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -97,7 +97,7 @@
                     <label class="layui-form-label">电影简介</label>
                     <div class="layui-input-block">
                         <label>
-                            <textarea name="desc" placeholder="请输入电影介绍" class="layui-textarea"  value="${PF.pre_film_info}"></textarea>
+                            <input type="text" name="desc" placeholder="请输入电影介绍" autocomplete="off" class="layui-input" value="${PF.pre_film_info}" >
                         </label>
                     </div>
                 </div>
