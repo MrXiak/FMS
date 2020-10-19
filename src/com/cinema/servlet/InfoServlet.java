@@ -18,10 +18,7 @@ public class InfoServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
         //获取页面的值
-
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
@@ -107,16 +104,12 @@ public class InfoServlet extends HttpServlet {
         if (userService.isUpdate(u)){
 //        req.getSession().setAttribute("list",u);
 //        req.getServletContext().setAttribute("list",u);
-            out.print("<script type='text/javascript'>");
-
-            out.print("window.location='./user/usercenter.jsp#info';");
-            out.print("</script>");
-//            req.getRequestDispatcher("./user/usercenter.jsp#info").forward(req,resp);
+            req.getRequestDispatcher("./user/usercenter.jsp#info").forward(req,resp);
         }else{
             out.print("<script type='text/javascript'>");
-            out.print("alert('失败！请重新开始保存信息！');");
+            out.print("alert('账号或密码错误，请核查，如没有账号请注册！');");
+            out.print("window.location='./login_register/login.jsp';");
             out.print("</script>");
-//          req.getRequestDispatcher("./user/fail.jsp").forward(req,resp);
         }
     }
 }

@@ -22,7 +22,7 @@ public class CinemaService {
         List<Cinema>cinemaList=new ArrayList<Cinema>();
         try {
             //获取数据库连接
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
             //创建sql语句
             String sql="select * from cinema";
             //创建sql执行对象

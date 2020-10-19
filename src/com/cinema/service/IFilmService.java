@@ -6,4 +6,5 @@ import com.cinema.entity.preFilm;
 public interface IFilmService {
     boolean isInsert(preFilm pre);
     boolean isUpdateFilmInfo(FilmInfo filmInfo);
+    boolean isInsertNew(FilmInfo filmInfo);
 }

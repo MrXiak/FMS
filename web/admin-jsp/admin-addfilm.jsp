@@ -16,6 +16,42 @@
     <link rel="stylesheet" href="../css/logo-icon.css">
     <link rel="stylesheet" href="../css/admin-addfilm.css">
     <script src="../js/jquery/jquery-3.2.1.js"></script>
+    <style type="text/css">
+        .warp {
+            display: inline-block;
+            vertical-align: bottom;
+            position: relative;
+
+        }
+
+        .warp-content {
+            border: 1px solid red;
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+        }
+
+        .input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid red;
+            width: 150px;
+            height: 150px;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .img {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin-top: 50px;
+            vertical-align: bottom;
+        }
+    </style>
+
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
@@ -25,18 +61,31 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div class="admin_addfilm_maincontainer">
-            <form class="layui-form" action="${pageContext.request.contextPath}/add_prefilm.action" method="post" enctype="multipart/form-data">
+            <div class="fileBox">
+                <div class="warp">
+                    <div class="warp-content">点击上传</div>
+                    <input class="input" type="file" id="file"/>
+                </div>
+                <img class="img" id="ip" src=""/>
+                <button onclick=savesrc()>保存</button>
+                <img class="img" id="ip2" src=""/>
+            </div>
+
+
+            <form class="layui-form" action="${pageContext.request.contextPath}/add_prefilm.action" method="post">
                 <div class="layui-form-item">
                     <label class="layui-form-label">影片海报</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="file" name="road" placeholder="海报路径" autocomplete="off" class="layui-input">
+                        <input id="inputsrc" type="text" name="road" placeholder="海报路径" autocomplete="off"
+                               class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <label class="layui-form-label">影片编号</label>
                         <div class="layui-input-block" style="width: 500px;">
-                            <input id="input_filmid" type="text" name="input_pre_filmid" placeholder="请点击右侧生成按钮生成订单编号" autocomplete="off" class="layui-input">
+                            <input id="input_filmid" type="text" name="input_pre_filmid" placeholder="请点击右侧生成按钮生成订单编号"
+                                   autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-inline">
@@ -69,7 +118,8 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">时长</label>
                     <div class="layui-input-block" style="width: 500px;">
-                        <input type="text" name="p_time" placeholder="请输入电影时长xxx（min）" autocomplete="off" class="layui-input">
+                        <input type="text" name="p_time" placeholder="请输入电影时长xxx（min）" autocomplete="off"
+                               class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -89,10 +139,10 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">版本</label>
                     <div class="layui-input-block">
-                        <input type="checkbox" name="like[2D]" title="2D" value="twod">
-                        <input type="checkbox" name="like[3D]" title="3D" value="threed">
-                        <input type="checkbox" name="like[2D MAX]" title="2D MAX" value="twodmax">
-                        <input type="checkbox" name="like[3D MAX]" title="3D MAX" value="threedmax">
+                        <input type="checkbox" name="like[2D]" title="2D" value="2D">
+                        <input type="checkbox" name="like[3D]" title="3D" value="3D">
+                        <input type="checkbox" name="like[2D MAX]" title="2D MAX" value="2D MAX">
+                        <input type="checkbox" name="like[3D MAX]" title="3D MAX" value="3D MAX">
                     </div>
                 </div>
 
@@ -100,7 +150,7 @@
                     <label class="layui-form-label">电影简介</label>
                     <div class="layui-input-block">
                         <label>
-                            <input type="text" name="desc" placeholder="请输入电影介绍"  />
+                            <input type="text" name="desc" placeholder="请输入电影介绍" autocomplete="off" class="layui-input">
                         </label>
                     </div>
                 </div>
@@ -118,38 +168,70 @@
         </div>
     </div>
 </div>
-<script src="../layui/layui.all.js" charset=""></script>
+<script src="../layui/layui.js" charset=""></script>
 <script src="../js/jquery/jquery-3.2.1.js"></script>
 <script>
     document.getElementById("lifilm").classList.add("layui-this");
     document.getElementById("ddaddfilm").classList.add("layui-this");
 
-    function newGuid(){
+    var file = document.getElementById('file');
+    var image = document.querySelector(".img");
+    file.onchange = function () {
+        var fileData = this.files[0];//获取到一个FileList对象中的第一个文件( File 对象),是我们上传的文件
+        var pettern = /^image/;
+
+        console.info(fileData.type)
+
+        if (!pettern.test(fileData.type)) {
+            alert("图片格式不正确");
+            return;
+        }
+        var reader = new FileReader();
+        reader.readAsDataURL(fileData);//异步读取文件内容，结果用data:url的字符串形式表示
+        /*当读取操作成功完成时调用*/
+        reader.onload = function (e) {
+            console.log(e); //查看对象
+            console.log(this.result);//要的数据 这里的this指向FileReader（）对象的实例reader
+            image.setAttribute("src", this.result)
+        }
+    }
+
+    function savesrc() {
+        var src1 = document.getElementById("ip").src;
+        alert(src1);
+        var ip2 = document.getElementById("ip2");
+        $("#inputsrc").attr("value", src1);
+        ip2.setAttribute("src", src1);
+    }
+
+
+    function newGuid() {
         var guid = "";
-        for (var i = 1; i <= 12; i++){
-            var n = Math.floor(Math.random()*16.0).toString(16);
+        for (var i = 1; i <= 12; i++) {
+            var n = Math.floor(Math.random() * 16.0).toString(16);
             guid += n;
         }
         // document.getElementById("input_filmid").innerHTML = guid;
-        $("#input_filmid").attr("value",guid);
+        $("#input_filmid").attr("value", guid);
     }
 
-    layui.use('laydate' , function() {
+
+    layui.use('laydate', function () {
         var laydate = layui.laydate;
 
         //开启公历节日
         laydate.render({
             elem: '#calendar'
-            ,calendar: true
-            ,trigger:'click'
+            , calendar: true
+            , trigger: 'click'
         });
     });
 
     //Demo
-    layui.use('form', function(){
+    layui.use('form', function () {
         var form = layui.form;
         //监听提交
-        form.on('submit(formDemo)', function(data){
+        form.on('submit(formDemo)', function (data) {
             layer.msg(JSON.stringify(data.field));
             return false;
         });

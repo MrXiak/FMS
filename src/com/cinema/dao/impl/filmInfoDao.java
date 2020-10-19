@@ -1,11 +1,8 @@
 package com.cinema.dao.impl;
 
 import com.cinema.entity.FilmInfo;
-import com.cinema.entity.User;
 import com.cinema.entity.preFilm;
 import com.cinema.util.DBUtil;
-import com.cinema.util.pageUtils;
-import com.mysql.cj.protocol.Resultset;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -104,7 +101,7 @@ public class filmInfoDao {
         List<FilmInfo> filmInfoList=new ArrayList<FilmInfo>();
         try {
             //获取数据库连接
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
             //sql语句
             String sql="select * from film limit 8 ";
             //创建sql执行对象

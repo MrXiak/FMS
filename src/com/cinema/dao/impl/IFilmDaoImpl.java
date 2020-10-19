@@ -14,7 +14,7 @@ import java.util.List;
 public class IFilmDaoImpl implements IFilmDao {
 
     @Override
-    public FilmInfo addFilmInfo(String pre_img, String pre_id, String pre_name, String pre_type, String pre_time, String pre_actor, String pre_date, String pre_version, String pre_info) {
+    public preFilm addFilmInfo(String pre_img, String pre_id, String pre_name, String pre_type, String pre_time, String pre_actor, String pre_date, String pre_version, String pre_info) {
         DBUtil.initConnection();
         String sql="insert into prefilm values (?,?,?,?,?,?,?,?,?)";
         DBUtil.initPrepareStatement(sql);
@@ -174,6 +174,17 @@ public class IFilmDaoImpl implements IFilmDao {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        DBUtil.close();
+        return null;
+    }
+
+    @Override
+    public FilmInfo insertNewFilm(String film_img, String film_id, String film_name, String film_type, String film_time, String film_actor, String film_date, String film_version, String film_info, String film_price, String film_score) {
+        DBUtil.initConnection();
+        String sql="insert into film values (?,?,?,?,?,?,?,?,?,?,?)";
+        DBUtil.initPrepareStatement(sql);
+        DBUtil.setPar(film_img,film_id,film_name,film_type,film_time,film_actor,film_date,film_version,film_info,film_price,film_score);
+        DBUtil.executeUpdate();
         DBUtil.close();
         return null;
     }
