@@ -1,3 +1,8 @@
+<%@ page import="com.cinema.dao.IOrderDao" %>
+<%@ page import="com.cinema.dao.impl.IOrderDaoImpl" %>
+<%@ page import="com.cinema.entity.OrderInfo" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: 67463
@@ -18,6 +23,10 @@
     <link rel="stylesheet" href="../css/admin-film.css">
     <link rel="stylesheet" href="../css/topage.css">
 </head>
+<%
+    IOrderDao iOrderDao = new IOrderDaoImpl();
+    List<OrderInfo> OrderList = iOrderDao.findAllOrder();
+%>
 <body>
 <div class="layui-layout layui-layout-admin">
     <script type="text/javascript" src="../js/admin-navigation-head.js"></script>
@@ -41,24 +50,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <button type="button" class="btnoperate edit">上映</button>
-                        </td>
-                    </tr>
+                    <c:forEach items="<%= OrderList%>" var="ol">
+                        <tr>
+                            <td>${ol.order_id}</td>
+                            <td>${ol.film_name}</td>
+                            <td>${ol.session_time}</td>
+                            <td>${ol.cinema_name}</td>
+                            <td>${ol.seat}</td>
+                            <td>${ol.sum_price}</td>
+                            <td>${ol.pay_state}</td>
+                            <td>
+                                <a href="${pageContext.request.contextPath}/admin_order.action?type=delete&orderid=${ol.order_id}"><span>删除</span></a>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
-            </div>
-            <div class="admin_film_table_foot">
-                <button type="button" id="up" class="btnShow">上一页</button>
-                <button type="button" id="down" class="btnShow ">下一页</button>
             </div>
         </div>
 

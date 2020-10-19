@@ -21,11 +21,20 @@
     <link rel="stylesheet" href="../css/logo-icon.css">
 </head>
 <body>
+
 <%--导航栏--%>
 <script type="text/javascript" src="../js/navigation-head.js"></script>
 <div id="main_body">
     <div id="film_pic">
-        <img src="../image/shouye3.png" width="100%" height="100%">
+        <div class="layui-carousel" id="test1">
+            <div carousel-item>
+                <div><img src="../image/shouye3.png"width="100%"height="100%"></div>
+                <div><img src="../image/bl.png"width="100%"height="100%"></div>
+                <div><img src="../image/fsh.png"width="100%"height="100%"></div>
+                <div><img src="../image/dh.png"width="100%"height="100%"></div>
+                <div><img src="../image/yun.png"width="100%"height="100%"></div>
+            </div>
+        </div>
     </div>
 
     <div id="aside">
@@ -176,12 +185,11 @@
             <% List<FilmInfo>filmInfoList= (List<FilmInfo>) request.getAttribute("filmInfoList");
                 if (filmInfoList!=null&&!filmInfoList.isEmpty()){
                     for (FilmInfo filmInfo:filmInfoList){
-
             %>
             <table style="height: 200px;width: 200px;float: left">
                 <tr>
                     <td >
-                        <a href="#">
+                        <a href="/cinema.action?&film_id=<%=filmInfo.getFilm_id()%>">
                             <div class="film_img">
                                 <img src="<%=filmInfo.getFilm_img()%>" height="200px" width="150px">
                                 <div class="film_info">
@@ -191,7 +199,7 @@
                             </div>
                             <div class="buyTickets">购票</div>
                         </a>
-                        <div class="film_type" >2DIMAX</div>
+                        <div class="film_type" ><%=filmInfo.getFilm_version()%></div>
                     </td>
                 </tr>
 
@@ -218,7 +226,7 @@
             <table style="height: 200px;width: 200px;float: left">
                 <tr>
                     <td>
-                        <a href="#">
+                        <a href="/filmDetail.action?&pre_film_id=<%=prefilm.getPre_film_id()%>">
                             <div class="film_img">
                                 <img src="<%=prefilm.getPre_film_img()%>" height="200px" width="150px">
                                 <div class="film_info">
@@ -228,6 +236,7 @@
                             </div>
                             <div class="buyTickets">查看详情</div>
                         </a>
+                        <div class="film_type" ><%=prefilm.getPre_film_version()%></div>
                     </td>
                 </tr>
             </table>
@@ -309,5 +318,35 @@
 
 </body>
 <script>
+    // var i = 0;
+    // window.onload = function (){
+    // if (i == 0){
+        window.location.replace = "/index.action";
+    //     i++;
+    // }
+
+    // }
+
+    layui.config({
+        version: '1598935358933' //为了更新 js 缓存，可忽略
+    });
+
+    layui.use(['layer', 'carousel', 'element'], function(){
+        var layer = layui.layer //弹层
+            ,carousel = layui.carousel //轮播
+
+        //向世界问个好
+        layer.msg('欢迎进入熊熊电影后台管理界面！');
+
+        //执行一个轮播实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,height: '100%'
+            ,arrow: 'none' //不显示箭头
+            ,anim: 'fade' //切换动画方式
+        });
+
+    });
 </script>
 </html>

@@ -56,7 +56,7 @@
             var pathn, i;
             switch(sId) {
                 case "#order":
-                    pathn = "userorder.html";
+                    pathn = "userorder.jsp";
                     i = 0;
                     break;
                 case "#info":

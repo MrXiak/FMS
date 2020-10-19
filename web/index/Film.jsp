@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.cinema.entity.FilmInfo"%>
 <%@ page import="java.util.List"%>
+<%@ page import="com.cinema.entity.preFilm" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -35,25 +36,26 @@
                 <%--影片展示--%>
                 <div  style="margin-top:50px;height: 800px;width: 1200px">
                 <div id="film_page">
-                <table style="border-collapse: separate;border-spacing: 20px 5px">
+
+<%--                    <table >--%>
+<%--                        <tr >--%>
                 <c:forEach items="${pageutils.records}" var="filmInfo">
-
-                        <td>
-                            <a href="#" >
-                                <div class="film_img">
-                                    <img src="${filmInfo.film_img }" height="200px" width="150px">
-                                    <div class="film_info">
-                                        <div class="film_name">${filmInfo.film_name }</div>
-                                        <div class="film_score">${filmInfo.film_score }</div>
-                                    </div>
+                    <div style="float: left;margin-top: 20px;margin-left: 20px">
+                        <a href="#" >
+                            <div class="film_img">
+                                <img src="${filmInfo.film_img }" height="200px" width="150px">
+                                <div class="film_info">
+                                    <div class="film_name">${filmInfo.film_name }</div>
+                                    <div class="film_score">${filmInfo.film_score }</div>
                                 </div>
-                                <div class="buyTickets">购票</div>
-                            </a>
-                            <div class="film_type" >2DIMAX</div>
-                        </td>
-
+                            </div>
+                                <a href="/cinema.action?&film_id=${filmInfo.film_id}"><div class="buyTickets">购票</div></a>
+                        </a>
+                            <div class="film_type" >${filmInfo.film_version }</div>
+                        </div>
                 </c:forEach>
-                </table>
+<%--                        </tr>--%>
+<%--                    </table>--%>
                 </div>
     </div>
                 <%--分页栏--%>
@@ -79,11 +81,8 @@
 <%--                                                    <input type="button" value="go" onclick="toPage2()"/>--%>
 <%--                                                        </td>--%>
                                 <td>${pageutils.currentPage}/${pageutils.lastPage}, 共${pageutils.totalRecordsSize}条 </td>
-<%--                                                        <td>--%>
-
                             </tr>
                         </table>
-
                 </div>
 
 </div>

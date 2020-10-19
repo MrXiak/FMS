@@ -36,9 +36,11 @@
     </div>
     <div class="main_container_middle">
         <div class="main_container_middle_top">
-            <div class="main_container_middle_top_left" id="orderid">
+            <div class="main_container_middle_top_left">
                 熊熊订单号：
+                <span id="orderid">${OD.order_id}</span>
             </div>
+
             <div class="main_container_middle_top_right">
                 （有订单问题可拨打客服电话：1001-1001，工作时间：9:00-24:00）
             </div>
@@ -54,17 +56,17 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>${T.film_name}</td>
-                    <td>${T.film_time}</td>
-                    <td>`````11111111111111111111111111111111111111111111111111111111111111`</td>
-                    <td>``````</td>
+                    <td>${OD.film_name}</td>
+                    <td>${OD.session_time}</td>
+                    <td>${OD.cinema_name}</td>
+                    <td>${OD.seat}</td>
                 </tr>
             </tbody>
         </table>
         <div class="main_container_middle_foot">
             <div class="main_container_middle_foot_left">
                 <span style="color: red">￥</span>
-                <span style="color: red; font-size: 30px">0</span>
+                <span style="color: red; font-size: 30px">${OD.sum_price}</span>
             </div>
             <div class="main_container_middle_foot_right">
                 <input type="button" class="order_submit_button" value="确认支付">
@@ -74,7 +76,6 @@
 </div>
 
 <script>
-    getOrderId();
     FreshTime();
     var sh = setInterval(FreshTime, 1000); // 每秒钟执行一次
 </script>

@@ -12,7 +12,7 @@ import java.io.IOException;
 public class preFilmServlet extends HttpServlet {
 
     private static final long serialVersionUID=1L;
-    private pageService pageservice =new pageService();
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request,response);
     }
@@ -23,6 +23,7 @@ public class preFilmServlet extends HttpServlet {
         if (currentPage==null||"".equals(currentPage)){
             currentPage="1";
         }
+        pageService pageservice =new pageService();
         pageUtils pageutils=pageservice.getPreFilm(Integer.parseInt(currentPage));
         request.setAttribute("pageutils",pageutils);
         request.getRequestDispatcher("/index/preFilm.jsp").forward(request,response);

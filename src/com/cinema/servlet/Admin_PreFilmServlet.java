@@ -22,7 +22,6 @@ public class Admin_PreFilmServlet extends HttpServlet {
         //获取页面的值
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = resp.getWriter();
 
         String type=req.getParameter("type");
         if("delete".equals(type)){

@@ -1,0 +1,284 @@
+#container{
+    /*height: 900px;*/
+    width:1200px;
+    margin:80px auto;
+
+}
+
+#film_show{
+    height: 376px;
+    background:  radial-gradient(circle at 500px -1000px, indianred 5%, #392f59);
+}
+#nav{
+    height: 376px;
+    width: 1200px;
+    margin: 0 auto;
+}
+#nav_img{
+    height: 370px;
+    width: 300px;
+    float: left;
+    position: relative;
+    top: 70px;
+}
+#poster_shadow{
+    position: relative;
+    margin: 0 30px;
+    width: 240px;
+    height: 330px;
+    padding-bottom: 40px;
+
+ }
+#poster{
+    height: 322px;
+    width: 232px;
+    border: 4px solid white;
+    margin: 0 auto;
+}
+#nav_text{
+    height: 300px;
+    width: 870px;
+    margin-right: 30px;
+    margin-left: 300px;
+    top: 70px;
+    position: relative;
+}
+.name{
+
+    color: #fff;
+    margin: .67em 0;
+    width: 900px;
+    margin-top: 0;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 700;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+     max-height: 64px;
+}
+#film_info{
+    width: 340px;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+.ellipsis{
+    margin: 12px 0;
+    line-height: 100%;
+}
+.action_btn{
+    position: absolute;
+    bottom: 20px;
+}
+.clearfix{
+    font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    height: 80px;
+}
+.wish{
+    cursor: pointer;
+    float: left;
+    display: block;
+    width: 120px;
+    height: 25px;
+    background-color: #756189;
+    margin-right: 10px;
+    padding-top: 11px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    border-radius: 2px;
+}
+.wish.a:visited{color: #ffffff}
+.msg{
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+}
+.score_btn{
+    cursor: pointer;
+    float: left;
+    display: block;
+    width: 120px;
+    height: 25px;
+    background-color: #756189;
+    margin-right: 10px;
+    padding-top: 11px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    border-radius: 2px;
+
+}
+.score_btn.a:visited{color: #ffffff}
+.btn_buy{
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    width:250px;
+    height: 40px;
+    font-size: 16px;
+    line-height:40px;
+    text-align: center;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #df2d2d;
+    display: inline-block;
+    /*margin-left: -50px;*/
+}
+.btn_buy.a:visited{
+    color: #ffffff;}
+.movie_stars_nav{
+    position: absolute;
+    top: 220px;
+    left: 342px;
+}
+.movie_index{
+    margin-bottom: 16px;
+    color: #fff;
+}
+.movie_index_title{
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+.movie_index_content{
+    overflow: hidden;
+}
+.left_score{
+    font-size: 30px;
+    color: #ffc600;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+.right_index{
+    margin-top: 10px;
+    margin-left: 54px;
+    font-size: 12px;
+}
+.score_num{
+
+    font-size: 12px;
+    color: white;
+}
+.cinema_list_header{
+    font-size: 18px;
+    color: #333;
+    border-left: 4px solid #f03d37;
+    padding-left: 6px;
+    line-height: 18px;
+    margin: 0;
+    position: relative
+}
+.cinema_cell{
+    display: block;
+    padding: 20px 0;
+    border-bottom: 1px dashed #e5e5e5;
+}
+.cinema_info{
+    display: inline-block;
+    max-width: 80%;
+}
+.cinema_name{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.cinema_address{
+    font-size: 14px;
+    line-height: 14px;
+    color: #999;
+}
+.buy_btn{
+    float: right;
+    width: 80px;
+    height: 45px;
+    line-height: 45px;
+    margin-left: 36px;
+    margin-right: 20px;
+}
+.price{
+    float: right;
+    font-size: 12px;
+    color: #999;
+    height: 45px;
+    line-height: 45px;
+}
+.buy_tickets{
+
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    color: #fff;
+    background-color: #f03d37;
+    font-size: 14px;
+    line-height: 30px;
+    border-radius: 100px;
+    text-align: center;
+    -webkit-box-shadow: 0 2px 10px -2px #f03d37;
+    box-shadow: 0 2px 10px -2px #f03d37;
+}
+.price{
+    float: right;
+    font-size: 12px;
+    color: #999;
+    height: 45px;
+    line-height: 45px;
+}
+.rmb{
+    margin-right: -4px;
+    color: #f03d37;
+}
+.price_red{
+    font-size: 16px;
+    margin-right: -3px;
+    font-weight: 700;
+    color: #f03d37;
+}
+
+
+.footer{
+    background-color: #262426;
+    /*padding: 56px 0;*/
+    margin: 0 auto;
+    width: 100%;
+    height: 300px;
+    /*z-index: 90;*/
+    /*position: absolute;*/
+    /*bottom: 0px;*/
+}
+.friendly-links{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    height: 22px;
+    color: white;
+}
+
+.friendly-links-credentials{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    height: 22px;
+    color: white;
+}
+.certificate{
+    margin-top: 20px;
+    padding: 0;
+    text-align: center;
+}

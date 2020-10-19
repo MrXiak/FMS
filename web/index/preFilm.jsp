@@ -35,10 +35,10 @@
     <%--影片展示--%>
     <div  style="margin-top:50px;height: 800px;width: 1200px">
         <div id="film_page">
-            <table style="border-collapse: separate;border-spacing: 20px 5px">
+
                 <c:forEach items="${pageutils.records}" var="filmInfo">
 
-                    <td>
+                    <div style="float: left;margin-top: 20px;margin-left: 20px">
                         <a href="#" >
                             <div class="film_img">
                                 <img src="${filmInfo.pre_film_img }" height="200px" width="150px">
@@ -47,13 +47,13 @@
 <%--                                    <div class="film_score">${filmInfo.film_score }</div>--%>
                                 </div>
                             </div>
-                            <div class="buyTickets">查看详情</div>
+                            <a href="/filmDetail.action?&pre_film_id=${filmInfo.pre_film_id}"><div class="buyTickets">查看详情</div></a>
                         </a>
-                        <div class="film_type" >2DIMAX</div>
-                    </td>
+                        <div class="film_type" >${filmInfo.pre_film_version}</div>
+                    </div>
 
                 </c:forEach>
-            </table>
+
         </div>
     </div>
     <%--分页栏--%>
