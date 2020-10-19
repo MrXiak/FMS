@@ -104,7 +104,7 @@ public class filmInfoDao {
         List<FilmInfo> filmInfoList=new ArrayList<FilmInfo>();
         try {
             //获取数据库连接
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "111");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/fms?serverTimezone=GMT%2B8&useSSL=false", "root",  "1234");
             //sql语句
             String sql="select * from film limit 8 ";
             //创建sql执行对象
