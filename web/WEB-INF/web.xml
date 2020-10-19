@@ -214,4 +214,12 @@
         <servlet-name>LoginOut</servlet-name>
         <url-pattern>/LoginOut.action</url-pattern>
     </servlet-mapping>
+    <servlet>
+    <servlet-name>uploadimage</servlet-name>
+    <servlet-class>com.cinema.servlet.UploadImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>uploadimage</servlet-name>
+    <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
 </web-app>

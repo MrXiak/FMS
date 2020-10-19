@@ -40,7 +40,7 @@
                 <table class="table-normal" id="userBoxTab">
                     <thead>
                     <tr>
-                        <th>用户头像</th>
+<%--                        <th>用户头像</th>--%>
                         <th>用户昵称</th>
                         <th>帐号</th>
                         <th>性别(1:男，0:女)</th>
@@ -55,7 +55,7 @@
                     <tbody>
                     <c:forEach items="<%= us%>" var="user">
                         <tr>
-                            <td>${user.user_image}</td>
+<%--                            <td>${user.user_image}</td>--%>
                             <td>${user.user_name}</td>
                             <td>${user.user_id}</td>
                             <td>${user.user_sex}</td>

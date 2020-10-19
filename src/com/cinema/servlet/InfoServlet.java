@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class InfoServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -17,9 +18,13 @@ public class InfoServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
         //获取页面的值
+
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
         String uname=req.getParameter("qname");//引的是name
         String uid=req.getParameter("user_id");
         String sex = req.getParameter("sex");
@@ -102,9 +107,16 @@ public class InfoServlet extends HttpServlet {
         if (userService.isUpdate(u)){
 //        req.getSession().setAttribute("list",u);
 //        req.getServletContext().setAttribute("list",u);
-            req.getRequestDispatcher("./user/success.jsp").forward(req,resp);
+            out.print("<script type='text/javascript'>");
+
+            out.print("window.location='./user/usercenter.jsp#info';");
+            out.print("</script>");
+//            req.getRequestDispatcher("./user/usercenter.jsp#info").forward(req,resp);
         }else{
-            req.getRequestDispatcher("./user/fail.jsp").forward(req,resp);
+            out.print("<script type='text/javascript'>");
+            out.print("alert('失败！请重新开始保存信息！');");
+            out.print("</script>");
+//          req.getRequestDispatcher("./user/fail.jsp").forward(req,resp);
         }
     }
 }

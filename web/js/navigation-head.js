@@ -8,6 +8,7 @@ document.writeln("    <!-- 头部区域（可配合layui已有的水平导航）
 document.writeln("    <ul class=\'layui-nav layui-layout-left\'>");
 document.writeln("        <li class=\'layui-nav-item\' id='lifilm'><a href=\'/index.action\'>首页</a></li>");
 document.writeln("        <li class=\'layui-nav-item\' id='liuser'><a href=\'/Film.action\'>影片</a></li>");
+// document.writeln("        <li class=\\'layui-nav-item\\' id='liadmin'><a href=\'/admin-jsp/admin-index.jsp\'>影片</a></li>\");
 // document.writeln("        <li class=\'layui-nav-item\'>");
 // document.writeln("            <a href=\'javascript:;\'>地区选择</a>");
 // document.writeln("            <dl class=\'layui-nav-child\'>");

@@ -33,8 +33,10 @@ public class RegisterServlet extends HttpServlet {
         //调用Service层，注册
         IUserService userService=new IUserServiceImpl();
         if (userService.isRegister(u)){
-            JOptionPane.showMessageDialog(null, "注册成功");
-            req.getRequestDispatcher("./login_register/login.jsp").forward(req,resp);
+            out.print("<script type='text/javascript'>");
+            out.print("alert('注册成功，返回登录界面！');");
+            out.print("window.location='./login_register/login.jsp';");
+            out.print("</script>");
         }else {
             out.print("<script type='text/javascript'>");
             out.print("alert('账号已被注册，请重新填写！');");

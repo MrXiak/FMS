@@ -11,7 +11,7 @@ import java.io.IOException;
 public class LoginOutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        this.doPost(req,resp);
     }
 
 

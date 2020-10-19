@@ -1,3 +1,10 @@
 .admin_addfilm_maincontainer{
     margin-top: 20px;
 }
+.fileBox{
+    width: 250px;
+    height: 250px;
+}
+.filmimage{
+    max-width: 100%;
+}
