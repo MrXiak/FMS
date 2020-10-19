@@ -205,4 +205,13 @@
         <servlet-name>user_manage_order</servlet-name>
         <url-pattern>/user_manage_order.action</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginOut</servlet-name>
+        <servlet-class>com.cinema.servlet.LoginOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginOut</servlet-name>
+        <url-pattern>/LoginOut.action</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -5,10 +5,7 @@ import com.cinema.dao.IUserDao;
 import com.cinema.dao.impl.IOrderDaoImpl;
 import com.cinema.dao.impl.IUserDaoImpl;
 import com.cinema.dao.impl.filmInfoDao;
-import com.cinema.entity.Cinema;
-import com.cinema.entity.FilmInfo;
-import com.cinema.entity.OrderInfo;
-import com.cinema.entity.preFilm;
+import com.cinema.entity.*;
 import com.cinema.service.impl.CinemaService;
 
 import javax.servlet.ServletException;

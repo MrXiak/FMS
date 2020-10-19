@@ -3,6 +3,7 @@ package com.cinema.servlet;
 import com.cinema.dao.impl.filmInfoDao;
 import com.cinema.entity.Cinema;
 import com.cinema.entity.FilmInfo;
+import com.cinema.entity.User;
 import com.cinema.entity.preFilm;
 import com.cinema.service.impl.CinemaService;
 import com.cinema.service.preFilmService;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 public class CinemaServlet extends HttpServlet {
@@ -30,6 +32,8 @@ public class CinemaServlet extends HttpServlet {
         List<Cinema> cinemaList=cinemaService.findCinema();
         //保存查询的电影信息
         req.setAttribute("cinemaList",cinemaList);
+
+
         //转发请求
         req.getRequestDispatcher("/index/cinemaSelect.jsp").forward(req,resp);
 
