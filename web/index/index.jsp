@@ -321,7 +321,7 @@
     // var i = 0;
     // window.onload = function (){
     // if (i == 0){
-        window.location.replace = "/index.action";
+    //     window.location.replace = "/index.action";
     //     i++;
     // }
 

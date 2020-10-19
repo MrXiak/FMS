@@ -53,9 +53,9 @@
                             </div>
                         </a>
                     </div>
-                    <div  >
-                        <a class="btn_buy"href="/filmDetail.action?&film_id=${filmInfo.film_id}">查看电影详情</a>
-                    </div>
+<%--                    <div  >--%>
+<%--                        <a class="btn_buy"href="/filmDetail.action?&film_id=${filmInfo.film_id}">查看电影详情</a>--%>
+<%--                    </div>--%>
                 </div>
                 <div class="movie_stars_nav">
                     <div class="movie_index">
