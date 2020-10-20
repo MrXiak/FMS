@@ -12,6 +12,7 @@
     <title>订单详情</title>
     <link rel="icon" href="../image/icon_bear.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/orderinfo.css">
+    <script src="../js/jquery/jquery-3.2.1.js"></script>
     <script src="../js/orderinfo.js"></script>
     <link rel="stylesheet" href="../layui/css/layui.css">
     <script src="../layui/layui.js"></script>
@@ -69,7 +70,7 @@
                 <span style="color: red; font-size: 30px">${OD.sum_price}</span>
             </div>
             <div class="main_container_middle_foot_right">
-                <input type="button" class="order_submit_button" value="确认支付">
+                <input type="button" class="order_submit_button" value="确认支付" onclick="showPic()" name="Psw" id="Psw">
             </div>
         </div>
     </div>
@@ -78,6 +79,37 @@
 <script>
     FreshTime();
     var sh = setInterval(FreshTime, 1000); // 每秒钟执行一次
+
+    function showPic(){
+        var Psw=prompt("请输入支付密码","")
+       if(Psw==${USER.user_password}){
+           $("#Psw").attr('disabled',true).val('支付成功').css("background-color", "red","color" ,"white");
+           alert("支付成功！");
+       }else{
+           alert("请重新输入密码！");
+           showPic();
+       }
+    }
+
+    // $(document).ready(function (){
+    //     $.post("/getUserName.action",function (result){
+    //         $("#username").val(result);
+    //         $("#thelogin").hide();
+    //     })
+    // })
+
+    // window.onload(function (){
+    //     $.post("/login.action",function (result){
+    //         $("#username").text(result);
+    //         $("#thelogin").hide();
+    //     })
+    // })
+    // $(document).ready(function (){
+    //     $.post("/login.action",function (result){
+    //         $("#username").text(result);
+    //         $("#thelogin").hide();
+    //     })
+    // })
 </script>
 
 </body>

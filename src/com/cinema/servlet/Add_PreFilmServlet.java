@@ -92,7 +92,7 @@ public class Add_PreFilmServlet extends HttpServlet {
         //获取页面的值
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");
-        String img=str;
+        String img=req.getParameter("road");
         String pid=req.getParameter("input_pre_filmid");
         String p_name = req.getParameter("p_name");
 

@@ -73,7 +73,12 @@
         var sId = window.location.hash;
         loadInner(sId);
     });
-
+    $(document).ready(function (){
+        $.post("/getUserName.action",function (result){
+            $("#username").val(result);
+            $("#thelogin").hide();
+        })
+    })
 
 </script>
 

@@ -36,7 +36,7 @@
     <div id="main_container_right">
         <div id="main_container_right_top">
             <div id="main_container_right_top_pic">
-                <img src="${FILMINFO.film_img}"style="max-width: 100%">
+                <img src="http://localhost:8080//filmimage//${FILMINFO.film_img}"style="max-width: 100%">
             </div>
             <div id="main_container_right_top_content">
                 <p class="p_title" id="filmname">${FILMINFO.film_name}</p>
@@ -106,6 +106,13 @@
     layui.use('element', function(){
         var element = layui.element;
     });
+
+    // $(document).ready(function (){
+    //     $.post("/getUserName.action",function (result){
+    //         $("#username").val(result);
+    //         $("#thelogin").hide();
+    //     })
+    // })
 </script>
 </body>
 </html>

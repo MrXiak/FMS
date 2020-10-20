@@ -65,7 +65,7 @@
                     <tbody>
                     <c:forEach items="<%= filmInfoList%>" var="fl">
                         <tr>
-                            <td><img src="${fl.film_img}" style="max-width: 100%"></td>
+                            <td><img src="http://localhost:8080//filmimage//${fl.film_img}" style="max-width: 100%"></td>
                             <td>${fl.film_id}</td>
                             <td>${fl.film_name}</td>
                             <td>${fl.film_type}</td>

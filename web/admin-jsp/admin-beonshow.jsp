@@ -53,7 +53,7 @@
                     <tbody>
                     <c:forEach items="<%= plist%>" var="pl">
                         <tr>
-                            <td><img src="${pl.pre_film_img}" style="max-width: 100%"></td>
+                            <td><img src="http://localhost:8080//filmimage//${pl.pre_film_img}" style="max-width: 100%"></td>
                             <td>${pl.pre_film_id}</td>
                             <td>${pl.pre_film_name}</td>
                             <td>${pl.pre_film_type}</td>

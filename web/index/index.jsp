@@ -191,7 +191,7 @@
                     <td >
                         <a href="/cinema.action?&film_id=<%=filmInfo.getFilm_id()%>">
                             <div class="film_img">
-                                <img src="<%=filmInfo.getFilm_img()%>" height="200px" width="150px">
+                                <img src="http://localhost:8080//filmimage//<%=filmInfo.getFilm_img()%>" height="200px" width="150px">
                                 <div class="film_info">
                                     <div class="film_name"><%=filmInfo.getFilm_name()%></div>
                                     <div class="film_score"><%=filmInfo.getFilm_score()%></div>
@@ -228,7 +228,7 @@
                     <td>
                         <a href="/filmDetail.action?&pre_film_id=<%=prefilm.getPre_film_id()%>">
                             <div class="film_img">
-                                <img src="<%=prefilm.getPre_film_img()%>" height="200px" width="150px">
+                                <img src="http://localhost:8080//filmimage//<%=prefilm.getPre_film_img()%>" height="200px" width="150px">
                                 <div class="film_info">
                                     <div class="film_name"><%=prefilm.getPre_film_name()%></div>
 <%--                                    <div class="film_score"><%=prefilm.getPre_film_id()%></div>--%>
@@ -348,5 +348,11 @@
         });
 
     });
+    $(document).ready(function (){
+        $.post("/getUserName.action",function (result){
+            $("#username").val(result);
+            $("#thelogin").hide();
+        })
+    })
 </script>
 </html>

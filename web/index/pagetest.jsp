@@ -109,4 +109,12 @@
     </table>
 </center>
 </body>
+<%--<script>--%>
+<%--    $(document).ready(function (){--%>
+<%--        $.post("/getUserName.action",function (result){--%>
+<%--            $("#username").val(result);--%>
+<%--            $("#thelogin").hide();--%>
+<%--        })--%>
+<%--    })--%>
+<%--</script>--%>
 </html>

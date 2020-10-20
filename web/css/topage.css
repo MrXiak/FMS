@@ -16,11 +16,13 @@
 .table-normal td {
     padding: 5px 10px 5px 10px;
     height: 35px;
+    max-height: 150px;
     width: 40px;
     border: 1px solid #ccc;
-    word-wrap: break-word;
+    word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .outBox .checkbox {

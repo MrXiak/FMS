@@ -136,3 +136,20 @@ td{
     background-color: #FF5722;
     color: white;
 }
+
+.order_submit_button2{
+    font-family: 黑体;
+    font-size: 16px;
+    width: 200px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    padding: 14px 32px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    border: 2px solid #FF5722;
+    border-radius:50px;
+    box-shadow: 5px 5px 20px #d0d1d2;
+    outline: none;
+    cursor: pointer;
+}

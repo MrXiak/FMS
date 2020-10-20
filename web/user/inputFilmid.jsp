@@ -131,5 +131,13 @@
         <h4 id="login_h3">©2020 京ICP证070791号 京公网安备11010502025545号</h4>
     </div>
 </div>
+<script>
+    $(document).ready(function (){
+        $.post("/getUserName.action",function (result){
+            $("#username").val(result);
+            $("#thelogin").hide();
+        })
+    })
+</script>
 </body>
 </html>

@@ -47,11 +47,17 @@ public class LoginServlet extends HttpServlet {
 //            out.print("window.location='./login_register/login.jsp';");
 //            out.print("</script>");
 //        }
+
         IUserDao userDao=new IUserDaoImpl();
         User u=userDao.selectByAccount(uid,upass);
         if (u!=null){
             HttpSession session = req.getSession();
             session.setAttribute("USER", u);
+
+            String username=u.getUser_name();
+//            out.write(username);
+
+            session.setAttribute("username",username);
 
             String currentPage=req.getParameter("currentPage");
             if (currentPage==null||"".equals(currentPage)){
@@ -75,6 +81,6 @@ public class LoginServlet extends HttpServlet {
             out.print("window.location='./login_register/login.jsp';");
             out.print("</script>");
         }
-
+//<script type='text/javascript'>alert('账号或密码错误，请核查，如没有账号请注册！');window.location='./login_register/login.jsp';</script>
     }
 }

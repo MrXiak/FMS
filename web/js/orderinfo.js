@@ -8,7 +8,7 @@ nowtime.setMinutes(nowtime.getMinutes()+15);
 function FreshTime() {
     // if (i == 0){
         var nowtime1 = new Date();
-        var lefttime = parseInt((time - nowtime1.getTime()) / 1000); // 剩余时间
+        var lefttime = parseInt((nowtime - nowtime1.getTime()) / 1000); // 剩余时间
         m = parseInt((lefttime / 60) % 60);	// 剩余分钟数
         s = parseInt(lefttime % 60);	// 剩余秒数
         i++;

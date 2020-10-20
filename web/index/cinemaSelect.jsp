@@ -26,7 +26,7 @@
     <div id="nav">
         <div id="nav_img">
             <div id="poster_shadow">
-                <img id="poster" src="${FILMINFO.film_img}">
+                <img id="poster" src="http://localhost:8080//filmimage//${FILMINFO.film_img}">
             </div>
 
         </div>
@@ -167,4 +167,12 @@
 
 </div>
 </body>
+<script>
+    // $(document).ready(function (){
+    //     $.post("/getUserName.action",function (result){
+    //         $("#username").val(result);
+    //         $("#thelogin").hide();
+    //     })
+    // })
+</script>
 </html>

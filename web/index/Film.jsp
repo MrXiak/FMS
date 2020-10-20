@@ -43,7 +43,7 @@
                     <div style="float: left;margin-top: 20px;margin-left: 20px">
                         <a href="#" >
                             <div class="film_img">
-                                <img src="${filmInfo.film_img }" height="200px" width="150px">
+                                <img src="http://localhost:8080//filmimage//${filmInfo.film_img }" height="200px" width="150px">
                                 <div class="film_info">
                                     <div class="film_name">${filmInfo.film_name }</div>
                                     <div class="film_score">${filmInfo.film_score }</div>
@@ -160,10 +160,16 @@
         function toPage(pageutils){
             window.location = 'http://localhost:8080/Film.action?currentPage='+pageutils;
         }
-    function toPage2(pageutils){
-        var page = document.getElementById("page");
-        window.location = 'http://localhost:8080/Film.action?currentPage='+pageutils.value;
-    }
+        function toPage2(pageutils){
+            var page = document.getElementById("page");
+            window.location = 'http://localhost:8080/Film.action?currentPage='+pageutils.value;
+        }
+        // $(document).ready(function (){
+        //     $.post("/getUserName.action",function (result){
+        //         $("#username").val(result);
+        //         $("#thelogin").hide();
+        //     })
+        // })
 </script>
 
 </html>

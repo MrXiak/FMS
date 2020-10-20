@@ -14,10 +14,13 @@ import java.io.IOException;
 public class UploadImage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String str = "D:\\FMS\\web\\image\\filmimage";
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=UTF-8");
         // 新建一个SmartUpload对象
         SmartUpload su = new SmartUpload();
-        // 上传初始化
+
+        String str = "D:\\FMS\\web\\image\\filmimage";
+// 上传初始化
         su.initialize(getServletConfig(),req,resp);
 // 设定上传限制
 // 1.限制每个上传文件的最大长度。
@@ -55,6 +58,7 @@ public class UploadImage extends HttpServlet {
             if (file.isMissing()) continue;
 
 // 显示当前文件信息
+            str = file.getFilePathName();
             System.out.println("表单项名（FieldName）"
                     + file.getFieldName() );
             System.out.println("文件长度（Size）"
@@ -64,8 +68,8 @@ public class UploadImage extends HttpServlet {
             System.out.println("文件扩展名（FileExt）"
                     + file.getFileExt());
             System.out.println("文件全名（FilePathName）"
-                    + str
-                    + file.getFilePathName());
+                    + str);
+
 
 // 将文件另存
 // file.saveAs("/upload/" + .getFileName());
@@ -77,6 +81,9 @@ public class UploadImage extends HttpServlet {
 //    su.SAVE_PHYSICAL);
 //
         }
+
+        req.setAttribute("road", str);
+        req.getRequestDispatcher("/admin-jsp/admin-addfilm.jsp").forward(req, resp);
     }
 
     @Override
