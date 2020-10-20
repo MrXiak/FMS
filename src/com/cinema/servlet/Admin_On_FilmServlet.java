@@ -1,5 +1,7 @@
 package com.cinema.servlet;
 
+import com.cinema.dao.IFilmDao;
+import com.cinema.dao.impl.IFilmDaoImpl;
 import com.cinema.entity.FilmInfo;
 import com.cinema.service.IFilmService;
 import com.cinema.service.impl.IFilmServiceImpl;
@@ -115,6 +117,8 @@ public class Admin_On_FilmServlet extends HttpServlet {
 
         IFilmService iFilmService=new IFilmServiceImpl();
         if ( iFilmService.isInsertNew(filmInfo)){
+            IFilmDao iFilmDao=new IFilmDaoImpl();
+            iFilmDao.del_PreFilm(pid);
             req.getRequestDispatcher("./admin-jsp/admin-film.jsp").forward(req,resp);
         }else{
             req.getRequestDispatcher("./user/fail.jsp").forward(req,resp);

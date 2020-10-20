@@ -25,9 +25,9 @@ document.writeln("                <img src=\'http://t.cn/RCzsdCq\' class=\'layui
 document.writeln("              <input type='text' id='username' disabled='disabled' style='border: 0px ; width: 50px; text-align: center ;max-width:100% ; color: white; background-color: rgba(0,0,0,0.1) ' value='贤心' />  ");
 document.writeln("            </a>");
 document.writeln("            <dl class=\'layui-nav-child\'>");
-document.writeln("                <dd><a href=\'/login_register/login.jsp\' id='thelogin'>登录</a></dd>");
+// document.writeln("                <dd><a href=\'/login_register/login.jsp\' id='thelogin'>登录</a></dd>");
 document.writeln("                <dd><a href=\'/user/usercenter.jsp#order\'>我的订单</a></dd>");
-document.writeln("                <dd><a href=\'/LoginOut.action\'>退出登录</a></dd>");
+// document.writeln("                <dd><a href=\'/LoginOut.action\'>退出登录</a></dd>");
 document.writeln("            </dl>");
 document.writeln("        </li>");
 document.writeln("    </ul>");
